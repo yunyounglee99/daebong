@@ -1,0 +1,53 @@
+daebong_rl_project/
+├── data/                   # 1. 데이터 (원본 및 가공)
+│   ├── raw/                #    - 원본 CSV, JSON, SQL 덤프
+│   │   ├── price_data.csv
+│   │   └── quality_data.csv
+│   └── processed/          #    - 전처리 완료된 데이터
+│       └── features.parquet
+│
+├── model_register/         # 2. 모델 저장소 (학습된 모델 보관)
+│   ├── ml_model/           #    - 기계학습 모델 (가격/품질 예측)
+│   │   ├── ml_model_v1.pkl
+│   │   └── ml_model_v2.pkl
+│   └── rl_model/           #    - 강화학습 모델 (SAC+PER)
+│       ├── rl_model_v1.pth
+│       └── rl_model_v2.pth
+│
+├── notebooks/              # 3. 실험실 (데이터 분석 및 모델 프로토타이핑)
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_ml_model_training.ipynb
+│   └── 03_rl_training_simulation.ipynb # (과제 제출용 핵심 노트북)
+│
+├── src/                    # 4. 핵심 소스 코드 (재사용 가능한 모든 모듈)
+│   ├── __init__.py
+│   ├── config.py           #    - 모든 경로, 하이퍼파라미터, API 키 관리
+│   │
+│   ├── data/
+│   │   └── preprocess.py   #    - data/raw/ -> data/processed/ 로 변환
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── ml_model.py     #    - '기계학습 모델' (가격/품질) 클래스 정의
+│   │   └── rl_model.py     #    - ★★★ SAC + PER 에이전트 클래스 정의 (sac.py)
+│   │
+│   └── utils/
+│       ├── __init__.py
+│       └── replay_buffer.py #   - PER(우선순위 경험 리플레이) 클래스 정의
+│
+├── training/               # 5. 학습 서버 (<Training Server> 로직)
+│   ├── __init__.py
+│   ├── train_ml.py         #    - src/models/ml_model.py를 학습, model_register/에 저장
+│   ├── train_rl.py         #    - ★★★ SAC+PER 학습 루프 (model.train())
+│   │                       #    - Replay Buffer에서 데이터 샘플링
+│   │                       #    - 주기적으로 model_register/에 모델 저장
+│   └── reward_collector.py #    - (옵션) 클릭 데이터를 수집해 Replay Buffer에 저장하는 파이프라인
+│
+├── serving/                # 6. 서빙 API 서버 (<Serving API Server> 로직)
+│   ├── __init__.py
+│   ├── main.py             #    - FastAPI / Flask 등 API 서버 실행 파일
+│   ├── model_loader.py     #    - Model Register를 감시, 새 모델 로드/교체 (Hot-Swap)
+│   └── inference.py        #    - ★★★ 모델(eval())로 Q-value 계산, JSON 생성하는 핵심 로GIC
+│
+├── requirements.txt        # 7. 의존성 (필요한 모든 라이브러리)
+└── README.md               # 8. 프로젝트 설명서
