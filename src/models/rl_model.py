@@ -75,6 +75,75 @@ class PERBufferClass:
                 beta = 0.4, 
                 beta_increment = 0.001):
         self.tree = Sumtree(buffer_limit)
+        self.device = device
+        self.alpha = alpha
+        self.beta = beta
+        self.beta_increment = beta_increment
+        self.capacity = buffer_limit
+        self.max_priority = 1.0
+        self.epsilon = 1e-6 # to prevent the priority becomes 0
+    
+    def put(self, item):
+        """
+        save the item in the buffer (in max priority)
+        """
+        self.tree.add(self.max_priority, item)
+
+    def size(self):
+        return self.tree.n_entries
+    
+    def sample(self, n):
+        """
+        sample based on priority
+        """
+        mini_batch = []
+        idxs = []
+        is_weights = np.empty(n, dtype = np.float32)
+        segment = self.tree.total() / n
+        self.beta = np.min([1., self.beta + self.beta_increment]) # beta anyling
+
+        for i in range(n):
+            s = random.uniform(segment * i, segment * (i+1))
+            (idx, p, data) = self.tree.get(s)
+
+            prob = p / self.tree.total()
+            is_weights[i] = np.power(self.size() * prob, -self.beta) # calculate priority sampling weight
+
+            mini_batch.append(data)
+            idxs.append(idx)
+    
+        s_list, a_list, r_list, s_prime_list, done_mask_list = [], [], [], [], []
+        for transition in mini_batch:
+            s, a, r, s_prime, done_mask = transition
+            s_list.append(s)
+            a_list.append([a]) #as action is scalar(0 or 1)
+            r_list.append([r])
+            s_prime_list.append(s_prime)
+            done_mask = 0.0 if done_mask else 1.0
+            done_mask_list.append(done_mask)
+
+        is_weights /= is_weights.max() # normalize is_weight
+
+        return (list2torch(s_list, self.device),
+                list2torch(a_list, self.device),
+                list2torch(r_list, self.device),
+                list2torch(s_prime_list, self.device),
+                list2torch(done_mask_list, self.device),
+                torch.tensor(is_weights, dtype=torch.float).to(self.device).reshape(-1, 1), idx)
+    
+    def update_priorities(self, batch_indices, td_errors):
+        """
+        update the priority of sampling batch (based on TD-Error)
+        """
+        td_errors = td_errors.detach().cpu().numpy()
+        priorities = (np.abs(td_errors) + self.epsilon) ** self.alpha
+
+        for idx, p in zip(batch_indices, priorities):
+            self.tree.update(idx, p[0])
+            self.max_priority = max(self.max_priority, p[0])
+
+    def clear(self):
+        self.__init__(self.capacity, self.device)
 
 #Actor
 class ActorClass(nn.Module):
