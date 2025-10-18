@@ -149,9 +149,9 @@ class PERBufferClass:
 class ActorClass(nn.Module):
     def __init__(self,
                 name = 'actor',
-                obs_dim = 8,    # need to modificate to suit the project 
+                obs_dim = 8,    # need to modify to suit the project 
                 h_dims = [256, 256],
-                a_dim = 2,    #recommend or not
+                a_dim = 2,    # recommend or not
                 init_alpha = 0.1,
                 lr_actor = 0.0003,
                 lr_alpha = 0.0003,
@@ -278,8 +278,8 @@ class ActorClass(nn.Module):
 class CriticClass(nn.Module):
     def __init__(self,
                 name      = "critic",
-                obs_dim   = 75,
-                a_dim     = 8,
+                obs_dim   = 8,     # state dimension / need to modify to suit the project 
+                a_dim     = 2,     # recommend or not
                 h_dims    = [256,256],
                 out_dim   = 1,
                 lr_critic = 0.0003,
@@ -293,7 +293,7 @@ class CriticClass(nn.Module):
         self.obs_dim   = obs_dim
         self.a_dim     = a_dim
         self.h_dims    = h_dims
-        self.out_dim   = out_dim
+        self.out_dim   = self.a_dim
         self.lr_critic = lr_critic
         self.device    = device
         self.init_layers()
@@ -306,18 +306,12 @@ class CriticClass(nn.Module):
             Initialize layers
         """
         self.layers = {}
-        h_dim_prev = self.h_dims[0]
+        h_dim_prev = self.obs_dim
         for h_idx, h_dim in enumerate(self.h_dims):
-            if h_idx == 0:
-                self.layers['obs']      = nn.Linear(self.obs_dim, int(self.h_dims[0]/2))
-                self.layers['obs_relu'] = nn.ReLU()
-                self.layers['act']      = nn.Linear(self.a_dim, int(self.h_dims[0]/2))
-                self.layers['act_relu'] = nn.ReLU()
-            else:
-                self.layers['mlp_{}'.format(h_idx)] = nn.Linear(h_dim_prev, h_dim)
-                self.layers['relu_{}'.format(h_idx)] = nn.ReLU()
+            self.layers[f'mlp_{h_idx}'] = nn.Linear(h_dim_prev, h_dim)
+            self.layers[f'relu_{h_idx}'] = nn.ReLU()
             h_dim_prev = h_dim
-        self.layers['out'] = nn.Linear(h_dim_prev, self.out_dim)
+        self.layers['out'] = nn.Linear(h_dim_prev, self.out_dim)     # output : [Q(s, a_0), Q(s, a_1)]
 
         # Accumulate layers weights
         self.param_dict = {}
@@ -344,32 +338,35 @@ class CriticClass(nn.Module):
                 nn.init.kaiming_normal_(layer.weight)
                 nn.init.zeros_(layer.bias)
                 
-    def forward(self,
-                x,
-                a):
+    def forward(self, x):
         x = x.to(self.device)
-        a = a.to(self.device)
         for h_idx, _ in enumerate(self.h_dims):
-            if h_idx == 0:
-                x = self.layers['obs_relu'](self.layers['obs'](x))
-                a = self.layers['act_relu'](self.layers['act'](a))
-                cat = torch.cat([x,a], dim=1)
-            else:
-                q = self.layers['relu_{}'.format(h_idx)](self.layers['mlp_{}'.format(h_idx)](cat))
-        q = self.layers['out'](q)
+            x = self.layers[f'relu_{h_idx}'](self.layers[f'mlp_{h_idx}'](x))
+        q = self.layers['out'](x)     # output : [batch_size, a_dim] 
         return q
     
     def train(self,
-              target,
-              mini_batch):
+            target,
+            mini_batch,
+            is_weights):
         """
             Train
         """
         s, a, r, s_prime, done = mini_batch
-        critic_loss = F.smooth_l1_loss(self.forward(s,a), target)
+        
+        # return Q_value only using state(s)
+        # gather real action(a)'s Q_value
+        q_values = self.forward(s)
+        current_q = q_values.gather(1, a.long())     # a need to be [N, 1]
+
+        td_error = torch.abs(target - current_q)
+        loss = (is_weights * F.smooth_l1_loss(current_q, target, reduction='none')).mean()
+
         self.critic_optimizer.zero_grad()
-        critic_loss.mean().backward()
+        loss.backward()
         self.critic_optimizer.step()
+
+        return td_error
         
     def soft_update(self, tau, net_target):
         """
@@ -385,15 +382,17 @@ def get_target(pi, q1, q2, gamma, mini_batch, device):
     pi = pi.to(device)
     s, a, r, s_prime, done = mini_batch
     with torch.no_grad():
-        # We use the action the current 'pi' making SAC off-policy
-        a_prime, log_prob = pi(s_prime)
-        entropy = -pi.log_alpha.exp() * log_prob # incentivize exploration
+        next_probs, next_log_probs = pi(s_prime)
+        alpha = pi.log_alpha.exp()
+        entropy = -alpha * next_log_probs
         
-        # Use the minimum Q among q1 and q2 (to avoid over-confident issue)
-        q1_val, q2_val = q1(s_prime,a_prime), q2(s_prime,a_prime)
-        q = torch.cat([q1_val, q2_val], dim=1)
-        min_q = torch.min(q, 1, keepdim=True)[0]
-        
-        # Get target using Bellman backup operator
-        target = r + gamma * done * (min_q + entropy.mean()) # Eg. (3)
+        q1_val = q1(s_prime)
+        q2_val = q2(s_prime)
+        min_q = torch.min(q1_val, q2_val)
+
+        # V(s') = Σ [ probs(a'|s') * ( Q_target(s',a') + entropy(a'|s') ) ]
+        soft_v_prime = (next_probs * (min_q + entropy)).sum(dim=1, keemdim=True)
+
+        target = r + gamma * done * soft_v_prime
+
     return target 
