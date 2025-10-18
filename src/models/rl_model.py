@@ -145,127 +145,134 @@ class PERBufferClass:
     def clear(self):
         self.__init__(self.capacity, self.device)
 
-#Actor
+#Actor (discrete)
 class ActorClass(nn.Module):
-  def __init__(self,
-              name = 'actor',
-              obs_dim = 8,
-              h_dims = [256, 256],
-              out_dim = 1,
-              max_out = 1.0,
-              init_alpha = 0.1,
-              lr_actor = 0.0003,
-              lr_alpha = 0.0003,
-              device = None) -> None:
-    super(ActorClass, self).__init__()
-    #initialize
-    self.name = name
-    self.obs_dim = obs_dim
-    self.h_dims = h_dims
-    self.out_dims = out_dim
-    self.max_out = max_out
-    self.init_alpha = init_alpha
-    self.lr_actor = lr_actor
-    self.lr_alpha = lr_alpha
-    self.device = device
-    self.init_layers()
-    self.init_params()
-    # set optimizer
-    self.actor_optimizer = optim.Adam(self.parameters(), lr = self.lr_actor)
-    self.log_alpha = torch.tensor(np.log(self.init_alpha), requires_grad=True, dtype = torch.float32, device = self.device)
-    self.log_alpha_optimizer = optim.Adam([self.log_alpha], lr = self.lr_alpha)
+    def __init__(self,
+                name = 'actor',
+                obs_dim = 8,    # need to modificate to suit the project 
+                h_dims = [256, 256],
+                a_dim = 2,    #recommend or not
+                init_alpha = 0.1,
+                lr_actor = 0.0003,
+                lr_alpha = 0.0003,
+                device = None) -> None:
+        super(ActorClass, self).__init__()
+        #initialize
+        self.name = name
+        self.obs_dim = obs_dim
+        self.h_dims = h_dims
+        self.a_dim = a_dim
+        self.init_alpha = init_alpha
+        self.lr_actor = lr_actor
+        self.lr_alpha = lr_alpha
+        self.device = device
+        self.init_layers()
+        self.init_params()
+        # set optimizer
+        self.actor_optimizer = optim.Adam(self.parameters(), lr = self.lr_actor)
+        self.log_alpha = torch.tensor(np.log(self.init_alpha), requires_grad=True, dtype = torch.float32, device = self.device)
+        self.log_alpha_optimizer = optim.Adam([self.log_alpha], lr = self.lr_alpha)
 
-  def init_layers(self):
-    """
-    initialize layers
-    """
-    self.layers = {}
-    h_dim_prev = self.obs_dim
-    for h_idx, h_dim in enumerate(self.h_dims):
-        self.layers['mlp_{}'.format(h_idx)] = nn.Linear(h_dim_prev, h_dim)
-        self.layers['relu_{}'.format(h_idx)] = nn.ReLU()
-        h_dim_prev = h_dim
-    self.layers['mu'] = nn.Linear(h_dim_prev, self.out_dim)
-    self.layers['std'] = nn.Linear(h_dim_prev, self.out_dim)
+    def init_layers(self):
+        """
+        initialize layers
+        """
+        self.layers = {}
+        h_dim_prev = self.obs_dim
+        for h_idx, h_dim in enumerate(self.h_dims):
+            self.layers['mlp_{}'.format(h_idx)] = nn.Linear(h_dim_prev, h_dim)
+            self.layers['relu_{}'.format(h_idx)] = nn.ReLU()
+            h_dim_prev = h_dim        
+        self.layers['logits'] = nn.Linear(h_dim_prev, self.a_dim)
 
-    self.param_dict = {}
-    for key in self.layers.keys():
-        layer = self.layers[key]
-        if isinstance(layer,nn.Linear):
-            self.param_dict[key+'_w'] = layer.weight
-            self.param_dict[key+'_b'] = layer.bias
-    self.parameters = nn.ParameterDict(self.param_dict)
+        self.param_dict = {}
+        for key in self.layers.keys():
+            layer = self.layers[key]
+            if isinstance(layer,nn.Linear):
+                self.param_dict[key+'_w'] = layer.weight
+                self.param_dict[key+'_b'] = layer.bias
+        self.parameters = nn.ParameterDict(self.param_dict)
 
-  def init_params(self):
-      """
-          Initialize parameters
-      """
-      for key in self.layers.keys():
-          layer = self.layers[key]
-          if isinstance(layer,nn.Linear):
-              nn.init.normal_(layer.weight,mean=0.0,std=0.01)
-              nn.init.zeros_(layer.bias)
-          elif isinstance(layer,nn.BatchNorm2d):
-              nn.init.constant_(layer.weight,1.0)
-              nn.init.constant_(layer.bias,0.0)
-          elif isinstance(layer,nn.Conv2d):
-              nn.init.kaiming_normal_(layer.weight)
-              nn.init.zeros_(layer.bias)
+    def init_params(self):
+        """
+            Initialize parameters
+        """
+        for key in self.layers.keys():
+            layer = self.layers[key]
+            if isinstance(layer,nn.Linear):
+                nn.init.normal_(layer.weight,mean=0.0,std=0.01)
+                nn.init.zeros_(layer.bias)
+            elif isinstance(layer,nn.BatchNorm2d):
+                nn.init.constant_(layer.weight,1.0)
+                nn.init.constant_(layer.bias,0.0)
+            elif isinstance(layer,nn.Conv2d):
+                nn.init.kaiming_normal_(layer.weight)
+                nn.init.zeros_(layer.bias)
 
-  def forward(self,x,SAMPLE_ACTION=True):
-      """
-          Forward
-      """
-      x = x.to(self.device)
-      for h_idx, _ in enumerate(self.h_dims):
-          x = self.layers['relu_{}'.format(h_idx)](self.layers['mlp_{}'.format(h_idx)](x))
-      # Compute mean and std
-      mean = self.layers['mu'](x)
-      # std  = F.softplus(self.layers['std'](x)) + 1e-6
-      std = torch.sigmoid(self.layers['std'](x))
-      std = torch.clamp(std,  min=1e-6, max=1.0)
-      # Define Gaussian
-      GaussianDistribution = Normal(mean, std)
-      # Sample action
-      if SAMPLE_ACTION:
-          action = GaussianDistribution.rsample()
-      else:
-          action = mean
-      # Compute log prob
-      log_prob = GaussianDistribution.log_prob(action)
-      # Normalize action
-      real_action = torch.tanh(action) * self.max_out
-      real_log_prob = log_prob - torch.log(self.max_out*(1-torch.tanh(action).pow(2)) + 1e-6)
-      return real_action, real_log_prob
+    def forward(self,x,SAMPLE_ACTION=True):
+        """
+            Forward
+        """
+        x = x.to(self.device)
+        for h_idx, _ in enumerate(self.h_dims):
+            x = self.layers['relu_{}'.format(h_idx)](self.layers['mlp_{}'.format(h_idx)](x))
+        
+        # calculate
+        logits = self.layers['logits'](x)
+        probs = F.softmax(logits, dim = -1)
+        log_probs = F.log_softmax(logits, dim = -1)
 
-  def train(self,
-            q_1,
-            q_2,
-            target_entropy,
-            mini_batch):
-      """
-          Train
-      """
-      s, _, _, _, _ = mini_batch
-      a, log_prob = self.forward(s)
-      entropy = -self.log_alpha.exp() * log_prob 
-      
-      q_1_value = q_1(s, a)
-      q_2_value = q_2(s, a)
-      q_1_q_2_value = torch.cat([q_1_value, q_2_value], dim=1)
-      min_q_value   = torch.min(q_1_q_2_value, 1, keepdim=True)[0]
-      
-      # Update actor
-      actor_loss = -min_q_value -entropy # Eq. (7)
-      self.actor_optimizer.zero_grad()
-      actor_loss.mean().backward()
-      self.actor_optimizer.step()
-      
-      # Automating Entropy Adjustment
-      alpha_loss = -(self.log_alpha.exp() * (log_prob+target_entropy).detach()).mean()
-      self.log_alpha_optimizer.zero_grad()
-      alpha_loss.backward()
-      self.log_alpha_optimizer.step()
+        return probs, log_probs     # probabilities for [recommend or not]
+    
+    def get_action_prob(self, s, deterministic = False):
+        """
+        sampling the real actions and return log probabilities
+        """
+        probs, log_probs = self.forward(s)
+        dist = torch.distributions.Categorical(probs)
+
+        if deterministic:
+            action = torch.argmax(probs, dim=-1)
+        else:
+            action = dist.sample()
+
+        # log prob for specific actions
+        # .gathers acts same as dist.log_prob(action)
+        action_log_probs = log_probs.gather(1, action.unsqueeze(-1))
+
+        return action, action_log_probs
+
+    def train(self,
+                q_1,
+                q_2,
+                target_entropy,
+                s_batch):
+        """
+            Train
+        """
+        probs, log_probs = self.forward(s_batch)
+
+        #calculate Q-value
+        q_1_value = q_1(s_batch)
+        q_2_value = q_2(s_batch)
+        mini_q_value = torch.min(q_1_value, q_2_value)
+
+        alpha = self.log_alpha.exp().detach()
+
+        actor_loss = (probs * (alpha * log_probs - mini_q_value.detach())).sum(dim=1).mean()
+
+        self.actor_optimizer.zero_grad()
+        actor_loss.backward()
+        self.actor_optimizer.step()
+
+        entropy = -(probs * log_probs).sum(dim=-1)
+        alpha_loss = -(self.log_alpha.exp() * (entropy.detach() + target_entropy)).mean()
+
+        self.log_alpha_optimizer.zero_grad()
+        alpha_loss.backward()
+        self.log_alpha_optimizer.step()
+
+
 
 # Critic
 class CriticClass(nn.Module):
