@@ -35,3 +35,7 @@ SAVE_INTERVAL = 100     # save the model for 100 epi
 PER_ALPHA = 0.6         # 우선순위 강도
 PER_BETA_START = 0.4    # IS 가중치 시작 값
 PER_BETA_INCREMENT = 0.00001 # 1e-6 (BETA가 1.0에 도달하기까지 걸리는 시간 조절)
+
+# --- 5. checkpoint ---
+LOAD_CHECKPOINT = False
+CHECKPOINT_FILE_TO_LOAD = 'this_is_for_example.pth'
