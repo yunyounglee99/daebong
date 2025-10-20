@@ -62,6 +62,38 @@ def train():
   critic1_target.load_state_dict(critic1.state_dict())
   critic2_target.load_state_dict(critic2.state_dict())
 
+  # --- load checkpoint ---
+  start_episode = 0
+  total_steps_start = 0
+
+  if config.LOAD_CHECKPOINT:
+    checkpoint_path = os.path.join(config.RL_MODEL_PATH, config.CHECKPOINT_FILE_TO_LOAD)
+    if os.path.exists(checkpoint_path):
+      print(f'Loading checkpoint from : {checkpoint_path}')
+      checkpoint = torch.load(checkpoint_path, map_location = DEVICE)
+
+      actor.load_state_dict(checkpoint['actor_state_dict'])
+      critic1.load_state_dict(checkpoint['critic1_state_dict'])
+      critic2.load_state_dict(checkpoint['critic2_state_dict'])
+
+      critic1_target.load_state_dict(checkpoint['critic1_state_dict'])
+      critic2_target.load_state_dict(checkpoint['critic2_state_dict'])
+
+      actor.actor_optimizer.load_state_dict(checkpoint['actor_optimizer_state_dict'])
+      actor.log_alpha_optimizer.load_state_dict(checkpoint['log_alpha_optimizer_state_dict'])
+      critic1.critic_optimizer.load_state_dict(checkpoint['critic1_optimizer_state_dict'])
+      critic2.critic_optimizer.load_state_dict(checkpoint['critic2_optimizer_state_dict'])
+
+      actor.log_alpha = checkpoint['log_alpha']
+      start_episode = checkpoint['episode'] + 1
+      total_steps_start = checkpoint['total_steps']
+
+      print(f'Checkpoint loaded. Resuming from episode {start_episode}')
+    else:
+      print(f'Checkpoint file not found at : {checkpoint_path}. Starting from scratch')
+
+    # ---------------
+
   os.makedirs(config.RL_MODEL_PATH, exist_ok = True)
 
   print("Training started...")
@@ -114,7 +146,7 @@ def train():
 
       # caculate target Q-value
       target = get_target(
-        actor, critic1_target, critic2_target, config.GAMMA, mini_batch, device
+        actor, critic1_target, critic2_target, config.GAMMA, mini_batch, DEVICE
       )
 
       # training critic
@@ -142,9 +174,23 @@ def train():
 
     # save the model periodically
     if episode % config.SAVE_INTERVAL == 0 and episode > 0:
-      model_path = os.path.join(config.RL_MODEL_PATH, f'sac_actor_ep{episode}.pth')
-      torch.save(actor.state_dict(), model_path)
-      print(f'Model saved at : {model_path}')
+      checkpoint = {
+        'episode' : episode,
+        'total_steps' : total_steps,
+        'actor_state_dict' : actor.state_dict(),
+        'critic1_state_dict' : critic1.state_dict(),
+        'critic2_state_dict' : critic2.state_dict(),
+        'actor_optimizer_state_dict' : actor.actor_optimizer.state_dict(),
+        'log_alpha_optimizer_state_dict' : actor.log_alpha_optimizer.state_dict(),
+        'critic1_optimizer_state_dict' : critic1.critic_optimizer.state_dict(),
+        'critic2_optimizer_state_dict' : critic2.critic_optimizer.state_dict(),
+        'log_alpha' : actor.log_alpha
+      }
+
+      checkpoint_path = os.path.join(config.RL_MODEL_PATH, f'checkpoint_ep{episode}.pth')
+      torch.save(checkpoint, checkpoint_path)
+
+      print(f'\n--- Full checkpoint saved at : {checkpoint_path} ---')
 
 if __name__ == '__main__':
   train()
