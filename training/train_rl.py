@@ -6,61 +6,89 @@ import os
 import time
 import src.config as config
 from src.utils.replay_buffer import PERBufferClass
-from src.models.rl_model import ActorClass, CriticClass, get_target
+from src.models.rl_model_SAC import ActorClass, CriticClass, get_target as get_target_sac
+from src.models.rl_model_DQN import (
+  DQN,
+  get_action as get_action_dqn,
+  get_target as get_target_dqn
+)
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f'Using device : {DEVICE}')
+print(f'Running Model Type : {config.MODEL_TYPE}')
 
-TARGET_ENTROPY = -np.log(1.0 / config.ACTION_DIM) * 0.98
+if config.MODEL_TYPE == 'SAC':
+  TARGET_ENTROPY = -np.log(1.0 / config.ACTION_DIM) * 0.98
 
 def train():
   print('Initializing models and buffer...')
 
-  buffer = PERBufferClass(
-    buffer_limit=config.BUFFER_LIMIT,
-    device = DEVICE,
-    alpha = config.PER_ALPHA,
-    beta = config.PER_BETA_START,
-    beta_increment = config.PER_BETA_INCREMENT
-  )
+  # --- SAC Training ---
+  if config.MODEL_TYPE == 'SAC':
+    buffer = PERBufferClass(
+      buffer_limit=config.BUFFER_LIMIT,
+      device = DEVICE,
+      alpha = config.PER_ALPHA,
+      beta = config.PER_BETA_START,
+      beta_increment = config.PER_BETA_INCREMENT
+    )
 
-  actor = ActorClass(
-    obs_dim = config.OBS_DIM,
-    a_dim = config.ACTION_DIM,
-    h_dims = config.HIDDEN_DIMS,
-    device = DEVICE
-  ).to(DEVICE)
+    actor = ActorClass(
+      obs_dim = config.OBS_DIM,
+      a_dim = config.ACTION_DIM,
+      h_dims = config.HIDDEN_DIMS,
+      device = DEVICE
+    ).to(DEVICE)
 
-  critic1 = CriticClass(
-    obs_dim = config.OBS_DIM,
-    a_dim = config.ACTION_DIM,
-    h_dims = config.HIDDEN_DIMS,
-    device = DEVICE
-  ).to(DEVICE)
+    critic1 = CriticClass(
+      obs_dim = config.OBS_DIM,
+      a_dim = config.ACTION_DIM,
+      h_dims = config.HIDDEN_DIMS,
+      device = DEVICE
+    ).to(DEVICE)
 
-  critic2 = CriticClass(
-    obs_dim = config.OBS_DIM,
-    a_dim = config.ACTION_DIM,
-    h_dims = config.HIDDEN_DIMS,
-    device = DEVICE
-  ).to(DEVICE)
+    critic2 = CriticClass(
+      obs_dim = config.OBS_DIM,
+      a_dim = config.ACTION_DIM,
+      h_dims = config.HIDDEN_DIMS,
+      device = DEVICE
+    ).to(DEVICE)
 
-  critic1_target = CriticClass(
-    obs_dim = config.OBS_DIM,
-    a_dim = config.ACTION_DIM,
-    h_dims = config.HIDDEN_DIMS,
-    device = DEVICE
-  ).to(DEVICE)
+    critic1_target = CriticClass(
+      obs_dim = config.OBS_DIM,
+      a_dim = config.ACTION_DIM,
+      h_dims = config.HIDDEN_DIMS,
+      device = DEVICE
+    ).to(DEVICE)
 
-  critic2_target = CriticClass(
-    obs_dim = config.OBS_DIM,
-    a_dim = config.ACTION_DIM,
-    h_dims = config.HIDDEN_DIMS,
-    device = DEVICE
-  ).to(DEVICE)
+    critic2_target = CriticClass(
+      obs_dim = config.OBS_DIM,
+      a_dim = config.ACTION_DIM,
+      h_dims = config.HIDDEN_DIMS,
+      device = DEVICE
+    ).to(DEVICE)
 
-  critic1_target.load_state_dict(critic1.state_dict())
-  critic2_target.load_state_dict(critic2.state_dict())
+    critic1_target.load_state_dict(critic1.state_dict())
+    critic2_target.load_state_dict(critic2.state_dict())
+
+  elif config.MODEL_TYPE == 'DQN':
+    q_main = DQN(
+      obs_dim = config.OBS_DIM,
+      a_dim = config.ACTION_DIM,
+      h_dims = config.HIDDEN_DIMS,
+      lr_critic = config.LR_CRITIC,
+      device = DEVICE
+    )
+
+    q_target = DQN(
+      obs_dim = config.OBS_DIM,
+      a_dim = config.ACTION_DIM,
+      h_dims = config.HIDDEN_DIMS,
+      lr_critic = config.LR_CRITIC,
+      device = DEVICE
+    )
+
+    q_target.load_state_dict(q_main.state_dict())
 
   # --- load checkpoint ---
   start_episode = 0
@@ -72,19 +100,26 @@ def train():
       print(f'Loading checkpoint from : {checkpoint_path}')
       checkpoint = torch.load(checkpoint_path, map_location = DEVICE)
 
-      actor.load_state_dict(checkpoint['actor_state_dict'])
-      critic1.load_state_dict(checkpoint['critic1_state_dict'])
-      critic2.load_state_dict(checkpoint['critic2_state_dict'])
+      if config.MODEL_TYPE == 'SAC':
+        actor.load_state_dict(checkpoint['actor_state_dict'])
+        critic1.load_state_dict(checkpoint['critic1_state_dict'])
+        critic2.load_state_dict(checkpoint['critic2_state_dict'])
 
-      critic1_target.load_state_dict(checkpoint['critic1_state_dict'])
-      critic2_target.load_state_dict(checkpoint['critic2_state_dict'])
+        critic1_target.load_state_dict(checkpoint['critic1_state_dict'])
+        critic2_target.load_state_dict(checkpoint['critic2_state_dict'])
 
-      actor.actor_optimizer.load_state_dict(checkpoint['actor_optimizer_state_dict'])
-      actor.log_alpha_optimizer.load_state_dict(checkpoint['log_alpha_optimizer_state_dict'])
-      critic1.critic_optimizer.load_state_dict(checkpoint['critic1_optimizer_state_dict'])
-      critic2.critic_optimizer.load_state_dict(checkpoint['critic2_optimizer_state_dict'])
+        actor.actor_optimizer.load_state_dict(checkpoint['actor_optimizer_state_dict'])
+        actor.log_alpha_optimizer.load_state_dict(checkpoint['log_alpha_optimizer_state_dict'])
+        critic1.critic_optimizer.load_state_dict(checkpoint['critic1_optimizer_state_dict'])
+        critic2.critic_optimizer.load_state_dict(checkpoint['critic2_optimizer_state_dict'])
 
-      actor.log_alpha = checkpoint['log_alpha']
+        actor.log_alpha = checkpoint['log_alpha']
+
+      elif config.MODEL_TYPE == 'DQN':
+        q_main.load_state_dict(checkpoint['q_main_state_dict'])
+        q_target.load_state_dict(checkpoint['q_main_state_dict'])
+        q_main.optimizer.load_state_dict(checkpoint['q_main_optimizer_state_dict'])
+
       start_episode = checkpoint['episode'] + 1
       total_steps_start = checkpoint['total_steps']
 
@@ -117,8 +152,13 @@ def train():
 
       with torch.no_grad():
         s_tensor = torch.from_numpy(s).float().to(DEVICE).unsqueeze(0)
-        a, _ = actor.get_action_logprob(s_tensor, deterministic = False)
-        a = a.item()
+
+        if config.MODEL_TYPE == 'SAC':
+          a, _ = actor.get_action_logprob(s_tensor, deterministic = False)
+          a = a.item()
+
+        elif config.MODEL_TYPE == 'DQN':
+          a = get_action_dqn(q_main, s_tensor, deterministic = False)
 
       s_prime = np.random.rand(config.OBS_DIM).astype(np.float32)
 
@@ -144,26 +184,43 @@ def train():
       s_b, a_b, r_b, s_p_b, done_b, is_weights_b, idxs_b = buffer.sample(config.BATCH_SIZE)
       mini_batch = (s_b, a_b, r_b, s_p_b, done_b)
 
-      # caculate target Q-value
-      target = get_target(
-        actor, critic1_target, critic2_target, config.GAMMA, mini_batch, DEVICE
-      )
+      if config.MODEL_TYPE == 'SAC':
+        # caculate target Q-value
+        target = get_target_sac(
+          actor, critic1_target, critic2_target, config.GAMMA, mini_batch, DEVICE
+        )
 
-      # training critic
-      td_error1 = critic1.train(target, mini_batch, is_weights_b)
-      td_error2 = critic2.train(target, mini_batch, is_weights_b)
+        # training critic
+        td_error1 = critic1.train(target, mini_batch, is_weights_b)
+        td_error2 = critic2.train(target, mini_batch, is_weights_b)
 
-      # PER update
-      avg_td_error = (td_error1 + td_error2) / 2
-      buffer.update_priorities(idxs_b, avg_td_error)
+        # PER update
+        avg_td_error = (td_error1 + td_error2) / 2
+        buffer.update_priorities(idxs_b, avg_td_error)
 
-      # training actor
-      if total_steps % config.ACTOR_UPDATE_DELAY == 0:
-        actor.train(critic1, critic2, TARGET_ENTROPY, s_b)
+        # training actor
+        if total_steps % config.ACTOR_UPDATE_DELAY == 0:
+          actor.train(critic1, critic2, TARGET_ENTROPY, s_b)
 
-        # target net soft update
-        critic1.soft_update(config.TAU, critic1_target)
-        critic2.soft_update(config.TAU, critic2_target)
+          # target net soft update
+          critic1.soft_update(config.TAU, critic1_target)
+          critic2.soft_update(config.TAU, critic2_target)
+      
+      elif config.MODEL_TYPE == 'DQN':
+        # calculate the target
+        target = get_target_dqn(
+          q_main, q_target, config.GAMMA, mini_batch, DEVICE
+        )
+
+        #training Q-Net
+        td_error = q_main.train(target, mini_batch, is_weights_b)
+
+        # PER update
+        buffer.update_priorities(idxs_b, td_error)
+
+        # Target Net update
+        if total_steps % config.TARGET_UPDATE_INTERVAL == 0:
+          q_main.soft_update(config.TAU, q_target)
 
       if done:
         break
@@ -174,18 +231,28 @@ def train():
 
     # save the model periodically
     if episode % config.SAVE_INTERVAL == 0 and episode > 0:
-      checkpoint = {
-        'episode' : episode,
-        'total_steps' : total_steps,
-        'actor_state_dict' : actor.state_dict(),
-        'critic1_state_dict' : critic1.state_dict(),
-        'critic2_state_dict' : critic2.state_dict(),
-        'actor_optimizer_state_dict' : actor.actor_optimizer.state_dict(),
-        'log_alpha_optimizer_state_dict' : actor.log_alpha_optimizer.state_dict(),
-        'critic1_optimizer_state_dict' : critic1.critic_optimizer.state_dict(),
-        'critic2_optimizer_state_dict' : critic2.critic_optimizer.state_dict(),
-        'log_alpha' : actor.log_alpha
-      }
+
+      if config.MODEL_TYPE == 'SAC':
+        checkpoint = {
+          'episode' : episode,
+          'total_steps' : total_steps,
+          'actor_state_dict' : actor.state_dict(),
+          'critic1_state_dict' : critic1.state_dict(),
+          'critic2_state_dict' : critic2.state_dict(),
+          'actor_optimizer_state_dict' : actor.actor_optimizer.state_dict(),
+          'log_alpha_optimizer_state_dict' : actor.log_alpha_optimizer.state_dict(),
+          'critic1_optimizer_state_dict' : critic1.critic_optimizer.state_dict(),
+          'critic2_optimizer_state_dict' : critic2.critic_optimizer.state_dict(),
+          'log_alpha' : actor.log_alpha
+        }
+
+      elif config.MODEL_TYPE == 'DQN':
+        checkpoint = {
+          'episode' : episode,
+          'total_steps' : total_steps,
+          'q_main_state_dict' : q_main.state_dict(),
+          'q_main_optimizer_state_dict' : q_main.optimizer.state_dict()
+        }
 
       checkpoint_path = os.path.join(config.RL_MODEL_PATH, f'checkpoint_ep{episode}.pth')
       torch.save(checkpoint, checkpoint_path)

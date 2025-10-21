@@ -131,34 +131,34 @@ class DQN(nn.Module):
             if isinstance(module, NoisyLinear):
                 module.reset_noise()
 
-    # actor
-    def get_action(q_network, s, deterministic = False):
-        s = s.to(q_network.device)
+# actor
+def get_action(q_network, s, deterministic = False):
+    s = s.to(q_network.device)
 
-        if not deterministic:
-            # training : reset the noise of the Noisy Net for exploration
-            q_network.reset_noise()
+    if not deterministic:
+        # training : reset the noise of the Noisy Net for exploration
+        q_network.reset_noise()
 
-        with torch.no_grad():
-            q = q_network(s)
-            a = torch.argmax(q, dim = 1).unsqueeze(1)
+    with torch.no_grad():
+        q = q_network(s)
+        a = torch.argmax(q, dim = 1).unsqueeze(1)
 
-        return a.item()
-    
-    # caculatiing target
-    def get_target(q_main, q_target, gamma, mini_batch, device):
-        q_main = q_main.to(device)
-        q_target = q_target.to(device)
-        s, a, r, s_prime, done = mini_batch
+    return a.item()
 
-        with torch.no_grad():
-            # extract next action(a') with max q value on main net
-            q_main_next = q_main(s_prime)
-            best_a_prime = torch.argmax(q_main_next, dim = 1).unsqueeze(-1)
+# caculatiing target
+def get_target(q_main, q_target, gamma, mini_batch, device):
+    q_main = q_main.to(device)
+    q_target = q_target.to(device)
+    s, a, r, s_prime, done = mini_batch
 
-            q_target_next = q_target(s_prime)
-            target_q_val = q_target_next.gather(1, best_a_prime)
+    with torch.no_grad():
+        # extract next action(a') with max q value on main net
+        q_main_next = q_main(s_prime)
+        best_a_prime = torch.argmax(q_main_next, dim = 1).unsqueeze(-1)
 
-            target = r + gamma * done * target_q_val
+        q_target_next = q_target(s_prime)
+        target_q_val = q_target_next.gather(1, best_a_prime)
 
-        return target
+        target = r + gamma * done * target_q_val
+
+    return target
