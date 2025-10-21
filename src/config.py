@@ -39,3 +39,9 @@ PER_BETA_INCREMENT = 0.00001 # 1e-6 (BETA가 1.0에 도달하기까지 걸리는
 # --- 5. checkpoint ---
 LOAD_CHECKPOINT = False
 CHECKPOINT_FILE_TO_LOAD = 'this_is_for_example.pth'
+
+# --- 6. DQN ---
+TARGET_UPDATE_INTERVAL  = 10
+
+# --- 7. Model Change ---
+MODEL_TYPE = 'DQN'
