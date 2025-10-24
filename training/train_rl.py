@@ -1,6 +1,7 @@
 # excution exsample : python training/train_rl.py
 
 import torch
+import json
 import numpy as np
 import os
 import time
@@ -12,6 +13,7 @@ from src.models.rl_model_DQN import (
   get_action as get_action_dqn,
   get_target as get_target_dqn
 )
+from training.utils import flatten_state_to_vector, calculate_reward
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f'Using device : {DEVICE}')
@@ -134,107 +136,100 @@ def train():
   print("Training started...")
 
   # Main Loop
+  DATA_FILE = 'data/raw/dummy_data_100.json'
+  print(f'Loading transitions from {DATA_FILE}...')
+  loaded_count = 0
+  try:
+    with open(DATA_FILE, 'r', encoding = 'utf-8') as f:
+      transitions = json.load(f)
 
-  total_steps = 0
-  for episode in range(config.NUM_EPISODES):
-    """
-    now using dummy data please change codes below after you get data
-    """ 
-    s = np.random.rand(config.OBS_DIM).astype(np.float32) # this is dummy state you must change here to real state
-    episode_reward = 0
+      for trans in transitions:
+        s = flatten_state_to_vector(trans['state_t'])
+        a = trans['action_t']
+        r = calculate_reward(trans['reward_ingredients'])
+        s_prime = flatten_state_to_vector(trans['next_state_t_plus_1'])
+        done = trans['done']
 
-    for step in range(config.MAX_STEPS_PER_EPISODE):
-      total_steps += 1
+        if s is not None and s_prime is not None:
+          buffer.put((s, a, r, s_prime, done))
+          loaded_count += 1
 
-      # generate dummy data (s, a, r, s_prime, done)
-      # 이 부분은 나중에 'reward_collector.py'가 데이터 받아와서 buffer.put을 호출하는 로직으로 대체
-      # ===================================================
+    print(f'Successfully loaded and parsed {loaded_count} transitions into buffer.')
 
-      with torch.no_grad():
-        s_tensor = torch.from_numpy(s).float().to(DEVICE).unsqueeze(0)
+  except FileNotFoundError:
+    print(f'Error: {DATA_FILE} not found. Starting with an empth buffer')
+  except json.JSONDecodeError:
+    print(f'Error: Could not decode {DATA_FILE}. Is it a valid JSON list?')
+  except Exception as e:
+    print(f'An error occured while loading data: {e}')
+  
+  if buffer.size() < config.BATCH_SIZE:
+    print(f'Warning: Buffer size ({buffer.size()}) is smaller than BATCH_SIZE ({config.BATCH_SIZE})')
+    print('Training will not start unless BATCH_SIZE in config.py is lowered.')
 
-        if config.MODEL_TYPE == 'SAC':
-          a, _ = actor.get_action_logprob(s_tensor, deterministic = False)
-          a = a.item()
+  os.makedirs(config.RL_MODEL_PATH, exist_ok = True)
+  print('Traing started...')
 
-        elif config.MODEL_TYPE == 'DQN':
-          a = get_action_dqn(q_main, s_tensor, deterministic = False)
+  total_steps = total_steps_start
 
-      s_prime = np.random.rand(config.OBS_DIM).astype(np.float32)
+  for total_steps in range(total_steps_start, config.NUM_TRAINING_STEPS):
+    if buffer.size() < config.BATCH_SIZE:
+      print("Buffer has insufficient data to contine training. Stopping.")
+      break
 
-      # sparse reward as in real world, clicking recommended products is rare
-      # if success(click), reward = +1, or not 0
-      r = 1.0 if np.random.rand() < 0.05 else 0.0
-      done = True if step == config.MAX_STEPS_PER_EPISODE -1 else False
+    s_b, a_b, r_b, s_p_b, done_b, is_weights_b, idxs_b = buffer.sample(config.BATCH_SIZE)
+    mini_batch = (s_b, a_b, r_b, s_p_b, done_b)
 
-      # save (s, a, r, s_prime, done) in buffer
-      buffer.put((s, a, r, s_prime, done))
+    if config.MODEL_TYPE == 'SAC':
+      # caculate target Q-value
+      target = get_target_sac(
+        actor, critic1_target, critic2_target, config.GAMMA, mini_batch, DEVICE
+      )
 
-      episode_reward += r
-      s = s_prime
+      # training critic
+      td_error1 = critic1.train(target, mini_batch, is_weights_b)
+      td_error2 = critic2.train(target, mini_batch, is_weights_b)
 
-      # End simulation
-      # ===================================================
+      # PER update
+      avg_td_error = (td_error1 + td_error2) / 2
+      buffer.update_priorities(idxs_b, avg_td_error)
 
-      # begin training when sufficient data accumulates in the buffer
-      if buffer.size() < config.BATCH_SIZE:
-        continue
+      # training actor
+      if total_steps % config.ACTOR_UPDATE_DELAY == 0:
+        actor.train(critic1, critic2, TARGET_ENTROPY, s_b)
 
-      # sample in the PER buffer
-      s_b, a_b, r_b, s_p_b, done_b, is_weights_b, idxs_b = buffer.sample(config.BATCH_SIZE)
-      mini_batch = (s_b, a_b, r_b, s_p_b, done_b)
-
-      if config.MODEL_TYPE == 'SAC':
-        # caculate target Q-value
-        target = get_target_sac(
-          actor, critic1_target, critic2_target, config.GAMMA, mini_batch, DEVICE
-        )
-
-        # training critic
-        td_error1 = critic1.train(target, mini_batch, is_weights_b)
-        td_error2 = critic2.train(target, mini_batch, is_weights_b)
-
-        # PER update
-        avg_td_error = (td_error1 + td_error2) / 2
-        buffer.update_priorities(idxs_b, avg_td_error)
-
-        # training actor
-        if total_steps % config.ACTOR_UPDATE_DELAY == 0:
-          actor.train(critic1, critic2, TARGET_ENTROPY, s_b)
-
-          # target net soft update
-          critic1.soft_update(config.TAU, critic1_target)
-          critic2.soft_update(config.TAU, critic2_target)
+        # target net soft update
+        critic1.soft_update(config.TAU, critic1_target)
+        critic2.soft_update(config.TAU, critic2_target)
       
-      elif config.MODEL_TYPE == 'DQN':
-        # calculate the target
-        target = get_target_dqn(
-          q_main, q_target, config.GAMMA, mini_batch, DEVICE
-        )
+    elif config.MODEL_TYPE == 'DQN':
+      # calculate the target
+      target = get_target_dqn(
+        q_main, q_target, config.GAMMA, mini_batch, DEVICE
+      )
 
-        #training Q-Net
-        td_error = q_main.train(target, mini_batch, is_weights_b)
+      #training Q-Net
+      td_error = q_main.train(target, mini_batch, is_weights_b)
 
-        # PER update
-        buffer.update_priorities(idxs_b, td_error)
+      # PER update
+      buffer.update_priorities(idxs_b, td_error)
 
-        # Target Net update
-        if total_steps % config.TARGET_UPDATE_INTERVAL == 0:
-          q_main.soft_update(config.TAU, q_target)
+      # Target Net update
+      if total_steps % config.TARGET_UPDATE_INTERVAL == 0:
+        q_main.soft_update(config.TAU, q_target)
 
-      if done:
-        break
+    if done:
+      break
 
     # logging training process
-    if episode % config.LOG_INTERVAL == 0:
-      print(f"Epi : {episode}, Total Steps : {total_steps}, Avg Reward : {episode_reward/config.MAX_STEPS_PER_EPISODE:.4f}")
-
+    if total_steps % config.LOG_INTERVAL == 0:
+      print(f"Epi : {total_steps}, Total Steps : {total_steps}, TD-Error (mean): {td_error.mean().item():.4f}")
     # save the model periodically
-    if episode % config.SAVE_INTERVAL == 0 and episode > 0:
+    if total_steps % config.SAVE_INTERVAL == 0 and total_steps > 0:
 
       if config.MODEL_TYPE == 'SAC':
         checkpoint = {
-          'episode' : episode,
+          'episode' : total_steps,
           'total_steps' : total_steps,
           'actor_state_dict' : actor.state_dict(),
           'critic1_state_dict' : critic1.state_dict(),
@@ -248,13 +243,13 @@ def train():
 
       elif config.MODEL_TYPE == 'DQN':
         checkpoint = {
-          'episode' : episode,
+          'episode' : total_steps,
           'total_steps' : total_steps,
           'q_main_state_dict' : q_main.state_dict(),
           'q_main_optimizer_state_dict' : q_main.optimizer.state_dict()
         }
 
-      checkpoint_path = os.path.join(config.RL_MODEL_PATH, f'checkpoint_ep{episode}.pth')
+      checkpoint_path = os.path.join(config.RL_MODEL_PATH, f'checkpoint_ep{total_steps}.pth')
       torch.save(checkpoint, checkpoint_path)
 
       print(f'\n--- Full checkpoint saved at : {checkpoint_path} ---')

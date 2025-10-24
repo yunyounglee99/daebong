@@ -24,6 +24,7 @@ LR_ALPHA = 3e-4
 BATCH_SIZE = 32
 BUFFER_LIMIT = int(1e6) # 1,000,000
 NUM_EPISODES = 5000
+NUM_TRAINING_STEPS = 50000
 MAX_STEPS_PER_EPISODE = 100 # (for simulation)
 
 ACTOR_UPDATE_DELAY = 2  # Actor와 Target Net은 Critic보다 2배 늦게 업데이트
