@@ -41,3 +41,23 @@ def flatten_state_to_vector(state_obj):
   except TypeError as e:
     print(f'State JSON parsing error : {e}')
     return None
+  
+def calculate_reward(sources):
+  clicked = sources.get('clicked', 0)
+  view_time = sources.get('page_view_time_sec', 0)
+  purchased = sources.get('purchased', 0)
+
+  reward = 0.0
+
+  if clicked == 0:
+    reward = 0.0
+
+  elif view_time < 5:
+    reward = -0.5
+  else:
+    reward = 1.0 + (view_time / 60.0)
+
+  if purchased == 1:
+    reward += 5.0
+
+  return reward
