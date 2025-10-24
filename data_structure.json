@@ -1,0 +1,23 @@
+{
+  "order_id": "string (UUID format)",
+  "seller_code": "integer",
+  "company": "string",
+  "product_name": "string",
+  "quantity": "integer",
+  "supply_price": "float",
+  "order_date": "string (YYYY-MM-DD format)",
+  "cs_flag": "string (Y or N)",
+  "total_amount": "float (calculated: supply_price * quantity)",
+  "steps": [
+    {
+      "step_number": "integer (sequential, starting from 1)",
+      "step_type": "string (주문접수, 결제완료, 상품준비중, 배송준비중, 배송중, 배송완료, 구매확정, CS접수, 교환처리, 반품처리)",
+      "status": "string (대기, 진행중, 완료, 보류, 실패)",
+      "assigned_to": "string",
+      "started_at": "string (YYYY-MM-DD HH:MM:SS format)",
+      "completed_at": "string or null (YYYY-MM-DD HH:MM:SS format)",
+      "notes": "string"
+    }
+  ],
+  "_notes": "Each data entry should have 3-10 steps. Steps array should contain multiple step objects."
+}
