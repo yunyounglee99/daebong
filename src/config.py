@@ -11,12 +11,12 @@ ML_MODEL_PATH = os.path.join(MODEL_REGISTER_PATH, "ml_model")
 
 OBS_DIM = 15        # State의 실제 차원 (예: 품목정보 10 + 그룹 2 + 가격 1 + 리드타임 1 + 하자비율 1)
 ACTION_DIM = 2      # [rec, not rec]
-HIDDEN_DIMS = [256, 256]
+HIDDEN_DIMS = [64, 64]
 
 # --- 3. Training hyperparameters ---
 
 GAMMA = 0.99
-TAU = 0.005         # ratio of target net soft update
+TAU = 0.01         # ratio of target net soft update
 LR_ACTOR = 3e-4
 LR_CRITIC = 3e-4
 LR_ALPHA = 3e-4
@@ -24,12 +24,12 @@ LR_ALPHA = 3e-4
 BATCH_SIZE = 32
 BUFFER_LIMIT = int(1e6) # 1,000,000
 NUM_EPISODES = 5000
-NUM_TRAINING_STEPS = 50000
+NUM_TRAINING_STEPS = 10000
 MAX_STEPS_PER_EPISODE = 100 # (for simulation)
 
 ACTOR_UPDATE_DELAY = 2  # Actor와 Target Net은 Critic보다 2배 늦게 업데이트
-LOG_INTERVAL = 10       # print log for 10 epi
-SAVE_INTERVAL = 100     # save the model for 100 epi
+LOG_INTERVAL = 100       # print log for 10 epi
+SAVE_INTERVAL = 1000     # save the model for 100 epi
 
 # --- 4. PER hyperparameters ---
 
