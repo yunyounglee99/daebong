@@ -1,0 +1,53 @@
+{
+  "session_id": "dummy_session_001",
+  "step": 1,
+  "timestamp": "2025-10-24T14:00:00Z",
+  "state_t": {
+    "user_profile": {
+      "user_group_vector": [1, 0],
+      "_description": "[high_quality, low_price]"
+    },
+    "session_history": {
+      "_description": "(세션 첫 단계이므로 비어있음)",
+      "last_clicked_item_vector": [0.0, 0.0, 0.0],
+      "session_click_count": 0,
+      "session_total_view_time": 0,
+      "category_affinity_vector": [0.0, 0.0]
+    },
+    "candidate_item_info": {
+      "item_id": "P-1001",
+      "predicted_price": 25000,
+      "lead_time": 1,
+      "predicted_quality": 0.98,
+      "promotion": 1
+    }
+  },
+  "action_t": 1,
+  "reward_ingredients": {
+    "_description": "train_rl.py가 이 객체를 보고 최종 보상 점수를 계산",
+    "clicked": 1,
+    "page_view_time_sec": 30,
+    "purchased": 0
+  },
+  "next_state_t_plus_1": {
+    "user_profile": {
+      "user_group_vector": [1, 0]
+    },
+    "session_history": {
+      "_description": "(S_t의 행동/보상이 여기에 'update'됨)",
+      "last_clicked_item_vector": [0.1, 0.9, 0.2],
+      "session_click_count": 1,
+      "session_total_view_time": 30,
+      "category_affinity_vector": [0.8, 0.1]
+    },
+    "candidate_item_info": {
+      "_description": "(이것은 t+1 시점의 '다음' 추천 후보 정보임)",
+      "item_id": "P-2005",
+      "predicted_price": 8900,
+      "lead_time": 2,
+      "predicted_quality": 0.92,
+      "promotion": 0
+    }
+  },
+  "done": 0
+}
