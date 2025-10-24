@@ -1,0 +1,7053 @@
+[
+  {
+    "order_id": "e43571a7-0aa2-4a2b-ae00-7b75ee24efd3",
+    "seller_code": 897,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사알정품/5kg/12-16과",
+    "quantity": 4,
+    "supply_price": 20100.0,
+    "order_date": "2025-07-25",
+    "cs_flag": "Y",
+    "total_amount": 80400.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "결제완료",
+        "status": "대기",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-01 20:38:00",
+        "completed_at": "2025-07-18 10:46:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "CS접수",
+        "status": "실패",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-19 06:35:00",
+        "completed_at": "2025-07-09 13:41:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-03 02:04:00",
+        "completed_at": "2025-06-23 20:44:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송중",
+        "status": "대기",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-16 21:49:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 5,
+        "step_type": "주문접수",
+        "status": "진행중",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-22 03:40:00",
+        "completed_at": "2025-05-27 04:47:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송준비중",
+        "status": "진행중",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-26 01:23:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-06 05:08:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "37d7d515-c459-48a8-80fb-d0e08dfc7e7e",
+    "seller_code": 503,
+    "company": "도매BT",
+    "product_name": "(도매JI)부사대과/5kg/20과내외",
+    "quantity": 1,
+    "supply_price": 8800.0,
+    "order_date": "2025-06-25",
+    "cs_flag": "Y",
+    "total_amount": 8800.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-09 04:20:00",
+        "completed_at": "2025-06-30 08:21:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "교환처리",
+        "status": "대기",
+        "assigned_to": "담당자14",
+        "started_at": "2025-07-02 06:48:00",
+        "completed_at": "2025-06-30 07:29:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자14",
+        "started_at": "2025-07-16 14:29:00",
+        "completed_at": "2025-06-27 00:59:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자12",
+        "started_at": "2025-05-28 09:00:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자8",
+        "started_at": "2025-06-11 11:11:00",
+        "completed_at": "2025-07-12 01:46:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-04 19:51:00",
+        "completed_at": "2025-06-14 10:06:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 7,
+        "step_type": "주문접수",
+        "status": "보류",
+        "assigned_to": "담당자19",
+        "started_at": "2025-07-15 14:26:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-21 12:36:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "205a1ea0-1ad2-4c1d-874d-f6c07c1b5c46",
+    "seller_code": 1154,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사가정용세척/3kg/10-14과",
+    "quantity": 1,
+    "supply_price": 22200.0,
+    "order_date": "2025-05-29",
+    "cs_flag": "N",
+    "total_amount": 22200.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-19 13:30:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 2,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자4",
+        "started_at": "2025-05-31 11:53:00",
+        "completed_at": "2025-07-17 15:30:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자16",
+        "started_at": "2025-05-27 15:17:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 4,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-22 01:11:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-19 15:28:00",
+        "completed_at": "2025-07-17 13:57:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-04 05:38:00",
+        "completed_at": "2025-06-06 08:27:00",
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "ffa2fe01-1a10-4070-8bdb-2e39eb59cf9c",
+    "seller_code": 2124,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)미부사/3kg/6-9과(미색못난이)",
+    "quantity": 3,
+    "supply_price": 12900.0,
+    "order_date": "2025-06-01",
+    "cs_flag": "N",
+    "total_amount": 38700.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-18 10:29:00",
+        "completed_at": "2025-07-21 03:42:00",
+        "notes": ""
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송완료",
+        "status": "실패",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-21 08:45:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-11 12:38:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송중",
+        "status": "대기",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-08 01:37:00",
+        "completed_at": "2025-07-14 08:47:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-20 16:47:00",
+        "completed_at": "2025-06-10 12:07:00",
+        "notes": ""
+      },
+      {
+        "step_number": 6,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-05 19:34:00",
+        "completed_at": "2025-07-06 16:13:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 7,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-16 10:20:00",
+        "completed_at": "2025-06-29 22:51:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 8,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-07-19 04:58:00",
+        "completed_at": "2025-06-19 05:23:00",
+        "notes": "지연 발생"
+      }
+    ]
+  },
+  {
+    "order_id": "d8dae5ff-e52f-4378-8237-c0dab0d3d544",
+    "seller_code": 1802,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사알정품/2kg/10-13과",
+    "quantity": 5,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-17",
+    "cs_flag": "N",
+    "total_amount": 75000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-13 17:01:00",
+        "completed_at": "2025-06-28 03:09:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-10 04:34:00",
+        "completed_at": "2025-05-31 23:57:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "CS접수",
+        "status": "실패",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-07 20:16:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-08 01:35:00",
+        "completed_at": "2025-07-10 08:36:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "f56a2635-60ba-4958-966a-edcf6391b696",
+    "seller_code": 1928,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사쥬스용/10kg",
+    "quantity": 5,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-08",
+    "cs_flag": "Y",
+    "total_amount": 75000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "진행중",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-01 21:32:00",
+        "completed_at": "2025-07-14 05:03:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-18 02:05:00",
+        "completed_at": "2025-05-29 08:31:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-18 10:47:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "CS접수",
+        "status": "보류",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-02 04:14:00",
+        "completed_at": "2025-06-08 03:32:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송준비중",
+        "status": "실패",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-07 12:19:00",
+        "completed_at": "2025-06-24 01:25:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 6,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-25 04:23:00",
+        "completed_at": "2025-06-14 21:59:00",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "4fa3d3b8-a65a-4d99-ae54-6fb440f79a76",
+    "seller_code": 1802,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)미부사/2kg/14-16과(미색못난이)",
+    "quantity": 2,
+    "supply_price": 10900.0,
+    "order_date": "2025-06-11",
+    "cs_flag": "Y",
+    "total_amount": 21800.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-03 17:52:00",
+        "completed_at": "2025-06-07 04:48:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자17",
+        "started_at": "2025-05-30 11:57:00",
+        "completed_at": "2025-07-01 19:16:00",
+        "notes": ""
+      },
+      {
+        "step_number": 3,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-02 03:06:00",
+        "completed_at": "2025-06-04 20:52:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-25 06:02:00",
+        "completed_at": "2025-07-26 11:43:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자4",
+        "started_at": "2025-05-28 23:25:00",
+        "completed_at": "2025-06-18 15:23:00",
+        "notes": ""
+      },
+      {
+        "step_number": 6,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-24 01:26:00",
+        "completed_at": "2025-05-27 14:37:00",
+        "notes": "지연 발생"
+      }
+    ]
+  },
+  {
+    "order_id": "81e00948-f7dc-4bd2-a493-2c62cab26135",
+    "seller_code": 1984,
+    "company": "도매JI",
+    "product_name": "(경북농장)정품부사꿀사과중소과-중과/5kg/17-22과",
+    "quantity": 4,
+    "supply_price": 8800.0,
+    "order_date": "2025-07-14",
+    "cs_flag": "Y",
+    "total_amount": 35200.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-09 13:13:00",
+        "completed_at": "2025-07-03 02:26:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 2,
+        "step_type": "결제완료",
+        "status": "대기",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-01 21:33:00",
+        "completed_at": "2025-06-03 12:57:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-16 06:47:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 4,
+        "step_type": "교환처리",
+        "status": "실패",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-18 15:36:00",
+        "completed_at": "2025-06-13 07:06:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-17 00:16:00",
+        "completed_at": "2025-06-30 19:41:00",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "d2d910b4-a8cf-49d7-b491-986573118d55",
+    "seller_code": 1905,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사가정용세척/3kg/10-14과",
+    "quantity": 3,
+    "supply_price": 16000.0,
+    "order_date": "2025-07-16",
+    "cs_flag": "Y",
+    "total_amount": 48000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-14 09:51:00",
+        "completed_at": "2025-06-12 12:23:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-02 04:07:00",
+        "completed_at": "2025-06-12 20:49:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자17",
+        "started_at": "2025-07-12 22:33:00",
+        "completed_at": "2025-06-13 19:30:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "8121703b-8eaf-4c74-acb9-e8803f934f77",
+    "seller_code": 1984,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사알가정용/3kg/19-21과",
+    "quantity": 4,
+    "supply_price": 21000.0,
+    "order_date": "2025-06-26",
+    "cs_flag": "Y",
+    "total_amount": 84000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-12 19:23:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-15 05:03:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 3,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-06 10:40:00",
+        "completed_at": "2025-06-03 03:54:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-18 06:03:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "교환처리",
+        "status": "대기",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-08 02:55:00",
+        "completed_at": "2025-07-27 18:47:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 6,
+        "step_type": "구매확정",
+        "status": "실패",
+        "assigned_to": "담당자10",
+        "started_at": "2025-05-30 13:44:00",
+        "completed_at": "2025-06-19 14:19:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 7,
+        "step_type": "CS접수",
+        "status": "보류",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-10 18:20:00",
+        "completed_at": "2025-07-17 18:05:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 8,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-03 22:12:00",
+        "completed_at": "2025-07-22 13:09:00",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "91cfd7d2-4d19-4133-9e14-87cab50fd5fc",
+    "seller_code": 697,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사가정용세척/2kg/10-13과",
+    "quantity": 2,
+    "supply_price": 18100.0,
+    "order_date": "2025-06-05",
+    "cs_flag": "Y",
+    "total_amount": 36200.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자16",
+        "started_at": "2025-05-28 09:43:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-03 08:26:00",
+        "completed_at": "2025-06-13 15:51:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-20 15:15:00",
+        "completed_at": "2025-07-24 23:43:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-23 20:59:00",
+        "completed_at": "2025-07-07 10:24:00",
+        "notes": "재고 확인 중"
+      }
+    ]
+  },
+  {
+    "order_id": "9fd303d6-b48d-495f-8046-f120dbcc4c62",
+    "seller_code": 1904,
+    "company": "경북농장",
+    "product_name": "(경북농장)정품부사꿀사과중소과-중과/5kg/17-22과",
+    "quantity": 5,
+    "supply_price": 12900.0,
+    "order_date": "2025-06-27",
+    "cs_flag": "N",
+    "total_amount": 64500.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자13",
+        "started_at": "2025-05-29 20:12:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송준비중",
+        "status": "진행중",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-07 14:39:00",
+        "completed_at": "2025-07-05 08:16:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "진행중",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-12 17:07:00",
+        "completed_at": "2025-06-19 14:10:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-05 06:58:00",
+        "completed_at": "2025-07-18 18:10:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 5,
+        "step_type": "주문접수",
+        "status": "보류",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-24 20:49:00",
+        "completed_at": "2025-07-06 08:23:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-16 08:44:00",
+        "completed_at": "2025-06-09 04:26:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 7,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-20 15:23:00",
+        "completed_at": "2025-06-14 09:08:00",
+        "notes": "재고 확인 중"
+      }
+    ]
+  },
+  {
+    "order_id": "7e589e78-56d9-453f-9a3a-d68e32e6df9f",
+    "seller_code": 1904,
+    "company": "도매JI",
+    "product_name": "(도매JI)부사쥬스용/10kg/랜덤과",
+    "quantity": 3,
+    "supply_price": 19100.0,
+    "order_date": "2025-06-04",
+    "cs_flag": "Y",
+    "total_amount": 57300.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-12 14:16:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 2,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-05 11:09:00",
+        "completed_at": "2025-06-26 07:11:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-23 16:40:00",
+        "completed_at": "2025-07-03 19:24:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송중",
+        "status": "보류",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-22 19:14:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송완료",
+        "status": "보류",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-28 02:36:00",
+        "completed_at": "2025-06-07 09:08:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-12 01:53:00",
+        "completed_at": "2025-06-30 03:10:00",
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "9ea30cb9-b146-4259-a37b-0dbc2249ca38",
+    "seller_code": 2124,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사가정용세척/3kg/10-14과",
+    "quantity": 1,
+    "supply_price": 18100.0,
+    "order_date": "2025-07-17",
+    "cs_flag": "N",
+    "total_amount": 18100.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-14 12:14:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "CS접수",
+        "status": "실패",
+        "assigned_to": "담당자11",
+        "started_at": "2025-05-28 09:41:00",
+        "completed_at": "2025-06-12 06:12:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-07 15:25:00",
+        "completed_at": "2025-05-30 03:43:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "보류",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-22 21:20:00",
+        "completed_at": "2025-07-15 16:14:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "상품준비중",
+        "status": "보류",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-19 21:28:00",
+        "completed_at": "2025-07-02 14:45:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "교환처리",
+        "status": "실패",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-18 20:47:00",
+        "completed_at": "2025-05-31 17:29:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자13",
+        "started_at": "2025-07-17 12:26:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      }
+    ]
+  },
+  {
+    "order_id": "a8f3d933-c672-42a9-b6f1-e7c917fb8150",
+    "seller_code": 503,
+    "company": "경북농장",
+    "product_name": "(도매JI)부사소과/5kg/40과내외",
+    "quantity": 3,
+    "supply_price": 22200.0,
+    "order_date": "2025-06-15",
+    "cs_flag": "N",
+    "total_amount": 66600.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-12 21:15:00",
+        "completed_at": "2025-07-27 16:16:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-05 00:58:00",
+        "completed_at": "2025-07-10 21:00:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송중",
+        "status": "보류",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-04 14:45:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 4,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-13 11:09:00",
+        "completed_at": "2025-06-17 06:30:00",
+        "notes": "지연 발생"
+      }
+    ]
+  },
+  {
+    "order_id": "5ca4b0e9-f536-40a4-a82e-9f9c55722c35",
+    "seller_code": 1909,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사가정용세척/5kg/12-16과",
+    "quantity": 3,
+    "supply_price": 13400.0,
+    "order_date": "2025-06-30",
+    "cs_flag": "Y",
+    "total_amount": 40200.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송준비중",
+        "status": "실패",
+        "assigned_to": "담당자14",
+        "started_at": "2025-05-27 15:56:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-11 02:24:00",
+        "completed_at": "2025-06-07 05:14:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-02 05:56:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "진행중",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-09 07:52:00",
+        "completed_at": "2025-06-30 13:20:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "교환처리",
+        "status": "대기",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-11 12:10:00",
+        "completed_at": "2025-07-21 09:33:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자14",
+        "started_at": "2025-07-10 17:48:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 7,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-13 02:15:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "c68b2d73-4194-4b28-b2f9-6085e2b4ad18",
+    "seller_code": 1905,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)부사쥬스용/6kg",
+    "quantity": 1,
+    "supply_price": 22200.0,
+    "order_date": "2025-07-12",
+    "cs_flag": "N",
+    "total_amount": 22200.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-02 00:55:00",
+        "completed_at": "2025-06-30 20:55:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-01 21:38:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-27 03:08:00",
+        "completed_at": "2025-06-30 07:42:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자8",
+        "started_at": "2025-05-27 02:45:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "반품처리",
+        "status": "진행중",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-14 22:37:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-18 23:43:00",
+        "completed_at": "2025-07-09 10:22:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 7,
+        "step_type": "결제완료",
+        "status": "진행중",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-11 21:33:00",
+        "completed_at": "2025-07-13 03:06:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-19 01:09:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 9,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-12 09:18:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "9094b615-6cb5-4ea8-9f3e-7ca08a6751e2",
+    "seller_code": 143,
+    "company": "도매BT",
+    "product_name": "(경북농장)실속형부사꿀사과소꼬마과/2kg/14-16과",
+    "quantity": 3,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-30",
+    "cs_flag": "Y",
+    "total_amount": 45000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-05 12:18:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송완료",
+        "status": "보류",
+        "assigned_to": "담당자19",
+        "started_at": "2025-07-15 15:24:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 3,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-15 20:30:00",
+        "completed_at": "2025-06-21 08:23:00",
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "실패",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-28 18:03:00",
+        "completed_at": "2025-05-30 00:08:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-07 06:19:00",
+        "completed_at": "2025-06-23 04:19:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-04 07:43:00",
+        "completed_at": "2025-07-15 07:17:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 7,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-04 10:56:00",
+        "completed_at": "2025-07-14 13:40:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 8,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-19 03:09:00",
+        "completed_at": "2025-06-22 04:10:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 9,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-15 12:52:00",
+        "completed_at": "2025-07-06 11:45:00",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "85996325-4251-4099-a966-2a1a87bfe26d",
+    "seller_code": 1928,
+    "company": "도매GB",
+    "product_name": "(도매JI)부사혼합과/1kg/8과내외",
+    "quantity": 2,
+    "supply_price": 8800.0,
+    "order_date": "2025-07-23",
+    "cs_flag": "N",
+    "total_amount": 17600.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-17 12:01:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-05 23:59:00",
+        "completed_at": "2025-07-12 18:24:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "결제완료",
+        "status": "대기",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-03 21:37:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자8",
+        "started_at": "2025-05-31 12:52:00",
+        "completed_at": "2025-05-29 08:42:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 5,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-10 19:55:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 6,
+        "step_type": "구매확정",
+        "status": "실패",
+        "assigned_to": "담당자12",
+        "started_at": "2025-06-01 01:10:00",
+        "completed_at": "2025-07-10 00:54:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 7,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-08 18:42:00",
+        "completed_at": "2025-06-03 02:57:00",
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "c4c556f5-3699-46c4-b030-30a3deab5448",
+    "seller_code": 2041,
+    "company": "도매BT",
+    "product_name": "(도매JI)부사중대과/3kg/14과내외",
+    "quantity": 3,
+    "supply_price": 17000.0,
+    "order_date": "2025-07-21",
+    "cs_flag": "N",
+    "total_amount": 51000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-12 05:18:00",
+        "completed_at": "2025-06-22 05:58:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "대기",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-15 20:20:00",
+        "completed_at": "2025-06-25 00:47:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-22 20:10:00",
+        "completed_at": "2025-05-31 03:18:00",
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "반품처리",
+        "status": "진행중",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-12 04:44:00",
+        "completed_at": "2025-06-10 15:24:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-12 04:50:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-24 19:01:00",
+        "completed_at": "2025-06-07 01:56:00",
+        "notes": ""
+      },
+      {
+        "step_number": 7,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-12 06:35:00",
+        "completed_at": "2025-06-02 20:10:00",
+        "notes": ""
+      },
+      {
+        "step_number": 8,
+        "step_type": "교환처리",
+        "status": "실패",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-17 13:32:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 9,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-18 02:32:00",
+        "completed_at": "2025-05-28 18:53:00",
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "d749f69e-e010-4334-9617-9b7ccf2b2cc8",
+    "seller_code": 50,
+    "company": "경북농장",
+    "product_name": "(도매JI)부사중대과/2kg/9과내외",
+    "quantity": 3,
+    "supply_price": 10900.0,
+    "order_date": "2025-06-26",
+    "cs_flag": "N",
+    "total_amount": 32700.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-17 00:24:00",
+        "completed_at": "2025-06-29 16:48:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-15 20:22:00",
+        "completed_at": "2025-07-29 01:02:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-06 14:02:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "630069fe-9be4-4fcf-83bb-f3f6be2cd5e7",
+    "seller_code": 2008,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)미부사/5kg/23-28과(미색못난이)",
+    "quantity": 1,
+    "supply_price": 11400.0,
+    "order_date": "2025-06-02",
+    "cs_flag": "Y",
+    "total_amount": 11400.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송준비중",
+        "status": "진행중",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-18 14:23:00",
+        "completed_at": "2025-07-09 21:53:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자8",
+        "started_at": "2025-06-02 00:03:00",
+        "completed_at": "2025-07-30 17:42:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-03 06:59:00",
+        "completed_at": "2025-07-13 12:47:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-16 09:08:00",
+        "completed_at": "2025-06-29 23:46:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 5,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-17 20:55:00",
+        "completed_at": "2025-06-11 05:40:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-23 02:09:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송완료",
+        "status": "진행중",
+        "assigned_to": "담당자17",
+        "started_at": "2025-07-23 05:17:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-06 22:59:00",
+        "completed_at": "2025-07-14 10:52:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 9,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-11 21:55:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      }
+    ]
+  },
+  {
+    "order_id": "262ba686-3b09-4740-bd73-860b570c6cd1",
+    "seller_code": 2249,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사알가정용/2kg/10-13과",
+    "quantity": 3,
+    "supply_price": 16000.0,
+    "order_date": "2025-06-20",
+    "cs_flag": "N",
+    "total_amount": 48000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자12",
+        "started_at": "2025-05-29 15:53:00",
+        "completed_at": "2025-05-30 22:52:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-11 08:38:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자11",
+        "started_at": "2025-05-31 10:09:00",
+        "completed_at": "2025-07-21 13:47:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-21 21:44:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "21f85531-6f74-454c-8383-c306436fcee7",
+    "seller_code": 897,
+    "company": "경북농장",
+    "product_name": "(도매JI)부사중대과/2kg/9과내외",
+    "quantity": 1,
+    "supply_price": 18100.0,
+    "order_date": "2025-06-27",
+    "cs_flag": "Y",
+    "total_amount": 18100.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "보류",
+        "assigned_to": "담당자20",
+        "started_at": "2025-05-26 08:35:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 2,
+        "step_type": "교환처리",
+        "status": "실패",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-12 11:47:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-13 11:31:00",
+        "completed_at": "2025-06-21 04:42:00",
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "297a9afc-faea-464e-8fbd-e90e3d93f320",
+    "seller_code": 2041,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)부사가정용세척/3kg/15-18과",
+    "quantity": 1,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-12",
+    "cs_flag": "Y",
+    "total_amount": 15000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-13 23:22:00",
+        "completed_at": "2025-06-06 00:02:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자17",
+        "started_at": "2025-07-17 05:21:00",
+        "completed_at": "2025-07-25 07:41:00",
+        "notes": ""
+      },
+      {
+        "step_number": 3,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-06 00:47:00",
+        "completed_at": "2025-06-09 00:58:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-05 21:31:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-10 02:24:00",
+        "completed_at": "2025-07-12 20:19:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송중",
+        "status": "보류",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-01 02:28:00",
+        "completed_at": "2025-06-24 10:21:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "보류",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-12 14:30:00",
+        "completed_at": "2025-07-04 07:51:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 8,
+        "step_type": "주문접수",
+        "status": "보류",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-23 17:43:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 9,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-11 20:20:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "a44f9082-0b69-4557-a4a8-eea42815c516",
+    "seller_code": 1927,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사가정용세척/3kg/15-18과",
+    "quantity": 1,
+    "supply_price": 21000.0,
+    "order_date": "2025-07-09",
+    "cs_flag": "Y",
+    "total_amount": 21000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-07 07:36:00",
+        "completed_at": "2025-07-06 07:14:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-01 00:59:00",
+        "completed_at": "2025-07-15 11:16:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자14",
+        "started_at": "2025-05-26 17:52:00",
+        "completed_at": "2025-07-11 09:11:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "실패",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-03 13:03:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 5,
+        "step_type": "CS접수",
+        "status": "실패",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-06 18:47:00",
+        "completed_at": "2025-06-02 20:33:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 6,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-12 17:09:00",
+        "completed_at": "2025-07-21 09:45:00",
+        "notes": ""
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "진행중",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-08 22:38:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-05-27 13:38:00",
+        "completed_at": "2025-06-16 05:33:00",
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "da30f9c9-8256-45cb-b9f7-c33468dff57a",
+    "seller_code": 50,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사가정용세척/3kg/6-9과",
+    "quantity": 5,
+    "supply_price": 11400.0,
+    "order_date": "2025-05-27",
+    "cs_flag": "Y",
+    "total_amount": 57000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-16 14:17:00",
+        "completed_at": "2025-07-28 21:07:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "결제완료",
+        "status": "실패",
+        "assigned_to": "담당자18",
+        "started_at": "2025-07-01 06:19:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 3,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-05-30 16:07:00",
+        "completed_at": "2025-06-20 07:20:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "98110df7-78f0-421d-aec3-777d0a90b7a6",
+    "seller_code": 2124,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사가정용세척/2kg/10-13과",
+    "quantity": 2,
+    "supply_price": 8800.0,
+    "order_date": "2025-07-11",
+    "cs_flag": "N",
+    "total_amount": 17600.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자12",
+        "started_at": "2025-05-30 06:39:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-22 01:55:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "주문접수",
+        "status": "보류",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-15 02:51:00",
+        "completed_at": "2025-06-09 07:12:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 4,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-21 13:01:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자17",
+        "started_at": "2025-07-14 18:19:00",
+        "completed_at": "2025-07-08 14:29:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "교환처리",
+        "status": "실패",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-18 08:07:00",
+        "completed_at": "2025-07-23 13:19:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 7,
+        "step_type": "반품처리",
+        "status": "진행중",
+        "assigned_to": "담당자18",
+        "started_at": "2025-07-11 14:30:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 8,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-26 16:03:00",
+        "completed_at": "2025-07-16 03:45:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 9,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-15 06:24:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 10,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-07 12:53:00",
+        "completed_at": "2025-06-12 09:16:00",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "8957a181-f5b6-4da7-811c-f6162f0cf56d",
+    "seller_code": 143,
+    "company": "도매JI",
+    "product_name": "(도매JI)부사중대과/2kg/9과내외",
+    "quantity": 4,
+    "supply_price": 22200.0,
+    "order_date": "2025-06-26",
+    "cs_flag": "N",
+    "total_amount": 88800.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-21 23:57:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-17 21:32:00",
+        "completed_at": "2025-06-16 15:37:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-13 09:58:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-01 08:13:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 5,
+        "step_type": "구매확정",
+        "status": "대기",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-13 04:29:00",
+        "completed_at": "2025-06-20 20:17:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "반품처리",
+        "status": "대기",
+        "assigned_to": "담당자8",
+        "started_at": "2025-06-08 11:40:00",
+        "completed_at": "2025-07-05 06:37:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 7,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-18 14:27:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "94880f7a-d16e-40b8-a26e-23c3d5eff3d2",
+    "seller_code": 1877,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)미부사/3kg/10-14과(미색못난이)",
+    "quantity": 1,
+    "supply_price": 26300.0,
+    "order_date": "2025-07-17",
+    "cs_flag": "N",
+    "total_amount": 26300.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자15",
+        "started_at": "2025-05-28 05:54:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-08 02:26:00",
+        "completed_at": "2025-06-15 09:13:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-25 00:31:00",
+        "completed_at": "2025-06-04 16:37:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 4,
+        "step_type": "상품준비중",
+        "status": "보류",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-29 03:37:00",
+        "completed_at": "2025-06-16 06:47:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 5,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-22 18:11:00",
+        "completed_at": "2025-06-18 13:06:00",
+        "notes": ""
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자12",
+        "started_at": "2025-06-02 16:36:00",
+        "completed_at": "2025-07-11 17:19:00",
+        "notes": "지연 발생"
+      }
+    ]
+  },
+  {
+    "order_id": "a37f9611-da0e-4a0a-b205-ecb3d4239697",
+    "seller_code": 2249,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사가정용세척/5kg/12-16과",
+    "quantity": 3,
+    "supply_price": 14500.0,
+    "order_date": "2025-06-03",
+    "cs_flag": "N",
+    "total_amount": 43500.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-25 09:26:00",
+        "completed_at": "2025-07-25 07:21:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "구매확정",
+        "status": "보류",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-25 05:04:00",
+        "completed_at": "2025-07-13 16:08:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "결제완료",
+        "status": "실패",
+        "assigned_to": "담당자19",
+        "started_at": "2025-05-28 02:07:00",
+        "completed_at": "2025-06-29 00:45:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-04 04:11:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "f5a7c674-3ebb-4ce1-95b3-bbfbb36126ab",
+    "seller_code": 697,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)미부사/2kg/10-13과(미색못난이)",
+    "quantity": 4,
+    "supply_price": 16000.0,
+    "order_date": "2025-07-20",
+    "cs_flag": "N",
+    "total_amount": 64000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "보류",
+        "assigned_to": "담당자8",
+        "started_at": "2025-06-01 20:28:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "결제완료",
+        "status": "실패",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-22 17:37:00",
+        "completed_at": "2025-07-12 20:33:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "실패",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-19 16:42:00",
+        "completed_at": "2025-07-27 14:08:00",
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "상품준비중",
+        "status": "보류",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-04 15:31:00",
+        "completed_at": "2025-06-28 15:21:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-16 08:49:00",
+        "completed_at": "2025-06-14 16:38:00",
+        "notes": ""
+      },
+      {
+        "step_number": 6,
+        "step_type": "교환처리",
+        "status": "실패",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-01 00:00:00",
+        "completed_at": "2025-07-13 18:39:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 7,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-24 04:51:00",
+        "completed_at": "2025-07-25 00:35:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-07-15 20:51:00",
+        "completed_at": "2025-06-10 07:44:00",
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "0cc28987-8ac4-40aa-a981-2a6d0bcc5d6b",
+    "seller_code": 1294,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사가정용세척/5kg/23-28과",
+    "quantity": 2,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-01",
+    "cs_flag": "Y",
+    "total_amount": 30000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-20 09:40:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-07-21 10:11:00",
+        "completed_at": "2025-06-28 05:53:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-22 01:49:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 4,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자12",
+        "started_at": "2025-05-29 10:46:00",
+        "completed_at": "2025-06-12 04:09:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "교환처리",
+        "status": "진행중",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-02 17:56:00",
+        "completed_at": "2025-05-29 06:41:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-24 07:31:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "실패",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-24 07:20:00",
+        "completed_at": "2025-07-24 09:54:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 8,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자17",
+        "started_at": "2025-05-27 15:24:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "37ce32c4-7fd2-4584-b5ee-121efaf821e2",
+    "seller_code": 503,
+    "company": "도매BT",
+    "product_name": "(경북농장)실속형부사꿀사과중소과-중과/2kg/7-9과",
+    "quantity": 3,
+    "supply_price": 12900.0,
+    "order_date": "2025-06-11",
+    "cs_flag": "N",
+    "total_amount": 38700.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-29 04:30:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자17",
+        "started_at": "2025-05-28 05:09:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "주문접수",
+        "status": "진행중",
+        "assigned_to": "담당자12",
+        "started_at": "2025-06-29 06:13:00",
+        "completed_at": "2025-06-15 22:27:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "구매확정",
+        "status": "실패",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-13 18:16:00",
+        "completed_at": "2025-06-27 07:54:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 5,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-21 18:26:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "교환처리",
+        "status": "대기",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-23 18:04:00",
+        "completed_at": "2025-06-16 09:20:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자13",
+        "started_at": "2025-05-31 02:16:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-27 11:50:00",
+        "completed_at": "2025-06-25 06:13:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 9,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-28 16:14:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 10,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-05-28 05:51:00",
+        "completed_at": "2025-06-12 14:31:00",
+        "notes": "지연 발생"
+      }
+    ]
+  },
+  {
+    "order_id": "daa4d38b-e1fc-44b0-8500-43fb41922126",
+    "seller_code": 1928,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사알가정용/3kg/15-18과",
+    "quantity": 5,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-14",
+    "cs_flag": "N",
+    "total_amount": 75000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자19",
+        "started_at": "2025-07-17 21:34:00",
+        "completed_at": "2025-06-30 11:46:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-21 17:15:00",
+        "completed_at": "2025-07-12 02:17:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "실패",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-18 21:31:00",
+        "completed_at": "2025-06-18 07:40:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-17 22:18:00",
+        "completed_at": "2025-07-16 02:30:00",
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "dd988d2b-3be7-42fb-80b3-22f2c60f611a",
+    "seller_code": 50,
+    "company": "도매JI",
+    "product_name": "(도매JI)부사대과/2kg/7과내외",
+    "quantity": 3,
+    "supply_price": 12900.0,
+    "order_date": "2025-06-13",
+    "cs_flag": "Y",
+    "total_amount": 38700.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "진행중",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-07 02:30:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-14 14:04:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-07-15 23:40:00",
+        "completed_at": "2025-06-02 21:03:00",
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "반품처리",
+        "status": "대기",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-29 09:21:00",
+        "completed_at": "2025-06-22 00:09:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송준비중",
+        "status": "실패",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-25 09:05:00",
+        "completed_at": "2025-05-29 01:12:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 6,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자19",
+        "started_at": "2025-07-22 22:20:00",
+        "completed_at": "2025-07-01 19:44:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 7,
+        "step_type": "교환처리",
+        "status": "대기",
+        "assigned_to": "담당자17",
+        "started_at": "2025-07-05 18:52:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 8,
+        "step_type": "주문접수",
+        "status": "보류",
+        "assigned_to": "담당자19",
+        "started_at": "2025-05-29 20:19:00",
+        "completed_at": "2025-07-27 12:30:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 9,
+        "step_type": "배송중",
+        "status": "대기",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-11 16:35:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 10,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-05 03:42:00",
+        "completed_at": "2025-07-18 07:30:00",
+        "notes": "재고 확인 중"
+      }
+    ]
+  },
+  {
+    "order_id": "8e293700-c54f-4fb7-817c-ab5a10eac26f",
+    "seller_code": 130,
+    "company": "경북농장",
+    "product_name": "(도매JI)부사중과/3kg/17과내외",
+    "quantity": 4,
+    "supply_price": 22200.0,
+    "order_date": "2025-06-23",
+    "cs_flag": "N",
+    "total_amount": 88800.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-05 13:36:00",
+        "completed_at": "2025-07-03 13:19:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 2,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-04 12:42:00",
+        "completed_at": "2025-07-06 21:48:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-08 19:16:00",
+        "completed_at": "2025-06-12 18:57:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "진행중",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-12 21:52:00",
+        "completed_at": "2025-06-08 20:40:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 5,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-03 05:02:00",
+        "completed_at": "2025-06-03 03:26:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 6,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-22 09:38:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 7,
+        "step_type": "구매확정",
+        "status": "대기",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-16 11:31:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "배송준비중",
+        "status": "보류",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-23 02:24:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 9,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-18 22:16:00",
+        "completed_at": "2025-07-30 01:18:00",
+        "notes": ""
+      },
+      {
+        "step_number": 10,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자19",
+        "started_at": "2025-07-16 18:23:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "9a70e8cf-8f1b-47c9-b10e-b59ebf91135b",
+    "seller_code": 1294,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)미부사/5kg/23-28과(미색못난이)",
+    "quantity": 2,
+    "supply_price": 8300.0,
+    "order_date": "2025-06-01",
+    "cs_flag": "N",
+    "total_amount": 16600.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "주문접수",
+        "status": "실패",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-03 11:43:00",
+        "completed_at": "2025-06-19 04:46:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자14",
+        "started_at": "2025-07-10 06:41:00",
+        "completed_at": "2025-05-26 04:00:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "보류",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-26 19:10:00",
+        "completed_at": "2025-07-26 12:05:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-20 22:58:00",
+        "completed_at": "2025-07-09 09:11:00",
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "ae866bca-0736-43d4-bbd5-16f35c1523f5",
+    "seller_code": 503,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)미부사/5kg/12-16과(미색못난이)",
+    "quantity": 1,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-11",
+    "cs_flag": "N",
+    "total_amount": 15000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "진행중",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-08 16:50:00",
+        "completed_at": "2025-06-21 21:35:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-12 11:13:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-04 03:12:00",
+        "completed_at": "2025-07-26 04:11:00",
+        "notes": "재고 확인 중"
+      }
+    ]
+  },
+  {
+    "order_id": "e3613028-0c24-4c2a-a2a4-ff805b431473",
+    "seller_code": 793,
+    "company": "도매BT",
+    "product_name": "(도매JI)부사중대과/3kg/14과내외",
+    "quantity": 4,
+    "supply_price": 20600.0,
+    "order_date": "2025-06-24",
+    "cs_flag": "Y",
+    "total_amount": 82400.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-01 12:07:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-10 11:44:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "대기",
+        "assigned_to": "담당자12",
+        "started_at": "2025-06-14 10:58:00",
+        "completed_at": "2025-06-22 02:01:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-10 13:35:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-06 00:00:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송중",
+        "status": "대기",
+        "assigned_to": "담당자8",
+        "started_at": "2025-06-03 14:35:00",
+        "completed_at": "2025-06-15 09:36:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 7,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-14 15:32:00",
+        "completed_at": "2025-06-01 00:17:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 8,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-10 23:56:00",
+        "completed_at": null,
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "4c65a09b-7cc4-46cf-8928-73de1d86ffba",
+    "seller_code": 1820,
+    "company": "도매JI",
+    "product_name": "(도매JI)부사중대과/2kg/9과내외",
+    "quantity": 5,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-23",
+    "cs_flag": "Y",
+    "total_amount": 75000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "상품준비중",
+        "status": "보류",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-16 23:14:00",
+        "completed_at": "2025-07-29 17:24:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송준비중",
+        "status": "실패",
+        "assigned_to": "담당자14",
+        "started_at": "2025-07-14 06:04:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-04 17:42:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-05 15:27:00",
+        "completed_at": "2025-06-14 10:19:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-15 16:46:00",
+        "completed_at": "2025-06-21 18:04:00",
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "f0f978ea-9a82-4fbc-b373-d9164430d296",
+    "seller_code": 1880,
+    "company": "도매BT",
+    "product_name": "(경북농장)정품부사꿀사과꼬마과-소과/2kg/10-13과",
+    "quantity": 3,
+    "supply_price": 8800.0,
+    "order_date": "2025-06-23",
+    "cs_flag": "N",
+    "total_amount": 26400.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-12 19:25:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "보류",
+        "assigned_to": "담당자14",
+        "started_at": "2025-07-01 21:04:00",
+        "completed_at": "2025-06-07 10:49:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-07 11:53:00",
+        "completed_at": "2025-06-28 21:28:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "진행중",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-05 10:21:00",
+        "completed_at": "2025-06-11 07:09:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-11 22:03:00",
+        "completed_at": "2025-06-08 16:07:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 6,
+        "step_type": "CS접수",
+        "status": "보류",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-30 08:32:00",
+        "completed_at": "2025-06-11 18:05:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 7,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-13 07:55:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 8,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-04 12:47:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 9,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-05 20:52:00",
+        "completed_at": "2025-06-11 15:48:00",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "e44a6d59-712a-4138-b4c3-88e4d1e02fa5",
+    "seller_code": 143,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)미부사/3kg/6-9과(미색못난이)",
+    "quantity": 5,
+    "supply_price": 17000.0,
+    "order_date": "2025-07-15",
+    "cs_flag": "Y",
+    "total_amount": 85000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "실패",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-03 05:00:00",
+        "completed_at": "2025-06-17 00:55:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-14 09:48:00",
+        "completed_at": "2025-06-05 12:25:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송준비중",
+        "status": "실패",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-12 10:51:00",
+        "completed_at": "2025-05-26 23:14:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 4,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-06 22:54:00",
+        "completed_at": "2025-06-05 11:06:00",
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "654ed1e0-13ac-47c5-834f-cbc1f1fd5a09",
+    "seller_code": 1984,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사알정품/5kg/12-16과",
+    "quantity": 3,
+    "supply_price": 8800.0,
+    "order_date": "2025-06-10",
+    "cs_flag": "Y",
+    "total_amount": 26400.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자9",
+        "started_at": "2025-05-26 00:42:00",
+        "completed_at": "2025-06-19 03:59:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-26 11:28:00",
+        "completed_at": "2025-06-24 22:55:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-04 13:18:00",
+        "completed_at": "2025-06-20 11:42:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "7001e3e4-9533-4d39-8fb1-d0d2031679e4",
+    "seller_code": 1996,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사쥬스용/3kg",
+    "quantity": 2,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-23",
+    "cs_flag": "N",
+    "total_amount": 30000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-19 12:18:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송준비중",
+        "status": "보류",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-24 04:23:00",
+        "completed_at": "2025-07-19 23:49:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "진행중",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-08 23:49:00",
+        "completed_at": "2025-06-18 23:16:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 4,
+        "step_type": "CS접수",
+        "status": "실패",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-12 12:05:00",
+        "completed_at": "2025-06-15 04:44:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "주문접수",
+        "status": "보류",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-15 00:33:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "구매확정",
+        "status": "실패",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-24 05:04:00",
+        "completed_at": "2025-07-15 12:03:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 7,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-01 04:02:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "a3fc79ca-3caf-424d-a7f4-cf822966fa8a",
+    "seller_code": 2041,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)미부사/3kg/6-9과(미색못난이)",
+    "quantity": 2,
+    "supply_price": 17600.0,
+    "order_date": "2025-07-21",
+    "cs_flag": "N",
+    "total_amount": 35200.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "대기",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-25 17:55:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "교환처리",
+        "status": "실패",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-12 07:48:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-24 21:40:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "실패",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-26 04:29:00",
+        "completed_at": "2025-06-20 02:45:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 5,
+        "step_type": "결제완료",
+        "status": "대기",
+        "assigned_to": "담당자12",
+        "started_at": "2025-06-27 14:57:00",
+        "completed_at": "2025-06-06 15:29:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 6,
+        "step_type": "반품처리",
+        "status": "진행중",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-28 14:35:00",
+        "completed_at": "2025-07-22 09:41:00",
+        "notes": ""
+      },
+      {
+        "step_number": 7,
+        "step_type": "CS접수",
+        "status": "보류",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-10 02:28:00",
+        "completed_at": "2025-06-09 21:36:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 8,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-08 13:31:00",
+        "completed_at": "2025-06-25 00:25:00",
+        "notes": ""
+      },
+      {
+        "step_number": 9,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-01 12:57:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 10,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-16 03:06:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "5b1069bc-c5ec-4236-9a24-dc81c5f25671",
+    "seller_code": 1820,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사알가정용/2kg/7-9과",
+    "quantity": 4,
+    "supply_price": 15000.0,
+    "order_date": "2025-05-28",
+    "cs_flag": "N",
+    "total_amount": 60000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "보류",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-11 07:08:00",
+        "completed_at": "2025-07-15 01:56:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-14 22:35:00",
+        "completed_at": "2025-07-02 21:00:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-09 06:23:00",
+        "completed_at": "2025-07-08 03:22:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-08 10:16:00",
+        "completed_at": "2025-07-27 01:59:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-13 16:29:00",
+        "completed_at": "2025-06-29 08:50:00",
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "20f483a1-9705-45f4-ace4-9c7766aeca9a",
+    "seller_code": 1877,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)미부사/5kg/29-31과(미색못난이)",
+    "quantity": 5,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-11",
+    "cs_flag": "Y",
+    "total_amount": 75000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-24 02:41:00",
+        "completed_at": "2025-06-11 03:38:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-18 15:59:00",
+        "completed_at": "2025-06-01 12:36:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-07 13:04:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-13 10:15:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "CS접수",
+        "status": "보류",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-22 00:31:00",
+        "completed_at": "2025-07-09 08:01:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 6,
+        "step_type": "구매확정",
+        "status": "실패",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-10 19:43:00",
+        "completed_at": "2025-07-25 21:23:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송완료",
+        "status": "보류",
+        "assigned_to": "담당자17",
+        "started_at": "2025-07-14 08:19:00",
+        "completed_at": "2025-07-12 08:02:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 8,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-03 04:41:00",
+        "completed_at": "2025-05-26 22:40:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 9,
+        "step_type": "교환처리",
+        "status": "진행중",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-05 06:04:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 10,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자20",
+        "started_at": "2025-05-28 06:14:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "6cace8d2-6e1c-40f0-b944-1b94ea389ec9",
+    "seller_code": 1877,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매BT)청송가정용부사꼬마소과/2kg/11-16과",
+    "quantity": 1,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-16",
+    "cs_flag": "N",
+    "total_amount": 15000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "CS접수",
+        "status": "실패",
+        "assigned_to": "담당자19",
+        "started_at": "2025-07-11 12:43:00",
+        "completed_at": "2025-06-12 11:07:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-09 03:50:00",
+        "completed_at": "2025-05-27 13:36:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-09 07:46:00",
+        "completed_at": "2025-07-08 04:52:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "교환처리",
+        "status": "진행중",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-11 05:59:00",
+        "completed_at": "2025-07-14 21:05:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 5,
+        "step_type": "반품처리",
+        "status": "대기",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-09 06:30:00",
+        "completed_at": "2025-07-09 09:05:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-14 21:23:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 7,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-25 11:33:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 8,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-05-26 19:30:00",
+        "completed_at": "2025-07-25 12:37:00",
+        "notes": "재고 확인 중"
+      }
+    ]
+  },
+  {
+    "order_id": "bf7cbdff-6048-4d62-99ec-450f3754845a",
+    "seller_code": 50,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사가정용세척/3kg/15-18과",
+    "quantity": 1,
+    "supply_price": 32000.0,
+    "order_date": "2025-06-14",
+    "cs_flag": "Y",
+    "total_amount": 32000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-22 20:22:00",
+        "completed_at": "2025-06-08 03:33:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "교환처리",
+        "status": "대기",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-15 00:01:00",
+        "completed_at": "2025-06-29 05:04:00",
+        "notes": ""
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-28 18:14:00",
+        "completed_at": "2025-07-07 05:15:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "실패",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-14 16:03:00",
+        "completed_at": "2025-06-29 20:09:00",
+        "notes": ""
+      },
+      {
+        "step_number": 5,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-28 09:16:00",
+        "completed_at": "2025-06-11 12:56:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-14 03:54:00",
+        "completed_at": "2025-07-19 17:26:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-10 08:18:00",
+        "completed_at": "2025-07-14 06:06:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 8,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-30 23:18:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "e0554d2b-5d9e-477c-90d6-fc29f86d5862",
+    "seller_code": 143,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)미부사/3kg/19-21과(미색못난이)",
+    "quantity": 1,
+    "supply_price": 15000.0,
+    "order_date": "2025-05-30",
+    "cs_flag": "N",
+    "total_amount": 15000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "교환처리",
+        "status": "실패",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-12 01:52:00",
+        "completed_at": "2025-07-16 00:56:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-21 15:19:00",
+        "completed_at": "2025-06-19 20:06:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-24 15:29:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자13",
+        "started_at": "2025-07-03 01:26:00",
+        "completed_at": "2025-06-29 03:49:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 5,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-05 17:21:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-14 02:58:00",
+        "completed_at": "2025-06-10 15:04:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "실패",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-17 02:50:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 8,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-13 07:55:00",
+        "completed_at": "2025-07-06 09:08:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 9,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자14",
+        "started_at": "2025-05-26 02:24:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 10,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자13",
+        "started_at": "2025-07-17 21:13:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "7a91377c-1c36-4f47-847e-de03b2aa2dd4",
+    "seller_code": 2064,
+    "company": "경북농장",
+    "product_name": "(경북농장)실속형부사꿀사과꼬마과/1kg/5-8과",
+    "quantity": 5,
+    "supply_price": 13400.0,
+    "order_date": "2025-06-10",
+    "cs_flag": "Y",
+    "total_amount": 67000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-11 09:50:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-03 15:26:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "결제완료",
+        "status": "진행중",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-20 12:21:00",
+        "completed_at": "2025-06-25 11:57:00",
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-14 08:15:00",
+        "completed_at": "2025-07-30 12:24:00",
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "57c08c45-0f4a-42d9-a820-801c22066e14",
+    "seller_code": 2249,
+    "company": "도매BT",
+    "product_name": "(경북농장)부사쥬스용사과/10kg",
+    "quantity": 5,
+    "supply_price": 11900.0,
+    "order_date": "2025-05-26",
+    "cs_flag": "Y",
+    "total_amount": 59500.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송중",
+        "status": "대기",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-11 09:52:00",
+        "completed_at": "2025-06-30 23:59:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "결제완료",
+        "status": "진행중",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-01 08:41:00",
+        "completed_at": "2025-07-11 07:41:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "실패",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-10 17:17:00",
+        "completed_at": "2025-06-22 00:00:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "CS접수",
+        "status": "대기",
+        "assigned_to": "담당자1",
+        "started_at": "2025-05-30 10:46:00",
+        "completed_at": "2025-06-10 10:52:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 5,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-21 21:47:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-09 21:06:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 7,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-02 15:10:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "9e6957e6-b2eb-4147-92a4-370f46a48d57",
+    "seller_code": 612,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)미부사/5kg/12-16과(미색못난이)",
+    "quantity": 4,
+    "supply_price": 22200.0,
+    "order_date": "2025-05-28",
+    "cs_flag": "N",
+    "total_amount": 88800.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-17 18:38:00",
+        "completed_at": "2025-06-29 05:59:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "대기",
+        "assigned_to": "담당자14",
+        "started_at": "2025-07-15 00:49:00",
+        "completed_at": "2025-05-29 03:46:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-22 11:05:00",
+        "completed_at": "2025-06-23 21:39:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "CS접수",
+        "status": "대기",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-14 16:28:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-22 15:39:00",
+        "completed_at": "2025-07-01 01:01:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자13",
+        "started_at": "2025-07-09 09:15:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 7,
+        "step_type": "교환처리",
+        "status": "대기",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-17 01:14:00",
+        "completed_at": "2025-06-02 16:43:00",
+        "notes": ""
+      },
+      {
+        "step_number": 8,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-12 00:59:00",
+        "completed_at": "2025-05-29 17:27:00",
+        "notes": "지연 발생"
+      }
+    ]
+  },
+  {
+    "order_id": "a0a4a0ff-7e37-4b37-a0f6-b2669ddc74cc",
+    "seller_code": 2044,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)부사가정용세척/2kg/14-16과",
+    "quantity": 1,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-12",
+    "cs_flag": "Y",
+    "total_amount": 15000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "진행중",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-30 10:03:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "구매확정",
+        "status": "보류",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-18 07:26:00",
+        "completed_at": "2025-06-22 00:54:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "진행중",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-23 16:09:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "진행중",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-02 08:27:00",
+        "completed_at": "2025-07-26 16:09:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 5,
+        "step_type": "주문접수",
+        "status": "진행중",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-06 11:54:00",
+        "completed_at": "2025-07-05 19:53:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-11 19:38:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "보류",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-05 05:35:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 8,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-01 11:47:00",
+        "completed_at": "2025-07-17 05:52:00",
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "cf9b4f95-c4a7-48c8-b0ad-468138a8984a",
+    "seller_code": 1984,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)부사가정용세척/3kg/19-21과",
+    "quantity": 3,
+    "supply_price": 28900.0,
+    "order_date": "2025-07-19",
+    "cs_flag": "N",
+    "total_amount": 86700.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-24 08:06:00",
+        "completed_at": "2025-07-14 12:20:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "구매확정",
+        "status": "보류",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-17 20:02:00",
+        "completed_at": "2025-07-29 08:17:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-08 14:41:00",
+        "completed_at": null,
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "b2ae27e0-2e51-4a87-986c-e22cb581f3e4",
+    "seller_code": 143,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)미부사/5kg/12-16과(미색못난이)",
+    "quantity": 2,
+    "supply_price": 11400.0,
+    "order_date": "2025-07-22",
+    "cs_flag": "Y",
+    "total_amount": 22800.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "상품준비중",
+        "status": "보류",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-15 02:50:00",
+        "completed_at": "2025-07-17 12:00:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "결제완료",
+        "status": "진행중",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-22 05:46:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송중",
+        "status": "보류",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-25 10:11:00",
+        "completed_at": "2025-06-18 01:15:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "반품처리",
+        "status": "진행중",
+        "assigned_to": "담당자17",
+        "started_at": "2025-05-29 14:44:00",
+        "completed_at": "2025-07-14 03:42:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송완료",
+        "status": "진행중",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-04 13:49:00",
+        "completed_at": "2025-06-27 19:20:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자19",
+        "started_at": "2025-07-02 14:32:00",
+        "completed_at": "2025-07-15 11:52:00",
+        "notes": "지연 발생"
+      }
+    ]
+  },
+  {
+    "order_id": "0f9f68c9-47c5-4376-860e-4ee408ff8126",
+    "seller_code": 335,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사가정용세척/2kg/10-13과",
+    "quantity": 4,
+    "supply_price": 10900.0,
+    "order_date": "2025-06-17",
+    "cs_flag": "Y",
+    "total_amount": 43600.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-13 23:10:00",
+        "completed_at": "2025-05-29 09:24:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "CS접수",
+        "status": "실패",
+        "assigned_to": "담당자10",
+        "started_at": "2025-05-28 16:25:00",
+        "completed_at": "2025-07-20 03:13:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "실패",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-24 08:08:00",
+        "completed_at": "2025-06-28 06:04:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자13",
+        "started_at": "2025-07-04 02:58:00",
+        "completed_at": "2025-06-14 12:30:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자18",
+        "started_at": "2025-07-19 09:37:00",
+        "completed_at": "2025-07-17 22:33:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자19",
+        "started_at": "2025-05-31 13:10:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "ae9c8366-909f-463a-bcef-441fcd8e65e1",
+    "seller_code": 335,
+    "company": "도매GB",
+    "product_name": "(경북농장)실속형부사꿀사과소꼬마과/2kg/14-16과",
+    "quantity": 4,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-22",
+    "cs_flag": "Y",
+    "total_amount": 60000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송준비중",
+        "status": "실패",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-04 21:07:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-05-27 10:03:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-06 23:32:00",
+        "completed_at": "2025-07-01 00:51:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "진행중",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-12 12:22:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-11 14:50:00",
+        "completed_at": "2025-07-30 02:06:00",
+        "notes": ""
+      },
+      {
+        "step_number": 6,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-28 16:34:00",
+        "completed_at": "2025-06-05 06:36:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 7,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-14 13:47:00",
+        "completed_at": "2025-07-12 08:08:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 8,
+        "step_type": "결제완료",
+        "status": "대기",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-15 20:34:00",
+        "completed_at": "2025-07-01 04:38:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 9,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-08 16:56:00",
+        "completed_at": "2025-06-02 10:49:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 10,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-20 22:55:00",
+        "completed_at": null,
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "0b318f4f-cb86-4374-a72c-63860d91cfd7",
+    "seller_code": 143,
+    "company": "경북농장",
+    "product_name": "(경북농장)실속형부사꿀사과꼬마과/1kg/5-8과",
+    "quantity": 4,
+    "supply_price": 28900.0,
+    "order_date": "2025-06-20",
+    "cs_flag": "N",
+    "total_amount": 115600.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "CS접수",
+        "status": "보류",
+        "assigned_to": "담당자12",
+        "started_at": "2025-06-04 21:29:00",
+        "completed_at": "2025-06-01 03:29:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자9",
+        "started_at": "2025-05-29 19:59:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-07-04 22:24:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "3d7bc054-122d-4ce1-9570-0c20b4569acc",
+    "seller_code": 2041,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사가정용세척/2kg/7-9과",
+    "quantity": 2,
+    "supply_price": 22200.0,
+    "order_date": "2025-06-18",
+    "cs_flag": "N",
+    "total_amount": 44400.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "실패",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-02 10:51:00",
+        "completed_at": "2025-07-02 18:07:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-14 10:20:00",
+        "completed_at": "2025-07-27 06:01:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자17",
+        "started_at": "2025-05-30 07:45:00",
+        "completed_at": "2025-07-01 19:33:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-30 20:51:00",
+        "completed_at": "2025-07-26 19:52:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "e778eaac-8446-4c94-bcf2-d58f69dba5cc",
+    "seller_code": 503,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)실속용부사선물세트/5kg/14-16과",
+    "quantity": 1,
+    "supply_price": 14500.0,
+    "order_date": "2025-06-15",
+    "cs_flag": "Y",
+    "total_amount": 14500.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "실패",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-03 23:50:00",
+        "completed_at": "2025-06-29 19:35:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-04 20:35:00",
+        "completed_at": "2025-06-29 15:50:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-07 18:22:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-04 15:25:00",
+        "completed_at": "2025-06-11 20:28:00",
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "6c4fc6b2-cbff-4939-b870-76994dfbe1dd",
+    "seller_code": 2249,
+    "company": "도매BT",
+    "product_name": "(도매JI)부사중과/3kg/17과내외",
+    "quantity": 4,
+    "supply_price": 17000.0,
+    "order_date": "2025-07-21",
+    "cs_flag": "N",
+    "total_amount": 68000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "교환처리",
+        "status": "진행중",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-11 17:10:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-28 05:33:00",
+        "completed_at": "2025-06-03 20:41:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-25 13:27:00",
+        "completed_at": "2025-06-24 20:46:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자16",
+        "started_at": "2025-05-27 08:09:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-11 19:44:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 6,
+        "step_type": "CS접수",
+        "status": "대기",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-11 00:50:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "보류",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-01 18:37:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 8,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-30 06:00:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 9,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-08 22:09:00",
+        "completed_at": "2025-06-01 22:03:00",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "279bbf75-55b7-4d48-875d-70662f42d2a2",
+    "seller_code": 2008,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)미부사/2kg/14-16과(미색못난이)",
+    "quantity": 2,
+    "supply_price": 10900.0,
+    "order_date": "2025-06-24",
+    "cs_flag": "Y",
+    "total_amount": 21800.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "CS접수",
+        "status": "보류",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-12 23:23:00",
+        "completed_at": "2025-06-14 18:23:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "구매확정",
+        "status": "보류",
+        "assigned_to": "담당자14",
+        "started_at": "2025-07-07 15:36:00",
+        "completed_at": "2025-07-29 08:46:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 3,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-21 03:46:00",
+        "completed_at": "2025-06-22 02:24:00",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "d0e70ec0-43c8-4400-ba83-9aaf2b6e6906",
+    "seller_code": 1921,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사가정용세척/3kg/6-9과",
+    "quantity": 2,
+    "supply_price": 21000.0,
+    "order_date": "2025-06-11",
+    "cs_flag": "N",
+    "total_amount": 42000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자19",
+        "started_at": "2025-05-27 20:30:00",
+        "completed_at": "2025-06-27 06:07:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-21 20:07:00",
+        "completed_at": "2025-07-05 18:05:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-01 13:09:00",
+        "completed_at": "2025-06-06 18:34:00",
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-24 01:09:00",
+        "completed_at": "2025-07-05 21:09:00",
+        "notes": ""
+      },
+      {
+        "step_number": 5,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-04 08:21:00",
+        "completed_at": "2025-07-25 18:20:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 6,
+        "step_type": "주문접수",
+        "status": "실패",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-23 13:40:00",
+        "completed_at": "2025-06-15 07:50:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 7,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-20 17:27:00",
+        "completed_at": "2025-07-17 12:24:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-04 04:43:00",
+        "completed_at": "2025-06-14 19:44:00",
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "0e0b4c5e-4b2c-4578-a1f0-57f8e0937db0",
+    "seller_code": 2041,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사알가정용/2kg/14-16과",
+    "quantity": 2,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-06",
+    "cs_flag": "Y",
+    "total_amount": 30000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-22 08:42:00",
+        "completed_at": "2025-07-19 02:36:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-11 10:36:00",
+        "completed_at": "2025-07-26 03:03:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "대기",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-16 09:32:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-29 22:35:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송중",
+        "status": "대기",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-20 18:29:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 6,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자13",
+        "started_at": "2025-05-27 11:58:00",
+        "completed_at": "2025-07-18 17:21:00",
+        "notes": ""
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "보류",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-14 09:54:00",
+        "completed_at": "2025-07-25 08:19:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-20 15:38:00",
+        "completed_at": "2025-06-02 15:59:00",
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "ada9676b-41f5-43f3-9664-52a47c4af0de",
+    "seller_code": 143,
+    "company": "경북농장",
+    "product_name": "(경북농장)실속형부사꿀사과중소과-중과/2kg/7-9과",
+    "quantity": 2,
+    "supply_price": 10900.0,
+    "order_date": "2025-07-05",
+    "cs_flag": "N",
+    "total_amount": 21800.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자17",
+        "started_at": "2025-05-28 07:56:00",
+        "completed_at": "2025-07-13 11:10:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송준비중",
+        "status": "보류",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-04 22:40:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자19",
+        "started_at": "2025-07-11 00:58:00",
+        "completed_at": "2025-06-13 15:45:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-13 11:20:00",
+        "completed_at": "2025-07-17 03:34:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-11 07:01:00",
+        "completed_at": "2025-06-28 18:05:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-03 13:08:00",
+        "completed_at": "2025-06-02 21:42:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "cb5c43ff-73f5-4d89-bb5f-26d48d8f86fd",
+    "seller_code": 1996,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사알가정용/2kg/7-9과",
+    "quantity": 5,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-21",
+    "cs_flag": "N",
+    "total_amount": 75000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "주문접수",
+        "status": "실패",
+        "assigned_to": "담당자10",
+        "started_at": "2025-05-31 05:34:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-03 22:41:00",
+        "completed_at": "2025-06-04 22:25:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-13 22:36:00",
+        "completed_at": "2025-06-11 17:54:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "실패",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-13 05:08:00",
+        "completed_at": "2025-07-26 04:18:00",
+        "notes": ""
+      },
+      {
+        "step_number": 5,
+        "step_type": "교환처리",
+        "status": "실패",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-06 19:14:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 6,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-13 22:20:00",
+        "completed_at": "2025-06-02 09:29:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-07 23:14:00",
+        "completed_at": "2025-07-01 19:12:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 8,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자14",
+        "started_at": "2025-07-03 21:12:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      }
+    ]
+  },
+  {
+    "order_id": "2a854d3f-ab9f-45c6-9fe0-ecc24941cf0f",
+    "seller_code": 1914,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사알가정용/5kg/17-22과",
+    "quantity": 4,
+    "supply_price": 8800.0,
+    "order_date": "2025-06-20",
+    "cs_flag": "N",
+    "total_amount": 35200.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "상품준비중",
+        "status": "보류",
+        "assigned_to": "담당자11",
+        "started_at": "2025-05-28 11:48:00",
+        "completed_at": "2025-07-26 04:58:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송준비중",
+        "status": "진행중",
+        "assigned_to": "담당자18",
+        "started_at": "2025-07-18 23:11:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "대기",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-26 11:48:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "진행중",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-10 05:20:00",
+        "completed_at": "2025-05-26 18:20:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-14 01:35:00",
+        "completed_at": "2025-06-06 01:37:00",
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "376bcc32-ff7e-4ceb-b8f2-ce9728db7847",
+    "seller_code": 697,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사가정용세척/3kg/10-14과",
+    "quantity": 4,
+    "supply_price": 16000.0,
+    "order_date": "2025-06-11",
+    "cs_flag": "Y",
+    "total_amount": 64000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-02 14:31:00",
+        "completed_at": "2025-07-12 22:09:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-25 19:33:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자14",
+        "started_at": "2025-07-21 21:08:00",
+        "completed_at": "2025-06-14 03:01:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "보류",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-05 12:13:00",
+        "completed_at": "2025-05-27 20:16:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-01 23:35:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송완료",
+        "status": "실패",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-05 05:43:00",
+        "completed_at": "2025-07-04 23:44:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 7,
+        "step_type": "구매확정",
+        "status": "보류",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-17 23:58:00",
+        "completed_at": "2025-07-06 12:20:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 8,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-11 07:42:00",
+        "completed_at": "2025-05-28 03:29:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 9,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-18 05:57:00",
+        "completed_at": "2025-06-08 02:57:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "efeedb93-0512-47c8-83ed-f236b23157da",
+    "seller_code": 1966,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사가정용세척/2kg/14-16과",
+    "quantity": 3,
+    "supply_price": 22200.0,
+    "order_date": "2025-05-30",
+    "cs_flag": "Y",
+    "total_amount": 66600.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "주문접수",
+        "status": "진행중",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-24 16:56:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-12 13:11:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-13 13:42:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송완료",
+        "status": "보류",
+        "assigned_to": "담당자4",
+        "started_at": "2025-05-27 12:24:00",
+        "completed_at": "2025-06-25 12:52:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "상품준비중",
+        "status": "보류",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-24 05:13:00",
+        "completed_at": "2025-07-26 15:24:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 6,
+        "step_type": "교환처리",
+        "status": "대기",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-28 11:35:00",
+        "completed_at": "2025-06-04 07:49:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 7,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-11 20:22:00",
+        "completed_at": "2025-06-10 03:29:00",
+        "notes": "지연 발생"
+      }
+    ]
+  },
+  {
+    "order_id": "469a2682-36d0-4e87-9c85-78f41b0e7655",
+    "seller_code": 1928,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)미부사/5kg/12-16과(미색못난이)",
+    "quantity": 3,
+    "supply_price": 18100.0,
+    "order_date": "2025-07-07",
+    "cs_flag": "N",
+    "total_amount": 54300.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-09 12:34:00",
+        "completed_at": "2025-07-28 00:45:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "보류",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-02 22:13:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "CS접수",
+        "status": "보류",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-14 20:58:00",
+        "completed_at": "2025-07-26 04:56:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-05 20:33:00",
+        "completed_at": "2025-07-19 08:07:00",
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "7090a15f-cc16-44cf-a03c-c319330052a6",
+    "seller_code": 1904,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)부사가정용세척/5kg/23-28과",
+    "quantity": 5,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-14",
+    "cs_flag": "N",
+    "total_amount": 75000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-24 14:42:00",
+        "completed_at": "2025-07-17 12:08:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-20 22:36:00",
+        "completed_at": "2025-06-13 22:08:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송준비중",
+        "status": "진행중",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-30 12:29:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 4,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-12 05:35:00",
+        "completed_at": "2025-05-26 19:54:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "24081f8b-680e-42e1-b5c5-a44ca741dae2",
+    "seller_code": 503,
+    "company": "도매BT",
+    "product_name": "(경북농장)정품부사꿀사과꼬마과-소과/2kg/10-13과",
+    "quantity": 5,
+    "supply_price": 20100.0,
+    "order_date": "2025-07-03",
+    "cs_flag": "Y",
+    "total_amount": 100500.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-22 17:29:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-21 19:29:00",
+        "completed_at": "2025-06-26 17:59:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자12",
+        "started_at": "2025-06-07 09:54:00",
+        "completed_at": "2025-07-17 16:05:00",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "1ab29144-1e2c-4dc4-9be7-0c31bdf45858",
+    "seller_code": 2064,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)부사가정용세척/5kg/12-16과",
+    "quantity": 5,
+    "supply_price": 16000.0,
+    "order_date": "2025-06-20",
+    "cs_flag": "N",
+    "total_amount": 80000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자13",
+        "started_at": "2025-07-05 20:31:00",
+        "completed_at": "2025-07-01 21:56:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-12 05:24:00",
+        "completed_at": "2025-07-08 17:55:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자8",
+        "started_at": "2025-06-30 23:26:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "교환처리",
+        "status": "진행중",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-01 07:51:00",
+        "completed_at": "2025-06-17 07:19:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-27 18:45:00",
+        "completed_at": "2025-06-03 06:18:00",
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "f855bf03-551f-42ac-928c-1e6270fbd3ea",
+    "seller_code": 1966,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사가정용세척/2kg/10-13과",
+    "quantity": 4,
+    "supply_price": 20600.0,
+    "order_date": "2025-06-13",
+    "cs_flag": "N",
+    "total_amount": 82400.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "CS접수",
+        "status": "보류",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-23 14:25:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "반품처리",
+        "status": "진행중",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-08 07:59:00",
+        "completed_at": "2025-06-08 17:06:00",
+        "notes": ""
+      },
+      {
+        "step_number": 3,
+        "step_type": "결제완료",
+        "status": "진행중",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-14 04:30:00",
+        "completed_at": "2025-06-24 05:24:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-02 10:03:00",
+        "completed_at": "2025-07-27 06:22:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송준비중",
+        "status": "진행중",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-04 04:15:00",
+        "completed_at": "2025-06-17 09:57:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송완료",
+        "status": "보류",
+        "assigned_to": "담당자16",
+        "started_at": "2025-05-26 17:44:00",
+        "completed_at": "2025-06-09 01:18:00",
+        "notes": ""
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-05 08:03:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 8,
+        "step_type": "주문접수",
+        "status": "진행중",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-10 22:10:00",
+        "completed_at": "2025-07-15 11:25:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 9,
+        "step_type": "교환처리",
+        "status": "진행중",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-04 11:25:00",
+        "completed_at": "2025-07-30 07:21:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 10,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-06 11:32:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "c9468b45-0919-4476-8edf-830f0234d44c",
+    "seller_code": 143,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)부사알가정용/2kg/14-16과",
+    "quantity": 2,
+    "supply_price": 22200.0,
+    "order_date": "2025-06-28",
+    "cs_flag": "Y",
+    "total_amount": 44400.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-06 01:58:00",
+        "completed_at": "2025-06-06 07:48:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "교환처리",
+        "status": "진행중",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-26 22:26:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "결제완료",
+        "status": "진행중",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-11 05:07:00",
+        "completed_at": "2025-07-23 13:56:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 4,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-05-29 03:55:00",
+        "completed_at": "2025-06-04 05:50:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "01329f79-c8fc-4538-a7f8-8a9ccf2f359b",
+    "seller_code": 1996,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)부사가정용세척/2kg/14-16과",
+    "quantity": 5,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-20",
+    "cs_flag": "Y",
+    "total_amount": 75000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송준비중",
+        "status": "실패",
+        "assigned_to": "담당자17",
+        "started_at": "2025-05-26 04:00:00",
+        "completed_at": "2025-06-06 04:43:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "CS접수",
+        "status": "실패",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-06 04:22:00",
+        "completed_at": "2025-07-21 22:33:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-03 08:40:00",
+        "completed_at": "2025-07-01 23:47:00",
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "11283445-bc86-49a0-8e0c-155d414d770d",
+    "seller_code": 793,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사알가정용/5kg/17-22과",
+    "quantity": 3,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-08",
+    "cs_flag": "N",
+    "total_amount": 45000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송중",
+        "status": "대기",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-04 22:20:00",
+        "completed_at": "2025-07-01 22:54:00",
+        "notes": ""
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송준비중",
+        "status": "보류",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-01 20:15:00",
+        "completed_at": "2025-05-30 20:51:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "구매확정",
+        "status": "보류",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-24 00:56:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-24 16:05:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 5,
+        "step_type": "CS접수",
+        "status": "보류",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-16 06:59:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-13 23:12:00",
+        "completed_at": "2025-06-18 16:38:00",
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "2f9e2625-30cd-49b2-86cc-19eb8955c960",
+    "seller_code": 697,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사쥬스용/3kg",
+    "quantity": 1,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-22",
+    "cs_flag": "Y",
+    "total_amount": 15000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "결제완료",
+        "status": "실패",
+        "assigned_to": "담당자8",
+        "started_at": "2025-06-20 03:12:00",
+        "completed_at": "2025-06-20 05:07:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자1",
+        "started_at": "2025-05-27 03:22:00",
+        "completed_at": "2025-07-01 04:08:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-11 17:40:00",
+        "completed_at": "2025-07-02 05:57:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 4,
+        "step_type": "교환처리",
+        "status": "대기",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-13 20:47:00",
+        "completed_at": "2025-05-26 15:54:00",
+        "notes": ""
+      },
+      {
+        "step_number": 5,
+        "step_type": "반품처리",
+        "status": "완료",
+        "assigned_to": "담당자12",
+        "started_at": "2025-05-31 19:07:00",
+        "completed_at": "2025-06-09 23:11:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "CS접수",
+        "status": "보류",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-13 14:37:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "실패",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-11 10:38:00",
+        "completed_at": "2025-06-21 17:20:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 8,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-20 22:37:00",
+        "completed_at": "2025-07-23 23:23:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "f36d77c6-4fbe-4547-8c40-2f5c7e6c2732",
+    "seller_code": 1001,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)미부사/5kg/23-28과(미색못난이)",
+    "quantity": 1,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-11",
+    "cs_flag": "Y",
+    "total_amount": 15000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "주문접수",
+        "status": "실패",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-06 14:50:00",
+        "completed_at": "2025-05-28 16:54:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-02 03:19:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-10 18:10:00",
+        "completed_at": "2025-06-11 01:39:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "구매확정",
+        "status": "실패",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-07 04:00:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 5,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-11 05:36:00",
+        "completed_at": "2025-06-20 01:53:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-22 10:36:00",
+        "completed_at": "2025-06-29 21:18:00",
+        "notes": ""
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송완료",
+        "status": "보류",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-18 00:55:00",
+        "completed_at": "2025-06-24 22:28:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 8,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-09 16:01:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 9,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-12 09:30:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "ee5eec78-74c3-4c03-8584-86343435eb26",
+    "seller_code": 1984,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사알가정용/5kg/17-22과",
+    "quantity": 2,
+    "supply_price": 16000.0,
+    "order_date": "2025-05-30",
+    "cs_flag": "N",
+    "total_amount": 32000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "진행중",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-15 18:50:00",
+        "completed_at": "2025-06-11 00:34:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "주문접수",
+        "status": "보류",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-23 11:10:00",
+        "completed_at": "2025-07-24 00:56:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자8",
+        "started_at": "2025-06-24 02:11:00",
+        "completed_at": "2025-06-17 02:50:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 4,
+        "step_type": "CS접수",
+        "status": "실패",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-17 07:10:00",
+        "completed_at": "2025-06-15 06:15:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-14 22:36:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자14",
+        "started_at": "2025-07-13 14:25:00",
+        "completed_at": "2025-06-01 18:26:00",
+        "notes": "지연 발생"
+      }
+    ]
+  },
+  {
+    "order_id": "72ca97f3-8dc6-4d20-a0a6-8dac9c027cd4",
+    "seller_code": 1914,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사알가정용/3kg/15-18과",
+    "quantity": 2,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-09",
+    "cs_flag": "Y",
+    "total_amount": 30000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-23 18:37:00",
+        "completed_at": "2025-07-28 14:55:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "교환처리",
+        "status": "실패",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-04 00:41:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-18 15:42:00",
+        "completed_at": "2025-07-21 01:48:00",
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-21 02:58:00",
+        "completed_at": "2025-06-08 21:50:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 5,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-06 00:42:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-21 22:37:00",
+        "completed_at": "2025-07-16 19:45:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 7,
+        "step_type": "결제완료",
+        "status": "대기",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-13 00:08:00",
+        "completed_at": "2025-07-06 16:01:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-19 01:23:00",
+        "completed_at": "2025-06-04 05:57:00",
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "ec17389e-3451-408e-a9d5-be2216398a89",
+    "seller_code": 2064,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)미부사/5kg/29-31과(미색못난이)",
+    "quantity": 2,
+    "supply_price": 16000.0,
+    "order_date": "2025-05-31",
+    "cs_flag": "N",
+    "total_amount": 32000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자13",
+        "started_at": "2025-06-27 19:19:00",
+        "completed_at": "2025-06-10 01:51:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송준비중",
+        "status": "대기",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-30 23:18:00",
+        "completed_at": "2025-07-17 15:48:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "교환처리",
+        "status": "진행중",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-11 14:44:00",
+        "completed_at": "2025-05-26 16:22:00",
+        "notes": ""
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-19 16:36:00",
+        "completed_at": "2025-07-14 17:18:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "e4ed785d-4b77-4084-a5c5-da2e9f06b289",
+    "seller_code": 1909,
+    "company": "도매JI",
+    "product_name": "(행사용)(도매GB)부사가정용세척/2kg/14-16과",
+    "quantity": 4,
+    "supply_price": 14500.0,
+    "order_date": "2025-06-26",
+    "cs_flag": "Y",
+    "total_amount": 58000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "주문접수",
+        "status": "보류",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-18 18:22:00",
+        "completed_at": "2025-07-29 13:22:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자15",
+        "started_at": "2025-07-19 19:36:00",
+        "completed_at": "2025-06-30 03:59:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송준비중",
+        "status": "보류",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-30 12:36:00",
+        "completed_at": "2025-06-22 08:31:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-28 20:53:00",
+        "completed_at": "2025-07-02 18:51:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "CS접수",
+        "status": "대기",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-11 07:27:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-25 12:23:00",
+        "completed_at": "2025-07-23 20:17:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 7,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-24 08:51:00",
+        "completed_at": "2025-06-13 20:20:00",
+        "notes": "지연 발생"
+      }
+    ]
+  },
+  {
+    "order_id": "3bf8c569-2b1b-4dec-a628-063372b2cfd3",
+    "seller_code": 503,
+    "company": "도매JI",
+    "product_name": "(도매JI)부사대과/5kg/20과내외",
+    "quantity": 3,
+    "supply_price": 8800.0,
+    "order_date": "2025-06-18",
+    "cs_flag": "Y",
+    "total_amount": 26400.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "보류",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-03 21:57:00",
+        "completed_at": "2025-07-22 10:35:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "반품처리",
+        "status": "대기",
+        "assigned_to": "담당자6",
+        "started_at": "2025-06-06 16:35:00",
+        "completed_at": "2025-05-30 00:12:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "CS접수",
+        "status": "대기",
+        "assigned_to": "담당자13",
+        "started_at": "2025-05-29 08:20:00",
+        "completed_at": "2025-06-17 15:01:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "완료",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-08 07:17:00",
+        "completed_at": "2025-07-19 14:05:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송중",
+        "status": "대기",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-01 23:11:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "배송준비중",
+        "status": "보류",
+        "assigned_to": "담당자18",
+        "started_at": "2025-05-28 23:50:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 7,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-05-29 01:43:00",
+        "completed_at": "2025-05-30 08:49:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 8,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-13 11:17:00",
+        "completed_at": "2025-07-18 22:11:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 9,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-08 04:33:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 10,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-20 22:54:00",
+        "completed_at": "2025-07-06 12:50:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "98e2e026-339a-4fbd-8126-ecd4943add30",
+    "seller_code": 1909,
+    "company": "도매GB",
+    "product_name": "(도매JI)부사혼합과/1kg/8과내외",
+    "quantity": 2,
+    "supply_price": 16000.0,
+    "order_date": "2025-06-10",
+    "cs_flag": "N",
+    "total_amount": 32000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "CS접수",
+        "status": "대기",
+        "assigned_to": "담당자13",
+        "started_at": "2025-05-27 21:49:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-12 17:08:00",
+        "completed_at": "2025-06-12 04:51:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자16",
+        "started_at": "2025-07-08 08:52:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "1bc49820-a081-4b87-9916-12600897d193",
+    "seller_code": 1921,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)부사가정용세척/5kg/12-16과",
+    "quantity": 4,
+    "supply_price": 22200.0,
+    "order_date": "2025-07-05",
+    "cs_flag": "Y",
+    "total_amount": 88800.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "보류",
+        "assigned_to": "담당자12",
+        "started_at": "2025-06-09 17:13:00",
+        "completed_at": "2025-07-02 01:16:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-25 17:58:00",
+        "completed_at": "2025-06-24 21:24:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-17 16:51:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-15 13:52:00",
+        "completed_at": "2025-07-29 13:01:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 5,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-27 14:10:00",
+        "completed_at": "2025-06-25 10:49:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 6,
+        "step_type": "교환처리",
+        "status": "진행중",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-30 03:32:00",
+        "completed_at": "2025-06-03 20:54:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-14 01:01:00",
+        "completed_at": "2025-07-14 14:09:00",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "8de711a1-df09-4dc9-a6ad-11c98f643917",
+    "seller_code": 1909,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사알가정용/3kg/19-21과",
+    "quantity": 5,
+    "supply_price": 13400.0,
+    "order_date": "2025-07-20",
+    "cs_flag": "N",
+    "total_amount": 67000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "결제완료",
+        "status": "대기",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-29 01:58:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 2,
+        "step_type": "반품처리",
+        "status": "대기",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-24 21:43:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자3",
+        "started_at": "2025-05-31 20:42:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "주문접수",
+        "status": "대기",
+        "assigned_to": "담당자16",
+        "started_at": "2025-06-19 03:17:00",
+        "completed_at": "2025-07-04 22:20:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 5,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-02 16:30:00",
+        "completed_at": "2025-07-22 17:18:00",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "order_id": "885c6752-96c4-4672-9d86-750a1c348ec2",
+    "seller_code": 1905,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사가정용세척/3kg/15-18과",
+    "quantity": 1,
+    "supply_price": 15000.0,
+    "order_date": "2025-07-14",
+    "cs_flag": "Y",
+    "total_amount": 15000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자13",
+        "started_at": "2025-07-15 09:35:00",
+        "completed_at": "2025-07-18 15:40:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송완료",
+        "status": "진행중",
+        "assigned_to": "담당자12",
+        "started_at": "2025-06-03 16:56:00",
+        "completed_at": "2025-07-21 05:16:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-26 14:00:00",
+        "completed_at": "2025-07-30 15:45:00",
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "383be6fc-8d1b-4c09-9412-60489fd8da19",
+    "seller_code": 1802,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)미부사/5kg/23-28과(미색못난이)",
+    "quantity": 1,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-28",
+    "cs_flag": "N",
+    "total_amount": 15000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-28 20:11:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 2,
+        "step_type": "상품준비중",
+        "status": "진행중",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-06 13:00:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자15",
+        "started_at": "2025-06-14 08:54:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "d2e8fd47-45a1-4f16-a731-934d810e3e80",
+    "seller_code": 1904,
+    "company": "경북농장",
+    "product_name": "(행사용)(도매GB)미부사/3kg/19-21과(미색못난이)",
+    "quantity": 5,
+    "supply_price": 16000.0,
+    "order_date": "2025-05-30",
+    "cs_flag": "Y",
+    "total_amount": 80000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-24 14:42:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "결제완료",
+        "status": "진행중",
+        "assigned_to": "담당자8",
+        "started_at": "2025-06-16 02:44:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 3,
+        "step_type": "교환처리",
+        "status": "실패",
+        "assigned_to": "담당자19",
+        "started_at": "2025-07-23 17:14:00",
+        "completed_at": "2025-06-08 11:03:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송준비중",
+        "status": "진행중",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-17 01:09:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 5,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자8",
+        "started_at": "2025-06-04 19:55:00",
+        "completed_at": "2025-06-06 10:28:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-13 10:38:00",
+        "completed_at": "2025-07-24 16:02:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자12",
+        "started_at": "2025-07-01 04:40:00",
+        "completed_at": "2025-07-05 04:16:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "주문접수",
+        "status": "실패",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-19 05:55:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 9,
+        "step_type": "배송완료",
+        "status": "실패",
+        "assigned_to": "담당자10",
+        "started_at": "2025-07-07 02:00:00",
+        "completed_at": "2025-07-05 16:15:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 10,
+        "step_type": "CS접수",
+        "status": "완료",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-08 09:59:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      }
+    ]
+  },
+  {
+    "order_id": "2545eb43-7b12-4a05-8c4b-007d2243def5",
+    "seller_code": 1001,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사가정용세척/2kg/14-16과",
+    "quantity": 2,
+    "supply_price": 21000.0,
+    "order_date": "2025-06-01",
+    "cs_flag": "Y",
+    "total_amount": 42000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "결제완료",
+        "status": "대기",
+        "assigned_to": "담당자11",
+        "started_at": "2025-07-01 18:18:00",
+        "completed_at": "2025-07-03 19:57:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "교환처리",
+        "status": "진행중",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-21 01:47:00",
+        "completed_at": "2025-07-28 19:30:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송준비중",
+        "status": "진행중",
+        "assigned_to": "담당자8",
+        "started_at": "2025-07-22 22:47:00",
+        "completed_at": "2025-06-23 12:05:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 4,
+        "step_type": "상품준비중",
+        "status": "완료",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-01 13:30:00",
+        "completed_at": "2025-07-08 16:23:00",
+        "notes": ""
+      },
+      {
+        "step_number": 5,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자9",
+        "started_at": "2025-06-13 15:31:00",
+        "completed_at": "2025-07-28 20:05:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자3",
+        "started_at": "2025-06-08 19:27:00",
+        "completed_at": "2025-06-30 11:01:00",
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "bfe2c34c-b215-49b2-bf09-aab85db4f463",
+    "seller_code": 1966,
+    "company": "경북농장",
+    "product_name": "(도매JI)부사쥬스용/10kg/랜덤과",
+    "quantity": 3,
+    "supply_price": 13900.0,
+    "order_date": "2025-07-03",
+    "cs_flag": "N",
+    "total_amount": 41700.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "진행중",
+        "assigned_to": "담당자17",
+        "started_at": "2025-07-01 23:35:00",
+        "completed_at": "2025-06-04 21:34:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 2,
+        "step_type": "반품처리",
+        "status": "보류",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-09 05:31:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-07-20 11:59:00",
+        "completed_at": "2025-07-03 07:17:00",
+        "notes": "정상 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "23201df2-7112-4169-b65e-f8e10bac9d12",
+    "seller_code": 1877,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)부사알가정용/3kg/15-18과",
+    "quantity": 4,
+    "supply_price": 15000.0,
+    "order_date": "2025-05-29",
+    "cs_flag": "Y",
+    "total_amount": 60000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "구매확정",
+        "status": "대기",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-16 15:21:00",
+        "completed_at": "2025-07-30 08:36:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 2,
+        "step_type": "결제완료",
+        "status": "실패",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-23 05:39:00",
+        "completed_at": "2025-06-19 02:01:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 3,
+        "step_type": "주문접수",
+        "status": "진행중",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-22 01:05:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송중",
+        "status": "진행중",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-03 02:20:00",
+        "completed_at": "2025-06-28 11:10:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-13 01:56:00",
+        "completed_at": "2025-06-07 19:08:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 6,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자3",
+        "started_at": "2025-07-15 16:38:00",
+        "completed_at": "2025-05-28 03:47:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 7,
+        "step_type": "교환처리",
+        "status": "보류",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-30 04:05:00",
+        "completed_at": "2025-06-16 05:59:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 8,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-02 05:57:00",
+        "completed_at": "2025-06-15 20:16:00",
+        "notes": "배송지 변경"
+      }
+    ]
+  },
+  {
+    "order_id": "25afe050-dae8-4e91-be87-63838934c560",
+    "seller_code": 1904,
+    "company": "도매BT",
+    "product_name": "(경북농장)부사쥬스용사과/10kg",
+    "quantity": 2,
+    "supply_price": 16000.0,
+    "order_date": "2025-07-08",
+    "cs_flag": "Y",
+    "total_amount": 32000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "보류",
+        "assigned_to": "담당자4",
+        "started_at": "2025-06-21 08:08:00",
+        "completed_at": "2025-05-29 01:12:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송중",
+        "status": "보류",
+        "assigned_to": "담당자14",
+        "started_at": "2025-06-11 13:14:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 3,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-14 04:26:00",
+        "completed_at": "2025-07-29 02:19:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 4,
+        "step_type": "반품처리",
+        "status": "진행중",
+        "assigned_to": "담당자20",
+        "started_at": "2025-07-24 04:56:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 5,
+        "step_type": "주문접수",
+        "status": "완료",
+        "assigned_to": "담당자19",
+        "started_at": "2025-07-10 04:17:00",
+        "completed_at": "2025-06-16 18:47:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 6,
+        "step_type": "CS접수",
+        "status": "진행중",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-05 01:23:00",
+        "completed_at": null,
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자2",
+        "started_at": "2025-07-13 08:53:00",
+        "completed_at": "2025-07-23 00:34:00",
+        "notes": "고객 요청사항 확인 필요"
+      }
+    ]
+  },
+  {
+    "order_id": "6975ab4d-5f26-4bd0-a580-e22fcbba181c",
+    "seller_code": 130,
+    "company": "도매BT",
+    "product_name": "(도매JI)부사중대과/3kg/14과내외",
+    "quantity": 4,
+    "supply_price": 8800.0,
+    "order_date": "2025-06-13",
+    "cs_flag": "Y",
+    "total_amount": 35200.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "배송완료",
+        "status": "진행중",
+        "assigned_to": "담당자17",
+        "started_at": "2025-05-30 21:16:00",
+        "completed_at": "2025-07-21 22:41:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "교환처리",
+        "status": "진행중",
+        "assigned_to": "담당자6",
+        "started_at": "2025-05-28 12:46:00",
+        "completed_at": "2025-05-26 03:39:00",
+        "notes": ""
+      },
+      {
+        "step_number": 3,
+        "step_type": "결제완료",
+        "status": "진행중",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-26 22:05:00",
+        "completed_at": "2025-06-01 19:13:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-05 17:52:00",
+        "completed_at": "2025-07-28 12:56:00",
+        "notes": "재고 확인 중"
+      }
+    ]
+  },
+  {
+    "order_id": "ae70a504-2511-4202-ae2d-384f01218056",
+    "seller_code": 130,
+    "company": "도매BT",
+    "product_name": "(행사용)(도매GB)미부사/3kg/6-9과(미색못난이)",
+    "quantity": 3,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-23",
+    "cs_flag": "Y",
+    "total_amount": 45000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "상품준비중",
+        "status": "대기",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-18 11:22:00",
+        "completed_at": "2025-07-17 22:55:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송완료",
+        "status": "실패",
+        "assigned_to": "담당자2",
+        "started_at": "2025-06-30 20:55:00",
+        "completed_at": null,
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 3,
+        "step_type": "CS접수",
+        "status": "대기",
+        "assigned_to": "담당자18",
+        "started_at": "2025-06-22 16:11:00",
+        "completed_at": "2025-06-02 21:48:00",
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "결제완료",
+        "status": "실패",
+        "assigned_to": "담당자4",
+        "started_at": "2025-07-03 23:28:00",
+        "completed_at": "2025-06-01 01:10:00",
+        "notes": ""
+      },
+      {
+        "step_number": 5,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자17",
+        "started_at": "2025-06-03 05:28:00",
+        "completed_at": "2025-07-18 17:10:00",
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "675836c4-3a2e-458a-8407-58c955c8b04a",
+    "seller_code": 130,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)부사가정용세척/5kg/12-16과",
+    "quantity": 4,
+    "supply_price": 21000.0,
+    "order_date": "2025-06-24",
+    "cs_flag": "N",
+    "total_amount": 84000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "주문접수",
+        "status": "보류",
+        "assigned_to": "담당자6",
+        "started_at": "2025-07-25 03:03:00",
+        "completed_at": "2025-07-19 18:05:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "배송준비중",
+        "status": "완료",
+        "assigned_to": "담당자9",
+        "started_at": "2025-07-16 22:43:00",
+        "completed_at": null,
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 3,
+        "step_type": "상품준비중",
+        "status": "보류",
+        "assigned_to": "담당자5",
+        "started_at": "2025-06-07 13:13:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "교환처리",
+        "status": "완료",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-30 22:41:00",
+        "completed_at": "2025-07-14 17:29:00",
+        "notes": "CS 문의 접수"
+      },
+      {
+        "step_number": 5,
+        "step_type": "반품처리",
+        "status": "대기",
+        "assigned_to": "담당자19",
+        "started_at": "2025-06-05 11:36:00",
+        "completed_at": "2025-07-22 00:46:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 6,
+        "step_type": "결제완료",
+        "status": "실패",
+        "assigned_to": "담당자7",
+        "started_at": "2025-06-14 04:07:00",
+        "completed_at": "2025-06-28 04:23:00",
+        "notes": "배송지 변경"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송중",
+        "status": "실패",
+        "assigned_to": "담당자1",
+        "started_at": "2025-06-04 05:47:00",
+        "completed_at": null,
+        "notes": "정상 처리"
+      },
+      {
+        "step_number": 8,
+        "step_type": "배송완료",
+        "status": "완료",
+        "assigned_to": "담당자13",
+        "started_at": "2025-07-08 14:35:00",
+        "completed_at": null,
+        "notes": "긴급 처리"
+      }
+    ]
+  },
+  {
+    "order_id": "cda70d9f-d233-48ab-8c23-d6c056050c6f",
+    "seller_code": 856,
+    "company": "도매GB",
+    "product_name": "(행사용)(도매GB)부사쥬스용/6kg",
+    "quantity": 3,
+    "supply_price": 15000.0,
+    "order_date": "2025-06-30",
+    "cs_flag": "N",
+    "total_amount": 45000.0,
+    "steps": [
+      {
+        "step_number": 1,
+        "step_type": "반품처리",
+        "status": "실패",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-07 12:37:00",
+        "completed_at": "2025-07-19 21:25:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 2,
+        "step_type": "구매확정",
+        "status": "실패",
+        "assigned_to": "담당자5",
+        "started_at": "2025-07-05 08:02:00",
+        "completed_at": "2025-07-26 17:26:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 3,
+        "step_type": "CS접수",
+        "status": "대기",
+        "assigned_to": "담당자12",
+        "started_at": "2025-06-01 04:32:00",
+        "completed_at": "2025-06-16 23:37:00",
+        "notes": "긴급 처리"
+      },
+      {
+        "step_number": 4,
+        "step_type": "배송준비중",
+        "status": "보류",
+        "assigned_to": "담당자11",
+        "started_at": "2025-06-11 01:43:00",
+        "completed_at": null,
+        "notes": ""
+      },
+      {
+        "step_number": 5,
+        "step_type": "교환처리",
+        "status": "대기",
+        "assigned_to": "담당자9",
+        "started_at": "2025-05-31 11:10:00",
+        "completed_at": "2025-05-27 12:04:00",
+        "notes": "재고 확인 중"
+      },
+      {
+        "step_number": 6,
+        "step_type": "주문접수",
+        "status": "진행중",
+        "assigned_to": "담당자20",
+        "started_at": "2025-06-09 19:30:00",
+        "completed_at": null,
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 7,
+        "step_type": "배송완료",
+        "status": "대기",
+        "assigned_to": "담당자19",
+        "started_at": "2025-05-29 06:23:00",
+        "completed_at": "2025-07-10 11:09:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 8,
+        "step_type": "결제완료",
+        "status": "보류",
+        "assigned_to": "담당자11",
+        "started_at": "2025-05-29 11:15:00",
+        "completed_at": "2025-07-15 16:01:00",
+        "notes": "고객 요청사항 확인 필요"
+      },
+      {
+        "step_number": 9,
+        "step_type": "상품준비중",
+        "status": "실패",
+        "assigned_to": "담당자10",
+        "started_at": "2025-06-16 03:18:00",
+        "completed_at": "2025-07-02 06:24:00",
+        "notes": "지연 발생"
+      },
+      {
+        "step_number": 10,
+        "step_type": "배송중",
+        "status": "완료",
+        "assigned_to": "담당자7",
+        "started_at": "2025-07-10 08:01:00",
+        "completed_at": null,
+        "notes": "재고 확인 중"
+      }
+    ]
+  }
+]
