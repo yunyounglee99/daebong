@@ -23,7 +23,7 @@ class NoisyLinear(nn.Module):
         self.b_sigma = nn.Parameter(torch.empty(out_features))
         self.b_epsilon = self.register_buffer('bㄴ_epsilon', torch.empty(out_features))
 
-        self.reset_parameter()
+        self.reset_parameters()
         self.reset_noise()
 
     def reset_parameters(self):
