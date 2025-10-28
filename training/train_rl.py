@@ -132,11 +132,16 @@ def train():
   os.makedirs(config.RL_MODEL_PATH, exist_ok = True)
 
   print("Training started...")
+  print(f"Initial buffer size: {buffer.size()} transitions")
+  print(f"Batch size: {config.BATCH_SIZE}, Episodes: {config.NUM_EPISODES}")
+  print(f"OBS_DIM: {config.OBS_DIM}, ACTION_DIM: {config.ACTION_DIM}")
 
   # Main Loop
 
   total_steps = 0
   for episode in range(config.NUM_EPISODES):
+    if episode == 0:
+      print(f"\nStarting episode {episode}...")
     """
     now using dummy data please change codes below after you get data
     """ 
@@ -178,9 +183,14 @@ def train():
 
       # begin training when sufficient data accumulates in the buffer
       if buffer.size() < config.BATCH_SIZE:
+        if step == 0 and episode < 3:  # Only print for first few episodes
+          print(f"  Episode {episode}, Step {step}: Buffer size ({buffer.size()}) < Batch size ({config.BATCH_SIZE}), skipping training...")
         continue
 
       # sample in the PER buffer
+      if step == 0 and episode == 0:
+        print(f"  Starting actual training! Buffer size: {buffer.size()}")
+
       s_b, a_b, r_b, s_p_b, done_b, is_weights_b, idxs_b = buffer.sample(config.BATCH_SIZE)
       mini_batch = (s_b, a_b, r_b, s_p_b, done_b)
 

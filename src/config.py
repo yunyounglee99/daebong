@@ -9,7 +9,7 @@ ML_MODEL_PATH = os.path.join(MODEL_REGISTER_PATH, "ml_model")
 
 # --- 2. Model hyperparameters ---
 
-OBS_DIM = 15        # State의 실제 차원 (예: 품목정보 10 + 그룹 2 + 가격 1 + 리드타임 1 + 하자비율 1)
+OBS_DIM = 50        # State dimension: user_group(2) + last_clicked_item(32) + click_count(1) + view_time(1) + category_affinity(10) + price(1) + lead_time(1) + quality(1) + promotion(1)
 ACTION_DIM = 2      # [rec, not rec]
 HIDDEN_DIMS = [256, 256]
 
@@ -27,7 +27,7 @@ NUM_EPISODES = 5000
 MAX_STEPS_PER_EPISODE = 100 # (for simulation)
 
 ACTOR_UPDATE_DELAY = 2  # Actor와 Target Net은 Critic보다 2배 늦게 업데이트
-LOG_INTERVAL = 10       # print log for 10 epi
+LOG_INTERVAL = 1        # print log every episode for debugging
 SAVE_INTERVAL = 100     # save the model for 100 epi
 
 # --- 4. PER hyperparameters ---
