@@ -9,7 +9,7 @@ ML_MODEL_PATH = os.path.join(MODEL_REGISTER_PATH, "ml_model")
 
 # --- 2. Model hyperparameters ---
 
-OBS_DIM = 15        # State의 실제 차원 (예: 품목정보 10 + 그룹 2 + 가격 1 + 리드타임 1 + 하자비율 1)
+OBS_DIM = 50        # State의 실제 차원 (예: 품목정보 10 + 그룹 2 + 가격 1 + 리드타임 1 + 하자비율 1)
 ACTION_DIM = 2      # [rec, not rec]
 HIDDEN_DIMS = [64, 64]
 

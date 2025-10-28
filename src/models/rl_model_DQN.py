@@ -17,11 +17,11 @@ class NoisyLinear(nn.Module):
 
         self.w_mu = nn.Parameter(torch.empty(out_features, in_features))
         self.w_sigma = nn.Parameter(torch.empty(out_features, in_features))
-        self.w_epsilon = self.register_buffer('w_epsilon', torch.empty(out_features, in_features))
+        self.register_buffer('w_epsilon', torch.empty(out_features, in_features))
 
         self.b_mu = nn.Parameter(torch.empty(out_features))
         self.b_sigma = nn.Parameter(torch.empty(out_features))
-        self.b_epsilon = self.register_buffer('bㄴ_epsilon', torch.empty(out_features))
+        self.register_buffer('b_epsilon', torch.empty(out_features))
 
         self.reset_parameters()
         self.reset_noise()
@@ -45,8 +45,8 @@ class NoisyLinear(nn.Module):
 
     def forward(self, x):
         if self.training:
-            w = self.w_mu + self.w_sigma + self.w_epsilon
-            b = self.b_mu + self.b_sigma + self.b_epsilon
+            w = self.w_mu + self.w_sigma * self.w_epsilon
+            b = self.b_mu + self.b_sigma * self.b_epsilon
         else:
             w = self.w_mu
             b = self.b_mu
@@ -63,7 +63,7 @@ class DQN(nn.Module):
             lr_critic = 3e-4,
             device = None
     ) -> None:
-        super(DQN, self).__init___()
+        super(DQN, self).__init__()
         self.name = name
         self.obs_idm = obs_dim
         self.a_dim = a_dim

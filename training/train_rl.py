@@ -25,16 +25,15 @@ if config.MODEL_TYPE == 'SAC':
 def train():
   print('Initializing models and buffer...')
 
-  # --- SAC Training ---
-  if config.MODEL_TYPE == 'SAC':
-    buffer = PERBufferClass(
+  buffer = PERBufferClass(
       buffer_limit=config.BUFFER_LIMIT,
       device = DEVICE,
       alpha = config.PER_ALPHA,
       beta = config.PER_BETA_START,
       beta_increment = config.PER_BETA_INCREMENT
     )
-
+  # --- SAC Training ---
+  if config.MODEL_TYPE == 'SAC':
     actor = ActorClass(
       obs_dim = config.OBS_DIM,
       a_dim = config.ACTION_DIM,
@@ -177,8 +176,8 @@ def train():
       print("Buffer has insufficient data to contine training. Stopping.")
       break
 
-    s_b, a_b, r_b, s_p_b, done_b, is_weights_b, idxs_b = buffer.sample(config.BATCH_SIZE)
-    mini_batch = (s_b, a_b, r_b, s_p_b, done_b)
+    s_b, a_b, r_b, s_p_b, done_mask_b, is_weights_b, idxs_b = buffer.sample(config.BATCH_SIZE)
+    mini_batch = (s_b, a_b, r_b, s_p_b, done_mask_b)
 
     if config.MODEL_TYPE == 'SAC':
       # caculate target Q-value
