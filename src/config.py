@@ -18,7 +18,7 @@ HIDDEN_DIMS = [64, 64]
 GAMMA = 0.99
 TAU = 0.01         # ratio of target net soft update
 LR_ACTOR = 3e-4
-LR_CRITIC = 3e-4
+LR_CRITIC = 1e-5
 LR_ALPHA = 3e-4
 
 BATCH_SIZE = 32
@@ -42,7 +42,7 @@ LOAD_CHECKPOINT = False
 CHECKPOINT_FILE_TO_LOAD = 'this_is_for_example.pth'
 
 # --- 6. DQN ---
-TARGET_UPDATE_INTERVAL  = 10
+TARGET_UPDATE_INTERVAL  = 1
 
 # --- 7. Model Change ---
 MODEL_TYPE = 'DQN'

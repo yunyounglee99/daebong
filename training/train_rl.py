@@ -176,6 +176,7 @@ def train():
       print("Buffer has insufficient data to contine training. Stopping.")
       break
 
+    # print(f'buffer.sample(config.BATCH_SIZE) is ... {buffer.sample(config.BATCH_SIZE)}')
     s_b, a_b, r_b, s_p_b, done_mask_b, is_weights_b, idxs_b = buffer.sample(config.BATCH_SIZE)
     mini_batch = (s_b, a_b, r_b, s_p_b, done_mask_b)
 
@@ -217,8 +218,8 @@ def train():
       if total_steps % config.TARGET_UPDATE_INTERVAL == 0:
         q_main.soft_update(config.TAU, q_target)
 
-    if done:
-      break
+    # if done:
+    #   break
 
     # logging training process
     if total_steps % config.LOG_INTERVAL == 0:

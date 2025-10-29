@@ -79,7 +79,7 @@ class PERBufferClass:
         self.beta_increment = beta_increment
         self.capacity = buffer_limit
         self.max_priority = 1.0
-        self.epsilon = 1e-6 # to prevent the priority becomes 0
+        self.epsilon = 1e-5 # to prevent the priority becomes 0
     
     def put(self, item):
         """
@@ -118,7 +118,7 @@ class PERBufferClass:
             r_list.append([r])
             s_prime_list.append(s_prime)
             done_mask = 0.0 if done_mask else 1.0
-            done_mask_list.append(done_mask)
+            done_mask_list.append([done_mask])
 
         is_weights /= is_weights.max() # normalize is_weight
 
@@ -127,7 +127,7 @@ class PERBufferClass:
                 list2torch(r_list, self.device),
                 list2torch(s_prime_list, self.device),
                 list2torch(done_mask_list, self.device),
-                torch.tensor(is_weights, dtype=torch.float).to(self.device).reshape(-1, 1), idx)
+                torch.tensor(is_weights, dtype=torch.float).to(self.device).reshape(-1, 1), idxs)
     
     def update_priorities(self, batch_indices, td_errors):
         """

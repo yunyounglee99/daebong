@@ -118,6 +118,7 @@ class DQN(nn.Module):
 
         self.optimizer.zero_grad()
         loss.backward()
+        torch.nn.utils.clip_grad_norm_(self.parameters(), max_norm = 0.5)
         self.optimizer.step()
 
         return td_error
