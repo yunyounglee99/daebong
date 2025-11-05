@@ -1,8 +1,10 @@
 daebong_rl_project/
 ├── data/                   # 1. 데이터 (원본 및 가공)
+│   ├── 초창패개발_데이터.xlsx   
 │   ├── raw/                #    - 원본 CSV, JSON, SQL 덤프
-│   │   ├── price_data.csv
-│   │   └── quality_data.csv
+│   │   ├── data_dist.ipynb
+│   │   ├── dummy_data_100.json
+│   │   └── data_statistics_summary.csv
 │   └── processed/          #    - 전처리 완료된 데이터
 │       └── features.parquet
 │
@@ -29,7 +31,8 @@ daebong_rl_project/
 │   ├── models/
 │   │   ├── __init__.py
 │   │   ├── ml_model.py     #    - '기계학습 모델' (가격/품질) 클래스 정의
-│   │   └── rl_model.py     #    - ★★★ SAC + PER 에이전트 클래스 정의 (sac.py)
+│   │   ├── rl_model_DQN.py
+│   │   └── rl_model_SAC.py
 │   │
 │   └── utils/
 │       ├── __init__.py
@@ -37,6 +40,7 @@ daebong_rl_project/
 │
 ├── training/               # 5. 학습 서버 (<Training Server> 로직)
 │   ├── __init__.py
+│   ├── utils.py
 │   ├── train_ml.py         #    - src/models/ml_model.py를 학습, model_register/에 저장
 │   ├── train_rl.py         #    - ★★★ SAC+PER 학습 루프 (model.train())
 │   │                       #    - Replay Buffer에서 데이터 샘플링
