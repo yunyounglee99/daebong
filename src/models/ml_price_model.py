@@ -93,7 +93,7 @@ class EnsemblePriceModel:
       elif name == 'xgb':
         model.fit(
           X_train, y_train,
-          eval_set = (X_val, y_val) if X_val is not None else None,
+          eval_set = [(X_val, y_val)] if X_val is not None else None,
           verbose = False
         )
       else:
