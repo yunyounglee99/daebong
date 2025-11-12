@@ -37,11 +37,6 @@ env/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# PyTorch/ML models
-*.pth
-*.pt
-*.pkl
-*.h5
 
 # Data (uncomment if you want to ignore large data files)
 # data/
