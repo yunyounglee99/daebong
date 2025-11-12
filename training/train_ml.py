@@ -20,6 +20,13 @@ from datetime import datetime
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
+# ★★★ (추가) 분류 평가 지표 임포트 ★★★
+from sklearn.metrics import (
+    mean_absolute_error, mean_squared_error, r2_score,
+    precision_score, recall_score, f1_score, roc_auc_score, 
+    confusion_matrix, classification_report
+)
+
 # Add project root to path
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(PROJECT_ROOT)
@@ -323,10 +330,11 @@ class PriceModelTrainer:
         target_col = '평균가격'
 
         # Select features (numeric only)
+        # (데이터 누수 방지: '총거래금액', '총거래물량', 'price_per_kg' 제외)
         exclude_cols = [
             'DATE', '평균가격', '거래단위', '도매시장', '도매법인',
             '품목', '품종', '산지-광역시도', '산지-시군구', '등급',
-            'stnId', 'stnNm', 'avgTs'
+            'stnId', 'stnNm', 'avgTs', '총거래금액', '총거래물량', 'price_per_kg'
         ]
 
         feature_cols = [col for col in df.columns if col not in exclude_cols]
@@ -375,8 +383,6 @@ class PriceModelTrainer:
         print("="*60)
 
         y_pred = model.predict(X_test)
-
-        from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
         mae = mean_absolute_error(y_test, y_pred)
         rmse = np.sqrt(mean_squared_error(y_test, y_pred))
@@ -458,6 +464,18 @@ class QualityModelTrainer:
         print("="*60)
 
         # Initialize model
+        # ★★★ 중요 ★★★
+        # src/models/ml_quality_model.py의 EnsembleQualityModel이
+        # 회귀(Regression)가 아닌 '분류(Classification)' 모델(예: LGBMClassifier)을
+        # 사용하도록 수정되어야 합니다.
+        # 또한, 불균형 데이터 처리를 위해 is_unbalanced=True 또는
+        # scale_pos_weight 파라미터를 사용하는 것이 좋습니다.
+        #
+        # 예: self.model = EnsembleQualityModel(
+        #           ensemble_method=self.ensemble_method,
+        #           is_unbalanced=True 
+        #      )
+        # ★★★★★★★★★★★★★
         self.model = EnsembleQualityModel(ensemble_method=self.ensemble_method)
 
         # Train
@@ -465,15 +483,68 @@ class QualityModelTrainer:
 
         return self.model
 
+    # ★★★ (수정된 부분) 분류 지표로 평가 ★★★
     def evaluate(self, model, X_test, y_test):
-        """Evaluate model"""
+        """Evaluate classification model"""
         print("\n" + "="*60)
-        print("Evaluating Quality Model...")
+        print("Evaluating Quality Model (as Classification)...")
         print("="*60)
+        
+        # ---
+        # 중요: 이 코드가 작동하려면 src/models/ml_quality_model.py의
+        # EnsembleQualityModel이 .predict() (0/1 반환) 및 
+        # .predict_proba() (확률 반환) 메서드를 구현하고 있어야 합니다.
+        # ---
+        
+        metrics = {}
+        try:
+            # 1. Binary Predictions (0 or 1)
+            # (임계값 0.5 기준)
+            y_pred = model.predict(X_test)
+            
+            # 2. Probability Predictions (for AUC-ROC)
+            # (positive class, 1)의 확률을 가져옵니다.
+            y_pred_proba = model.predict_proba(X_test)
 
-        metrics = model.evaluate(X_test, y_test)
+            # 3. Calculate Metrics
+            # zero_division=0: CS=1 (positive) 클래스를 하나도 못 맞출 경우 경고 대신 0.0 반환
+            precision = precision_score(y_test, y_pred, zero_division=0)
+            recall = recall_score(y_test, y_pred, zero_division=0)
+            f1 = f1_score(y_test, y_pred, zero_division=0)
+            auc = roc_auc_score(y_test, y_pred_proba)
+            
+            print("\n[Test Set Classification Evaluation]")
+            print(f"✓ Precision (CS=1): {precision:.4f}")
+            print(f"✓ Recall (CS=1):    {recall:.4f}")
+            print(f"✓ F1-Score (CS=1):  {f1:.4f}")
+            print(f"✓ AUC-ROC:          {auc:.4f}")
+
+            print("\n[Classification Report]")
+            print(classification_report(y_test, y_pred, zero_division=0, target_names=['Normal (0)', 'CS (1)']))
+
+            print("\n[Confusion Matrix]")
+            print("         (Pred 0) (Pred 1)")
+            cm = confusion_matrix(y_test, y_pred)
+            print(f"Actual 0: {cm[0][0]:<8} {cm[0][1]:<8}")
+            print(f"Actual 1: {cm[1][0]:<8} {cm[1][1]:<8}")
+
+            metrics = {
+                'precision': precision,
+                'recall': recall,
+                'f1_score': f1,
+                'auc_roc': auc,
+                'confusion_matrix': cm.tolist()
+            }
+            
+        except AttributeError as e:
+            print(f"!!! 모델 평가 오류: {e}")
+            print("!!! 'EnsembleQualityModel'이 .predict() 또는 .predict_proba()를 지원하지 않는 것 같습니다.")
+            print("!!! src/models/ml_quality_model.py를 회귀 모델 대신 '분류' 모델로 수정해야 합니다.")
+        except Exception as e:
+            print(f"!!! 알 수 없는 평가 오류: {e}")
 
         return metrics
+    # ★★★ (수정 종료) ★★★
 
     def save(self, model, save_path):
         """Save model"""
