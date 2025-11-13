@@ -12,6 +12,7 @@ Usage:
 
 import os
 import sys
+import joblib
 import argparse
 import pandas as pd
 import numpy as np
@@ -404,6 +405,15 @@ class PriceModelTrainer:
         filepath = os.path.join(save_path, f"price_ensemble_{timestamp}")
 
         model.save_models(filepath)
+
+        try:
+            # LightGBM 모델에서 피처 이름을 직접 가져옴
+            feature_names = model.models['lgb'].feature_name_
+            joblib.dump(feature_names, f"{filepath}_features.pkl")
+            print(f"\n✓ Price model features saved.")
+        except Exception as e:
+            print(f"\n!!! Warning: Could not save price model features. {e}")
+
         print(f"\n✓ Price model saved to: {filepath}")
 
         return filepath
@@ -554,6 +564,14 @@ class QualityModelTrainer:
         filepath = os.path.join(save_path, f"quality_ensemble_{timestamp}")
 
         model.save_models(filepath)
+
+        try:
+            feature_names = model.models['lgb'].feature_name_
+            joblib.dump(feature_names, f"{filepath}_features.pkl")
+            print(f"\n✓ Quality model features saved.")
+        except Exception as e:
+            print(f"\n!!! Warning: Could not save quality model features. {e}")
+            
         print(f"\n✓ Quality model saved to: {filepath}")
 
         return filepath
