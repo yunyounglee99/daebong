@@ -41,6 +41,9 @@ env/
 # Data (uncomment if you want to ignore large data files)
 # data/
 
+# Generated prediction outputs
+data/processed/*_predictions_*.csv
+
 # Logs
 *.log
 logs/
