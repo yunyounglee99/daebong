@@ -1,3 +1,12 @@
+"""
+DQN (Deep Q-Network) 강화학습 모델 구현
+
+Double DQN, Dueling Network, Noisy Net을 결합한 고급 DQN 구현
+- Dueling Architecture: Value와 Advantage 분리 학습
+- Noisy Linear: 파라메트릭 노이즈 기반 탐색
+- Double DQN: Q-value 과대평가 방지
+- PER (Prioritized Experience Replay) 지원
+"""
 import random
 import collections
 import math
@@ -9,6 +18,11 @@ import torch.optim as optim
 from torch.distributions import Normal
 
 class NoisyLinear(nn.Module):
+    """
+    Noisy Linear Layer
+
+    가중치에 학습 가능한 노이즈를 추가하여 탐색을 수행하는 레이어
+    """
     def __init__(self, in_features, out_features, std_init = 0.5):
         super(NoisyLinear, self).__init__()
         self.in_features = in_features

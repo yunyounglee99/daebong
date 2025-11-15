@@ -1,3 +1,12 @@
+"""
+앙상블 가격 예측 모델
+
+LightGBM, XGBoost, RandomForest를 결합한 앙상블 회귀 모델
+- Voting: 가중 평균 앙상블
+- Stacking: 메타 모델 기반 앙상블
+- Blending: 별도 검증 세트 기반 앙상블
+- 시계열 교차 검증 지원
+"""
 import numpy as np
 import pandas as pd
 import lightgbm as lgb
@@ -11,6 +20,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 class EnsemblePriceModel:
+    """
+    앙상블 가격 예측 모델 클래스
+
+    여러 트리 기반 모델을 결합하여 사과 가격을 예측
+    """
   def __init__(self, ensemble_method = 'voting'):
     """"
     Args:

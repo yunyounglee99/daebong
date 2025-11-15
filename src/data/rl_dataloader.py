@@ -1,3 +1,13 @@
+"""
+RL 학습 데이터 로더
+
+Raw 데이터와 ML 모델 예측을 결합하여 RL 학습 데이터 생성
+- CSV 데이터 로드
+- ML 모델로 가격/품질 예측
+- State 벡터 생성
+- Reward 계산
+- (State, Action, Reward, Next_State, Done) transition 생성
+"""
 import pandas as pd
 import numpy as np
 import os
