@@ -17,7 +17,6 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-# 프로젝트 루트 경로 추가
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(PROJECT_ROOT)
 
@@ -26,14 +25,9 @@ from serving.inference import ModelInferenceEngine
 
 
 class PredictionDatasetCreator:
-    """예측 데이터셋 생성 클래스"""
 
     def __init__(self, raw_data_path, output_path):
-        """
-        Args:
-            raw_data_path: raw 데이터 경로
-            output_path: 출력 데이터 경로
-        """
+
         self.raw_data_path = raw_data_path
         self.output_path = output_path
 
