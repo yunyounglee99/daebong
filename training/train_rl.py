@@ -1,5 +1,3 @@
-# excution exsample : python training/train_rl.py
-
 import torch
 import json
 import numpy as np

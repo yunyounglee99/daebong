@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 LightGBM, XGBoost, CatBoost, RandomForest 앙상블 품질(하자율) 예측 모델
 ★ 수정: 0/1 분류(Classification) 문제로 접근 ★

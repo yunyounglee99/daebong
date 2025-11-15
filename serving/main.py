@@ -1,5 +1,3 @@
-# serving/main.py
-
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field
 from typing import Dict, Any, Optional

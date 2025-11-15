@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 ML Model Training Script
 - Price prediction model (ml_price_model.py)

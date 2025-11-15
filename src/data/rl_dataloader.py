@@ -6,7 +6,6 @@ import joblib
 from datetime import timedelta
 from tqdm import tqdm
 
-# --- 1. 경로 설정 ---
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(PROJECT_ROOT)
 

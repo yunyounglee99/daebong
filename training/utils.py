@@ -20,11 +20,10 @@ def flatten_state_to_vector(state_obj):
         flat_vector_list.extend(user_profile.get('user_group_vector', [0.0, 0.0]))
         # flat_vector_list.append(user_profile.get('ltv_score', 0.0)) # LTV 사용 시
         
-        # Session History (기본값: 0 벡터, 0)
         session_history = state_obj.get('session_history', {})
-        # 벡터 차원은 config에서 가져오거나 상수로 정의 (예: 32, 10)
-        vec_dim_item = 32 # 예시 차원
-        vec_dim_cat = 10  # 예시 차원
+        
+        vec_dim_item = 32 
+        vec_dim_cat = 10 
         flat_vector_list.extend(session_history.get('last_clicked_item_vector', [0.0] * vec_dim_item))
         flat_vector_list.append(session_history.get('session_click_count', 0.0))
         flat_vector_list.append(session_history.get('session_total_view_time', 0.0))
@@ -38,17 +37,13 @@ def flatten_state_to_vector(state_obj):
         flat_vector_list.append(candidate_item.get('promotion', 0.0))
         # flat_vector_list.append(candidate_item.get('stock_level', 0.0)) # 재고 사용 시
 
-        # 최종 벡터 생성 및 타입 변환
         flat_vector = np.array(flat_vector_list).astype(np.float32)
         
-        # ★★★ nan 및 inf 체크 ★★★
         if np.isnan(flat_vector).any() or np.isinf(flat_vector).any():
             print(f"!!! Warning: Invalid value (nan/inf) detected in state vector! State object was: {state_obj}")
-            # nan을 0으로 대체 (임시 방편, 근본 원인 찾아야 함)
             flat_vector = np.nan_to_num(flat_vector, nan=0.0, posinf=0.0, neginf=0.0)
             print("!!! Replaced nan/inf with 0.")
 
-        # ★★★ 차원 체크 ★★★
         if len(flat_vector) != config.OBS_DIM:
             print(f"!!! Error: Flattened vector dim ({len(flat_vector)}) != config.OBS_DIM ({config.OBS_DIM}). Returning None.")
             print(f"Problematic state object: {state_obj}")
