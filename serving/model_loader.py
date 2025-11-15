@@ -1,3 +1,12 @@
+"""
+모델 로더 및 핫 스와핑 관리자
+
+백그라운드에서 주기적으로 새 모델을 확인하고 자동으로 교체 (Hot-swapping)
+- 무중단 모델 업데이트
+- 스레드 안전 모델 교체
+- 최신 모델 자동 감지
+- FastAPI 서버와 통합
+"""
 import os
 import glob
 import time

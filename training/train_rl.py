@@ -1,3 +1,16 @@
+"""
+강화학습(RL) 모델 학습 스크립트
+
+SAC 또는 DQN 알고리즘을 사용하여 상품 추천 최적화 모델을 학습합니다.
+- PER (Prioritized Experience Replay) 버퍼 사용
+- 체크포인트 저장/로드 지원
+- TD-Error 기반 우선순위 학습
+- SAC: Soft Actor-Critic (연속 행동 공간)
+- DQN: Deep Q-Network with Dueling/Noisy Net (이산 행동 공간)
+
+사용법:
+    python training/train_rl.py
+"""
 import torch
 import json
 import numpy as np
@@ -21,6 +34,26 @@ if config.MODEL_TYPE == 'SAC':
   TARGET_ENTROPY = -np.log(1.0 / config.ACTION_DIM) * 0.98
 
 def train():
+  """
+  RL 모델 학습 실행 함수
+
+  로직:
+      1. PER 버퍼 초기화
+      2. config.MODEL_TYPE에 따라 SAC 또는 DQN 모델 초기화
+      3. 체크포인트가 있으면 로드 (LOAD_CHECKPOINT=True)
+      4. JSON 파일에서 transition 데이터 로드 및 버퍼에 저장
+      5. NUM_TRAINING_STEPS만큼 학습 루프 실행:
+          - 버퍼에서 미니배치 샘플링 (우선순위 기반)
+          - Target Q-value 계산
+          - Critic/Q-Network 학습
+          - TD-Error로 버퍼 우선순위 업데이트
+          - Actor 업데이트 (SAC) 또는 Target Network 업데이트 (DQN)
+      6. 주기적으로 체크포인트 저장 (SAVE_INTERVAL)
+      7. 학습 진행상황 로깅 (LOG_INTERVAL)
+
+  Return:
+      None
+  """
   print('Initializing models and buffer...')
 
   buffer = PERBufferClass(

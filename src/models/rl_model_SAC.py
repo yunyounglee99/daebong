@@ -1,3 +1,12 @@
+"""
+SAC (Soft Actor-Critic) 강화학습 모델 구현
+
+이산 행동 공간을 위한 SAC 알고리즘 구현
+- Actor: 정책 네트워크 (이산 행동 확률 분포 출력)
+- Critic: 상태-행동 가치 함수 Q(s,a) 추정
+- Entropy 기반 탐색 (자동 온도 조절)
+- Target Network를 통한 안정적 학습
+"""
 import random
 import collections
 import numpy as np
@@ -9,6 +18,11 @@ from torch.distributions import Normal
 
 #Actor (discrete)
 class ActorClass(nn.Module):
+    """
+    SAC Actor 네트워크 (이산 행동 공간)
+
+    상태를 입력받아 각 행동의 확률 분포를 출력하는 정책 네트워크
+    """
     def __init__(self,
                 name = 'actor',
                 obs_dim = 8,    # need to modify to suit the project 

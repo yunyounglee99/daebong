@@ -1,3 +1,14 @@
+"""
+기상청 ASOS 일별 기상 데이터 수집 스크립트
+
+공공데이터포털 API를 통해 서울, 안동, 광주 지역의 일별 기상 데이터를 수집합니다.
+- 수집 데이터: 일자, 지역정보, 기온, 습도, 강수량, 풍속 등
+- 저장 형식: JSON 파일 (data/collectors/weather_data.json)
+- API: 기상청 ASOS 일별 기상정보 조회 서비스
+
+사용법:
+    python data/collectors/weather_api_check.py
+"""
 import requests
 import json
 

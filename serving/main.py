@@ -1,3 +1,15 @@
+"""
+FastAPI 모델 서빙 서버
+
+ML/RL 모델을 REST API로 제공하는 FastAPI 애플리케이션
+- /predict_price: 가격 예측 API
+- /predict_quality_rate: 품질/하자율 예측 API
+- /predict_q_values: RL Q-value 예측 API
+- 핫 스와핑(Hot-swapping) 지원
+
+사용법:
+    uvicorn serving.main:app --reload --host 127.0.0.1 --port 8000
+"""
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field
 from typing import Dict, Any, Optional

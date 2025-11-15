@@ -1,3 +1,13 @@
+"""
+통합 모델 추론 엔진
+
+ML 모델(가격/품질)과 RL 모델(추천)을 로드하여 추론을 수행하는 통합 엔진
+- 최신 모델 자동 로드
+- 가격 예측 (회귀)
+- 품질/하자율 예측 (분류)
+- Q-value 예측 (강화학습)
+- FastAPI 서버에서 사용
+"""
 import os
 import sys
 import glob
@@ -41,6 +51,11 @@ except ImportError as e:
     flatten_state_to_vector = None
 
 class ModelInferenceEngine:
+    """
+    통합 모델 추론 엔진 클래스
+
+    ML과 RL 모델을 모두 로드하고 예측 API를 제공
+    """
     def __init__(self, ml_dir = ML_MODEL_PATH, rl_dir = RL_MODEL_PATH):
         print("\n" + "="*60)
         print("Initializing Unified Model Inference Engine...")
