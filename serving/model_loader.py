@@ -40,7 +40,23 @@ class ModelLoader:
 
     def _find_latest_model_path(self, model_dir, search_prefix):
         """
-        가장 최신 모델 파일의 접두사(ML) 또는 경로(RL)를 찾습니다.
+        용도: 
+            지정된 디렉토리에서 특정 접두사(prefix)를 가진 파일 중 
+            가장 최신(수정 시간이 가장 늦은) 파일의 경로/접두사를 찾습니다.
+        Args:
+            model_dir (str): 모델이 저장된 디렉토리 경로 (예: '.../ml_model')
+            search_prefix (str): 검색할 파일의 접두사 (예: 'price_ensemble', 'dqn_checkpoint')
+        Returns:
+            Optional[str]: 
+                - ML 모델의 경우: 가장 최신 파일의 전체 경로 접두사 (예: '.../ml_model/price_ensemble_YYYYMMDD_HHMMSS')
+                - RL 모델의 경우: 가장 최신 파일의 전체 경로 (예: '.../rl_model/dqn_checkpoint_step10000.pth')
+                - 파일을 찾지 못한 경우: None
+        로직:
+            1. `search_prefix`를 기반으로 `glob`을 사용하여 파일 목록을 검색합니다.
+            2. 파일이 없으면 None을 반환합니다.
+            3. `os.path.getctime` (수정 시간)을 기준으로 가장 최신 파일을 찾습니다.
+            4. ML 모델(pkl)의 경우, `_lgb.pkl` 같은 확장자를 제외한 '접두사'를 반환합니다.
+            5. RL 모델(pth)의 경우, 파일 경로 전체를 반환합니다.
         """
         search_path = os.path.join(model_dir, f"{search_prefix}_*.pkl") # ML 모델 기준
         
@@ -64,7 +80,23 @@ class ModelLoader:
 
     def _update_models(self):
         """
-        새 모델이 있는지 확인하고, 있으면 ModelInferenceEngine을 다시 로드합니다.
+        용도: 
+            (내부 함수) model_register 디렉토리를 스캔하여 현재 로드된 모델보다 
+            더 최신 버전의 모델이 있는지 확인하고, 있다면 `ModelInferenceEngine`을 
+            새로 로드하여 교체(hot-swap)합니다.
+        Args:
+            None
+        Returns:
+            None
+        로직:
+            1. `_find_latest_model_path`를 호출하여 디스크에 저장된 최신 ML/RL 모델 경로를 가져옵니다.
+            2. 현재 클래스 속성에 저장된 모델 경로(`self._latest_price_prefix` 등)와 비교합니다.
+            3. 만약 최초 로드(`self._engine is None`)이거나, 하나라도 경로가 일치하지 않으면 `needs_update = True`로 설정합니다.
+            4. `needs_update`가 True이면, `ModelInferenceEngine()`을 새로 인스턴스화합니다.
+                (이때 `inference.py`가 모든 최신 모델을 알아서 로드합니다.)
+            5. 새 엔진이 모델 로드에 성공했는지 확인합니다.
+            6. `threading.Lock`을 사용하여 스레드 안전하게 `self._engine`을 새 엔진으로 교체합니다.
+            7. `self._latest_..._prefix` 속성을 새 엔진이 로드한 최신 경로로 업데이트합니다.
         """
         print(f"[{threading.current_thread().name}] Checking for new models...")
         
@@ -125,7 +157,18 @@ class ModelLoader:
 
     def _run_update_checker(self):
         """
-        백그라운드 스레드에서 주기적으로 _update_models를 호출하는 루프
+        용도: 
+            (내부 함수) 백그라운드 스레드에서 실행되는 메인 루프입니다.
+            `self.check_interval` (예: 600초) 마다 `_update_models()`를 호출합니다.
+        Args:
+            None
+        Returns:
+            None (무한 루프)
+        로직:
+            1. `while True:` 무한 루프를 실행합니다.
+            2. `time.sleep()`으로 설정된 시간만큼 대기합니다.
+            3. `_update_models()`를 호출하여 모델 업데이트를 확인합니다.
+            4. (예외 발생 시 에러 로그 출력)
         """
         while True:
             time.sleep(self.check_interval)
@@ -136,8 +179,18 @@ class ModelLoader:
 
     def get_inference_engine(self) -> Optional[ModelInferenceEngine]:
         """
-        FastAPI 서버(main.py)가 호출할 메서드.
-        현재 활성화된 모델 엔진을 스레드 안전하게 반환합니다.
+        용도: 
+            FastAPI 서버(`main.py`)가 API 요청을 처리할 때 호출하는 메인 함수입니다.
+            현재 활성화된 `ModelInferenceEngine` 인스턴스를 스레드 안전하게 반환합니다.
+        Args:
+            None
+        Returns:
+            Optional[ModelInferenceEngine]: 
+                현재 로드된 추론 엔진 인스턴스.
+                아직 로드되지 않았거나 로드에 실패한 경우 None.
+        로직:
+            1. `threading.Lock`을 사용하여 `self._engine`에 대한 동시 접근을 막습니다.
+            2. `self._engine`의 현재 값을 반환합니다.
         """
         with self._lock:
             return self._engine

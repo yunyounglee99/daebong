@@ -37,13 +37,31 @@ from src.config import ML_MODEL_PATH
 
 
 class DataPreprocessor:
-    """Data preprocessing and feature engineering class"""
-
+    """
+    용도:
+        Raw 데이터 폴더('data/raw/')에서 원본 CSV/JSON 파일들을 로드하고,
+        ML 모델 학습에 적합한 형태로 전처리 및 피처 엔지니어링을 수행합니다.
+        가격 모델과 품질 모델에 필요한 피처를 각각 생성하는 메서드를 포함합니다.
+    """
+    
     def __init__(self, data_path):
         self.data_path = data_path
         self.label_encoders = {}
 
     def load_raw_data(self):
+        """
+        용도: 
+            'data/raw/' 경로에서 필요한 모든 원본 데이터 파일(가격, 판매, CS, 날씨)을 로드합니다.
+        Args:
+            None
+        Returns:
+            tuple: 
+                (price_df, sales_df, cs_df, weather_df) 4개의 Pandas DataFrame 튜플.
+        로직:
+            1. `pd.read_csv`를 사용하여 '농넷_시장별_사과가격.csv', '초창패개발_데이터_판매데이터.csv', '...CS데이터.csv'를 로드합니다.
+            2. `json.load`를 사용하여 'weather_data.json'을 로드하고 DataFrame으로 변환합니다.
+            3. 로드된 DataFrame들을 튜플로 반환합니다.
+        """
         """Load raw data"""
         print("\n" + "="*60)
         print("Loading Raw Data...")
@@ -79,6 +97,17 @@ class DataPreprocessor:
         return price_df, sales_df, cs_df, weather_df
 
     def preprocess_price_data(self, price_df):
+        """
+        용도: (내부 함수) 농넷 가격 DataFrame을 전처리합니다.
+        Args:
+            price_df (pd.DataFrame): '농넷_시장별_사과가격.csv' 원본 DataFrame.
+        Returns:
+            pd.DataFrame: 전처리된 DataFrame.
+        로직:
+            1. 'DATE' 컬럼을 datetime 객체로 변환합니다.
+            2. '평균가격', '총거래물량', '총거래금액' 컬럼의 쉼표(,)를 제거하고 숫자로 변환합니다.
+            3. 결측치(NaN)와 비정상적인 가격(Outlier)을 제거합니다.
+        """
         """Preprocess price data"""
         df = price_df.copy()
 
@@ -99,6 +128,17 @@ class DataPreprocessor:
         return df
 
     def preprocess_sales_data(self, sales_df):
+        """
+        용도: (내부 함수) 판매 데이터 DataFrame을 전처리합니다.
+        Args:
+            sales_df (pd.DataFrame): '초창패개발_데이터_판매데이터.csv' 원본 DataFrame.
+        Returns:
+            pd.DataFrame: 전처리된 DataFrame.
+        로직:
+            1. '발주날짜'를 datetime 객체로 변환합니다.
+            2. '공급가격'에서 '₩' 기호와 쉼표를 제거하고 숫자로 변환합니다.
+            3. 'CS여부' ('Y'/'N')를 'CS여부_binary' (1/0) 컬럼으로 변환합니다.
+        """
         """Preprocess sales data"""
         df = sales_df.copy()
 
@@ -117,6 +157,16 @@ class DataPreprocessor:
         return df
 
     def preprocess_cs_data(self, cs_df):
+        """
+        용도: (내부 함수) CS 데이터 DataFrame을 전처리합니다.
+        Args:
+            cs_df (pd.DataFrame): '초창패개발_데이터_CS데이터.csv' 원본 DataFrame.
+        Returns:
+            pd.DataFrame: 전처리된 DataFrame.
+        로직:
+            1. '발주일자'를 datetime 객체로 변환합니다.
+            2. '매출원가', '상품공급가', '요청퍼센트' 등 숫자여야 하는 컬럼을 `pd.to_numeric`으로 변환합니다.
+        """
         """Preprocess CS data"""
         df = cs_df.copy()
 
@@ -136,6 +186,17 @@ class DataPreprocessor:
         return df
 
     def preprocess_weather_data(self, weather_df):
+        """
+        용도: (내부 함수) 날씨 데이터 DataFrame을 전처리합니다.
+        Args:
+            weather_df (pd.DataFrame): 'weather_data.json'을 로드한 원본 DataFrame.
+        Returns:
+            pd.DataFrame: 전처리된 DataFrame.
+        로직:
+            1. 'tm'(관측 시간) 컬럼을 datetime 객체로 변환합니다.
+            2. 'avgTs'(평균 기온) 등 모든 측정값 컬럼을 `pd.to_numeric`으로 변환합니다.
+            3. 'sumRn'(강수량)의 결측치(NaN)를 0으로 채웁니다.
+        """
         """Preprocess weather data"""
         df = weather_df.copy()
 
@@ -155,6 +216,20 @@ class DataPreprocessor:
         return df
 
     def create_price_features(self, price_df, weather_df):
+        """
+        용도: 가격 예측 모델('PriceModelTrainer') 학습에 필요한 피처 엔지니어링을 수행합니다.
+        Args:
+            price_df (pd.DataFrame): 전처리된 농넷 가격 데이터.
+            weather_df (pd.DataFrame): 전처리된 날씨 데이터.
+        Returns:
+            pd.DataFrame: 피처 엔지니어링이 완료된 최종 학습용 DataFrame.
+        로직:
+            1. (Time features) 'DATE' 컬럼에서 'year', 'month', 'dayofweek' 등을 추출합니다.
+            2. (Categorical encoding) '도매시장', '품종' 등을 `LabelEncoder`로 숫자로 변환합니다.
+            3. (Merge) 날짜(DATE)를 기준으로 `price_df`와 `weather_df`를 병합합니다.
+            4. (Lag features) '품종', '등급'별로 그룹화하여 7, 14, 30일 전의 평균 가격, 표준 편차, 가격 변동률을 계산합니다.
+            5. 결측치를 0으로 채우고(fillna) 최종 DataFrame을 반환합니다.
+        """
         """Create features for price prediction"""
         print("\n" + "="*60)
         print("Creating Features for Price Model...")
@@ -225,6 +300,25 @@ class DataPreprocessor:
         return df
 
     def create_quality_features(self, sales_df, cs_df, weather_df):
+        """
+        용도: 품질/하자율 예측 모델('QualityModelTrainer') 학습에 필요한 피처 엔지니어링을 수행합니다.
+        Args:
+            sales_df (pd.DataFrame): 전처리된 판매 데이터.
+            cs_df (pd.DataFrame): 전처리된 CS 데이터.
+            weather_df (pd.DataFrame): 전처리된 날씨 데이터.
+        Returns:
+            pd.DataFrame: 피처 엔지니어링이 완료된 최종 학습용 DataFrame.
+        로직:
+            1. (Target 생성) `sales_df`의 '주문코드'가 `cs_df`의 '발주번호'에 있는지 확인하여
+                `defect_rate` (타겟, 0 또는 1) 컬럼을 생성합니다.
+            2. (Feature) '셀러코드', '업체명'별 과거 평균 CS 발생률(`seller_cs_rate`) 피처를 생성합니다.
+            3. (Time features) '발주날짜'에서 'year', 'month', 'dayofweek' 등을 추출합니다.
+            4. (Merge) 날짜('발주날짜')를 기준으로 날씨 데이터를 병합합니다.
+            5. (Feature) '판매상품명'에서 `(\d+)kg` 정규식을 사용해 'product_weight'를 추출합니다.
+            6. (Feature) '공급가격'을 로그 변환(`price_log`)하거나 'price_per_kg' 피처를 생성합니다.
+            7. (Categorical encoding) '셀러코드', '업체명'을 `LabelEncoder`로 숫자로 변환합니다.
+            8. (Rolling features) 최근 7, 14, 30일간의 CS 발생률(`cs_rate_...d`)을 계산합니다.
+        """
         """Create features for quality (defect rate) prediction"""
         print("\n" + "="*60)
         print("Creating Features for Quality Model...")
@@ -314,6 +408,10 @@ class DataPreprocessor:
 
 
 class PriceModelTrainer:
+    """
+    용도:
+        가격 예측 모델('EnsemblePriceModel')의 학습, 평가, 저장을 관리하는 트레이너 클래스입니다.
+    """
     """Price prediction model trainer"""
 
     def __init__(self, ensemble_method='voting'):
@@ -321,6 +419,18 @@ class PriceModelTrainer:
         self.model = None
 
     def prepare_data(self, df):
+        """
+        용도: 피처 엔지니어링이 완료된 DataFrame을 받아 학습(Train), 검증(Validation), 테스트(Test) 세트로 분리합니다.
+        Args:
+            df (pd.DataFrame): 'create_price_features'에서 반환된 DataFrame.
+        Returns:
+            tuple: (X_train, y_train, X_val, y_val, X_test, y_test, feature_cols) 튜플.
+        로직:
+            1. (Target) `target_col = '평균가격'`으로 설정합니다.
+            2. (Data Leakage 방지) '평균가격'과 계산에 직접 사용된 '총거래금액', '총거래물량' 등을
+                `exclude_cols`에 명시하여 피처(X)에서 제외합니다.
+            3. (Time-series split) 데이터를 시간순으로 70% (Train), 15% (Validation), 15% (Test)로 분할합니다.
+        """
         """Prepare training data"""
         print("\n" + "="*60)
         print("Preparing Price Prediction Data...")
@@ -363,6 +473,16 @@ class PriceModelTrainer:
         return X_train, y_train, X_val, y_val, X_test, y_test, feature_cols
 
     def train(self, X_train, y_train, X_val, y_val):
+        """
+        용도: 'src.models.ml_price_model.EnsemblePriceModel'을 사용하여 모델을 학습시킵니다.
+        Args:
+            X_train, y_train, X_val, y_val: 'prepare_data'에서 반환된 학습/검증 데이터.
+        Returns:
+            EnsemblePriceModel: 학습이 완료된 앙상블 모델 객체.
+        로직:
+            1. `EnsemblePriceModel`을 인스턴스화합니다.
+            2. `model.train()` 메서드를 호출하여 앙상블 학습을 수행합니다.
+        """
         """Train model"""
         print("\n" + "="*60)
         print(f"Training Price Model (Ensemble: {self.ensemble_method})")
@@ -377,6 +497,18 @@ class PriceModelTrainer:
         return self.model
 
     def evaluate(self, model, X_test, y_test):
+        """
+        용도: 학습된 가격 예측 모델을 테스트 세트로 평가합니다. (회귀 지표)
+        Args:
+            model (EnsemblePriceModel): 'train' 메서드에서 반환된 학습된 모델.
+            X_test (pd.DataFrame): 테스트용 피처 데이터.
+            y_test (pd.Series): 테스트용 타겟 데이터.
+        Returns:
+            dict: MAE, RMSE, R², MAPE 평가 지표가 포함된 딕셔너리.
+        로직:
+            1. `model.predict(X_test)`로 예측값을 받습니다.
+            2. `sklearn.metrics`의 `mean_absolute_error`, `r2_score` 등을 사용해 성능을 계산하고 출력합니다.
+        """
         """Evaluate model"""
         print("\n" + "="*60)
         print("Evaluating Price Model...")
@@ -397,6 +529,19 @@ class PriceModelTrainer:
         return {'mae': mae, 'rmse': rmse, 'r2': r2, 'mape': mape}
 
     def save(self, model, save_path):
+        """
+        용도: 학습된 가격 모델과 피처 목록을 'model_register/ml_model/'에 저장합니다.
+        Args:
+            model (EnsemblePriceModel): 학습된 모델.
+            save_path (str): 저장할 디렉토리 경로.
+        Returns:
+            str: 저장된 모델의 고유한 파일 접두사(prefix) 경로.
+        로직:
+            1. 타임스탬프를 포함한 파일 경로(`filepath`)를 생성합니다.
+            2. `model.save_models(filepath)`를 호출하여 모델 가중치(pkl)를 저장합니다.
+            3. `joblib.dump`를 사용해 모델 학습에 사용된 피처 목록(`model.models['lgb'].feature_name_`)을
+                `{filepath}_features.pkl` 파일로 별도 저장합니다. (서빙 시 필수)
+        """ 
         """Save model"""
         os.makedirs(save_path, exist_ok=True)
 
@@ -419,6 +564,11 @@ class PriceModelTrainer:
 
 
 class QualityModelTrainer:
+    """
+    용도:
+        품질/하자율 예측 모델('EnsembleQualityModel')의 학습, 평가, 저장을 관리하는 트레이너 클래스입니다.
+        데이터 불균형(CS Rate 0.21%)을 고려하여 **분류(Classification) 문제**로 접근합니다.
+    """
     """Quality (defect rate) prediction model trainer"""
 
     def __init__(self, ensemble_method='voting'):
@@ -426,6 +576,17 @@ class QualityModelTrainer:
         self.model = None
 
     def prepare_data(self, df):
+        """
+        용도: 품질 피처 DataFrame을 학습/검증/테스트 세트로 분리합니다.
+        Args:
+            df (pd.DataFrame): 'create_quality_features'에서 반환된 DataFrame.
+        Returns:
+            tuple: (X_train, y_train, X_val, y_val, X_test, y_test, feature_cols) 튜플.
+        로직:
+            1. (Target) `target_col = 'defect_rate'` (0 또는 1 값)로 설정합니다.
+            2. (Feature) '발주날짜', '판매상품명' 등 원본 식별자 컬럼을 `exclude_cols`로 지정하여 제외합니다.
+            3. (Time-series split) 데이터를 시간순으로 70%/15%/15% (Train/Validation/Test) 분할합니다.
+        """
         """Prepare training data"""
         print("\n" + "="*60)
         print("Preparing Quality Prediction Data...")
@@ -467,6 +628,17 @@ class QualityModelTrainer:
         return X_train, y_train, X_val, y_val, X_test, y_test, feature_cols
 
     def train(self, X_train, y_train, X_val, y_val):
+        """
+        용도: 'src.models.ml_quality_model.EnsembleQualityModel'을 사용하여 모델을 학습시킵니다.
+        Args:
+            X_train, y_train, X_val, y_val: 'prepare_data'에서 반환된 학습/검증 데이터.
+        Returns:
+            EnsembleQualityModel: 학습이 완료된 앙상블 모델 객체.
+        로직:
+            1. `EnsembleQualityModel`을 인스턴스화합니다.
+                (이 모델은 내부에 `LGBMClassifier`, `XGBClassifier` 등 분류기를 사용해야 합니다.)
+            2. `model.train()` 메서드를 호출하여 앙상블 학습을 수행합니다.
+        """
         """Train model"""
         print("\n" + "="*60)
         print(f"Training Quality Model (Ensemble: {self.ensemble_method})")
@@ -494,6 +666,22 @@ class QualityModelTrainer:
 
     # ★★★ (수정된 부분) 분류 지표로 평가 ★★★
     def evaluate(self, model, X_test, y_test):
+        """
+        용도: 학습된 품질 예측 모델을 테스트 세트로 평가합니다. (분류 지표)
+        Args:
+            model (EnsembleQualityModel): 'train' 메서드에서 반환된 학습된 모델.
+            X_test (pd.DataFrame): 테스트용 피처 데이터.
+            y_test (pd.Series): 테스트용 타겟 데이터 (0 또는 1).
+        Returns:
+            dict: Precision, Recall, F1, AUC-ROC 등 분류 평가 지표가 포함된 딕셔너리.
+        로직:
+            1. `model.predict(X_test)`로 0/1 예측값(`y_pred`)을 받습니다.
+            2. `model.predict_proba(X_test)`로 CS=1 확률(`y_pred_proba`)을 받습니다.
+                (이것이 '예측 하자비율'입니다.)
+            3. `sklearn.metrics`의 `precision_score`, `recall_score`, `f1_score`, `roc_auc_score`를
+                사용하여 성능을 계산하고 출력합니다. (불균형 데이터이므로 이 지표가 중요)
+            4. `classification_report`와 `confusion_matrix` (오탐/미탐 확인)를 함께 출력합니다.
+        """
         """Evaluate classification model"""
         print("\n" + "="*60)
         print("Evaluating Quality Model (as Classification)...")
@@ -555,6 +743,19 @@ class QualityModelTrainer:
         return metrics
 
     def save(self, model, save_path):
+        """
+        용도: 학습된 품질 모델과 피처 목록을 'model_register/ml_model/'에 저장합니다.
+        Args:
+            model (EnsembleQualityModel): 학습된 모델.
+            save_path (str): 저장할 디렉토리 경로.
+        Returns:
+            str: 저장된 모델의 고유한 파일 접두사(prefix) 경로.
+        로직:
+            1. 타임스탬프를 포함한 파일 경로(`filepath`)를 생성합니다.
+            2. `model.save_models(filepath)`를 호출하여 모델 가중치(pkl)를 저장합니다.
+            3. `joblib.dump`를 사용해 모델 학습에 사용된 피처 목록(`model.models['lgb'].feature_name_`)을
+                `{filepath}_features.pkl` 파일로 별도 저장합니다. (서빙 시 필수)
+        """
         """Save model"""
         os.makedirs(save_path, exist_ok=True)
 
@@ -576,6 +777,21 @@ class QualityModelTrainer:
 
 
 def main():
+    """
+    용도: 
+        스크립트의 메인 진입점(Entrypoint)입니다.
+        커맨드 라인 인자(--model, --ensemble 등)를 파싱하여 
+        `DataPreprocessor`와 `PriceModelTrainer`/`QualityModelTrainer`를 실행합니다.
+    Args:
+        None (sys.argv에서 인자를 받음)
+    Returns:
+        None
+    로직:
+        1. `argparse`로 커맨드 라인 인자를 파싱합니다.
+        2. `DataPreprocessor`를 인스턴스화하고 모든 원본 데이터를 로드/전처리합니다.
+        3. `--model` 인자에 따라 'price' 또는 'quality' (또는 'all') 트레이너를 실행합니다.
+        4. 각 트레이너는 `prepare_data`, `train`, `evaluate`, `save`를 순차적으로 호출합니다.
+    """
     parser = argparse.ArgumentParser(description='ML Model Training Script')
     parser.add_argument(
         '--model',

@@ -61,8 +61,23 @@ class RLDataLoader:
 
     def _construct_state_vector(self, row, pred_price, pred_quality_rate):
         """
-        단일 거래 행(row)과 ML 예측값을 사용하여 RL State 벡터를 생성합니다.
-        (config.py의 OBS_DIM=50 차원에 맞춤)
+        용도: 
+            (내부 함수) Raw 데이터 한 행과 ML 예측값들을 결합하여
+            RL 모델(DQN)의 입력으로 사용할 1차원 상태(State) 벡터를 생성합니다.
+        Args:
+            row (pd.Series): '판매데이터.csv'의 단일 행(거래 내역).
+            pred_price (float): ML 모델이 예측한 가격.
+            pred_quality_rate (float): ML 모델이 예측한 품질(하자) 확률.
+        Returns:
+            np.ndarray: 
+                `config.OBS_DIM` (예: 50) 차원에 맞춰진 1차원 float32 벡터.
+        로직:
+            1. (User Profile) '업체명'을 기반으로 임시 사용자 그룹 벡터를 생성합니다.
+            2. (Session History) '수량', '공급가격' 등을 기반으로 임시 세션 이력 벡터를 생성합니다.
+            3. (Candidate Item) ML 예측값(`pred_price`, `pred_quality_rate`)과 
+                `lead_time_map`에서 조회한 리드타임을 `candidate_vec`로 만듭니다.
+            4. 모든 벡터를 `np.concatenate`로 결합합니다.
+            5. `np.pad` 또는 슬라이싱(`[:OBS_DIM]`)을 사용해 벡터 크기를 `OBS_DIM`에 정확히 맞춥니다.
         """
         #  ====== 제가 현재 대봉 백엔드에 직접 접근할 수 없기에 여기서는 일단 임의로 샘플로 진행했습니다 =====
         # 1. User Profile (가정: 업체명을 그룹으로 매핑)
@@ -106,8 +121,17 @@ class RLDataLoader:
 
     def _calculate_reward(self, row):
         """
-        비즈니스 목표에 따른 보상 계산
-        (매출 발생 +1, CS 발생 시 페널티)
+        용도: 
+            (내부 함수) Raw 데이터 행(row)을 기반으로 RL 보상(Reward) 점수를 계산합니다.
+            '판매데이터'는 모두 성공한 추천(Action=1)이라고 가정합니다.
+        Args:
+            row (pd.Series): '판매데이터.csv'의 단일 행(거래 내역).
+        Returns:
+            float: 계산된 최종 보상 점수.
+        로직:
+            1. 기본 보상으로 1.0 (판매 성공)을 부여합니다.
+            2. 해당 `row`의 '주문코드'가 `self.cs_order_set`(CS 데이터)에 존재하는지 확인합니다.
+            3. CS가 발생한 주문이면 -5.0의 큰 페널티를 차감합니다.
         """
         reward = 1.0 # initial reward: 판매 발생
         
@@ -120,8 +144,23 @@ class RLDataLoader:
 
     def _prepare_ml_input_features(self, row_series, feature_names):
         """
-        ML 모델이 요구하는 모든 피처(feature_names)를 가진 DataFrame을 생성합니다.
-        현재 행(row) 정보로 만들 수 있는 피처만 채우고, 나머지는 0으로 둡니다.
+        용도: 
+            (내부 함수) 단일 Raw 데이터 행(row_series)을 ML 모델 추론에 필요한
+            DataFrame 형태로 가공합니다.
+        Args:
+            row_series (pd.Series): '판매데이터.csv'의 단일 행.
+            feature_names (list): 
+                ML 모델이 학습할 때 사용했던 피처 이름 목록 (예: `self.inference_engine.feature_names_price`)
+        Returns:
+            pd.DataFrame: 
+                ML 모델의 `predict()` 메서드에 바로 입력할 수 있는,
+                1개 행과 `feature_names`의 순서를 따르는 DataFrame.
+        로직:
+            1. `row_series`에 존재하는 피처는 그대로 사용합니다.
+            2. '발주날짜'로부터 'year', 'month' 등 시간 피처를 생성합니다.
+            3. `feature_names` 목록에는 있지만 `row_series`나 시간 피처에 없는 
+                (예: `price_lag_7d` 같은 Lag 피처) 값들은 0.0으로 채웁니다.
+            4. 최종적으로 `feature_names` 순서에 맞는 DataFrame을 생성하여 반환합니다.
         """
         ml_input_dict = {}
         
@@ -148,6 +187,29 @@ class RLDataLoader:
 
 
     def generate_rl_training_data(self, sample_size=1000):
+        """
+        용도: 
+            `train_rl.py`가 호출하는 메인 함수.
+            ML 모델 추론을 기반으로 현실적인 RL 학습 데이터(transitions)를 생성합니다.
+        Args:
+            sample_size (int): 
+                생성할 총 transition(경험)의 수. `sales_df`에서 이만큼 샘플링합니다.
+        Returns:
+            list[tuple]: 
+                RL 리플레이 버퍼에 저장될 `(state, action, reward, next_state, done_mask)` 
+                튜플의 리스트.
+        로직:
+            1. ML 모델이 로드되었는지 확인합니다.
+            2. ML 모델이 요구하는 피처 목록(`feature_names_price`, `feature_names_quality`)을 가져옵니다.
+            3. `sales_df`에서 `sample_size`만큼 무작위 샘플링합니다.
+            4. 각 샘플(row)에 대해 `tqdm` (진행바)을 실행합니다.
+            5. `_prepare_ml_input_features`로 ML 추론용 입력을 만듭니다.
+            6. `self.inference_engine.predict_price`와 `predict_quality_rate`를 호출하여
+                `pred_price`와 `pred_quality`를 얻습니다.
+            7. `_construct_state_vector`로 (ML 예측값이 포함된) `state` 벡터를 생성합니다.
+            8. `action=1`, `done=True` (Contextual Bandit)로 설정하고, `_calculate_reward`로 `reward`를 계산합니다.
+            9. `(state, action, reward, next_state, not done)` 튜플을 `transitions` 리스트에 추가합니다.
+        """
         transitions = []
         
         # ML 모델이 로드되었는지 확인

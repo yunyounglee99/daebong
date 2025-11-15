@@ -24,7 +24,14 @@ from serving.inference import ModelInferenceEngine
 
 
 class PredictionDatasetCreator:
-
+    """
+    용도:
+        Raw 데이터와 학습된 ML 모델(InferenceEngine)을 결합하여,
+        과거 데이터에 대한 '예측값'과 '실제값'을 포함하는 CSV 데이터셋을 생성합니다.
+        (예: 가격 예측 결과, 품질(하자율) 예측 결과)
+        이 스크립트는 'train_ml.py'가 성공적으로 실행되어 
+        'model_register/ml_model/'에 모델 파일이 저장된 이후에 사용됩니다.
+    """
     def __init__(self, raw_data_path, output_path):
 
         self.raw_data_path = raw_data_path
@@ -40,6 +47,25 @@ class PredictionDatasetCreator:
         self.inference_engine = ModelInferenceEngine()
 
     def create_price_predictions(self):
+        """
+        용도: 
+            '농넷_시장별_사과가격.csv' 원본 데이터를 기반으로 가격 예측을 수행하고,
+            실제 가격과 예측 가격을 비교하는 CSV 파일을 생성합니다.
+        Args:
+            None
+        Returns:
+            (pd.DataFrame, str): 
+                결과 DataFrame과 저장된 파일 경로. 
+                오류 발생 시 (None, None).
+        로직:
+            1. 'load_raw_data'로 원본 데이터를 로드합니다.
+            2. 'preprocess_price_data', 'preprocess_weather_data'로 데이터를 전처리합니다.
+            3. 'create_price_features'로 ML 모델에 입력할 피처를 생성합니다.
+            4. 'inference_engine.predict_price()'를 호출하여 예측 가격을 얻습니다.
+            5. 원본 데이터(날짜, 품종 등)와 실제 가격, 예측 가격을 결합하여 DataFrame을 만듭니다.
+            6. 가격 차이, 오차율 등 통계 컬럼을 추가합니다.
+            7. 'data/processed/' 경로에 'price_predictions_...csv' 파일로 저장하고 통계를 출력합니다.
+        """
         """가격 예측 데이터셋 생성"""
         print("\n" + "="*60)
         print("가격 예측 데이터셋 생성 중...")
@@ -98,6 +124,25 @@ class PredictionDatasetCreator:
             return None, None
 
     def create_quality_predictions(self):
+        """
+        용도: 
+            '판매데이터.csv', 'CS데이터.csv' 원본 데이터를 기반으로 품질(하자율) 예측을 수행하고,
+            실제 CS 여부와 예측 하자 확률을 비교하는 CSV 파일을 생성합니다.
+        Args:
+            None
+        Returns:
+            (pd.DataFrame, str): 
+                결과 DataFrame과 저장된 파일 경로. 
+                오류 발생 시 (None, None).
+        로직:
+            1. 'load_raw_data'로 원본 데이터를 로드합니다.
+            2. 'preprocess_sales_data', 'preprocess_cs_data' 등으로 데이터를 전처리합니다.
+            3. 'create_quality_features'로 ML 모델에 입력할 피처를 생성합니다. (타겟: defect_rate=0/1)
+            4. 'inference_engine.predict_quality_rate()'를 호출하여 예측 하자 확률(0.0~1.0)을 얻습니다.
+            5. 원본 데이터(상품명, CS여부 등)와 실제 CS(0/1), 예측 확률을 결합하여 DataFrame을 만듭니다.
+            6. 예측 정확도 등 통계 컬럼을 추가합니다.
+            7. 'data/processed/' 경로에 'quality_predictions_...csv' 파일로 저장하고 통계를 출력합니다.
+        """
         """품질 예측 데이터셋 생성"""
         print("\n" + "="*60)
         print("품질 예측 데이터셋 생성 중...")
@@ -170,6 +215,20 @@ class PredictionDatasetCreator:
             return None, None
 
     def create_combined_predictions(self):
+        """
+        용도: 
+            가격 예측과 품질 예측을 모두 수행하고 결과를 요약합니다.
+        Args:
+            None
+        Returns:
+            dict: 
+                'price'와 'quality' 키를 포함하며, 각 키는 
+                {'df': DataFrame, 'file': str} 값을 가집니다.
+        로직:
+            1. `create_price_predictions()`를 호출합니다.
+            2. `create_quality_predictions()`를 호출합니다.
+            3. 두 함수의 반환값을 딕셔너리로 묶어 반환합니다.
+        """
         """가격 + 품질 통합 예측 데이터셋 생성"""
         print("\n" + "="*60)
         print("통합 예측 데이터셋 생성 중...")
@@ -196,6 +255,22 @@ class PredictionDatasetCreator:
 
 
 def main():
+    """
+    용도: 
+        스크립트의 메인 진입점(Entrypoint)입니다.
+        커맨드 라인 인자(--model, --output_dir 등)를 파싱하여 
+        `PredictionDatasetCreator`를 실행합니다.
+    Args:
+        None (sys.argv에서 인자를 받음)
+    Returns:
+        None
+    로직:
+        1. `argparse`로 커맨드 라인 인자를 파싱합니다.
+        2. `PredictionDatasetCreator` 클래스를 인스턴스화합니다.
+        3. `--model_type` 인자에 따라 `create_price_predictions`, 
+            `create_quality_predictions`, `create_combined_predictions` 중 
+            적절한 함수를 호출합니다.
+    """
     """메인 함수"""
     parser = argparse.ArgumentParser(
         description='ML 모델을 사용하여 가격 및 품질 예측 데이터셋 생성'
