@@ -554,7 +554,6 @@ class QualityModelTrainer:
             print(f"!!! 알 수 없는 평가 오류: {e}")
 
         return metrics
-    # ★★★ (수정 종료) ★★★
 
     def save(self, model, save_path):
         """Save model"""
@@ -571,7 +570,7 @@ class QualityModelTrainer:
             print(f"\n✓ Quality model features saved.")
         except Exception as e:
             print(f"\n!!! Warning: Could not save quality model features. {e}")
-            
+
         print(f"\n✓ Quality model saved to: {filepath}")
 
         return filepath
