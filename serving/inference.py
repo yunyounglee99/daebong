@@ -5,6 +5,7 @@ import joblib
 import torch
 import pandas as pd
 import numpy as np
+from typing import Optional
 
 # --- 1. 프로젝트 루트 경로 추가 ---
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -58,6 +59,10 @@ class ModelInferenceEngine:
         # RL models config
         self.q_network = None
 
+        self.latest_price_prefix_loaded: Optional[str] = None
+        self.latest_quality_prefix_loaded: Optional[str] = None
+        self.latest_rl_path_loaded: Optional[str] = None
+
         if EnsemblePriceModel and EnsembleQualityModel:
             self._load_latest_ml_models()
         else:
@@ -98,6 +103,8 @@ class ModelInferenceEngine:
                 self.price_model.load_models(latest_price_prefix)
                 self.feature_names_price = joblib.load(f"{latest_price_prefix}_features.pkl")
                 print(f"✓ Price Model (Regression) loaded with {len(self.feature_names_price)} features.")
+
+                self.latest_price_prefix_loaded = latest_price_prefix
             except Exception as e:
                 print(f"!!! Error loading Price Model: {e}")
 
@@ -111,6 +118,8 @@ class ModelInferenceEngine:
                 self.quality_model.load_models(latest_quality_prefix)
                 self.feature_names_quality = joblib.load(f"{latest_quality_prefix}_features.pkl")
                 print(f"✓ Quality Model (Classification) loaded with {len(self.feature_names_quality)} features.")
+
+                self.latest_quality_prefix_loaded = latest_quality_prefix
             except Exception as e:
                 print(f"!!! Error loading Quality Model: {e}")
 
@@ -141,6 +150,8 @@ class ModelInferenceEngine:
             self.q_network.load_state_dict(checkpoint['q_main_state_dict'])
             self.q_network.eval()
             print('RL Model (DQN) loaded and set to eval mode')
+
+            self.latest_rl_path_loaded = latest_checkpoint_path
         except Exception as e:
             print(f'!!! Error loading RL checkpoint file: {e}')
             self.q_network = None
