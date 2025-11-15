@@ -1,57 +1,61 @@
-daebong_rl_project/
-├── data/                   # 1. 데이터 (원본 및 가공)
-│   ├── 초창패개발_데이터.xlsx   
-│   ├── raw/                #    - 원본 CSV, JSON, SQL 덤프
-│   │   ├── data_dist.ipynb
-│   │   ├── dummy_data_100.json
-│   │   └── data_statistics_summary.csv
-│   └── processed/          #    - 전처리 완료된 데이터
-│       └── features.parquet
+daebong/
+├── data/
+│   ├── collectors/
+│   │   └── weather_api_check.py   # (유틸) 기상청 API 데이터 수집/테스트 스크립트
+│   ├── raw/
+│   │   ├── 농넷_시장별_사과가격.csv   # [Source] 농넷 가격 원본 데이터
+│   │   ├── 초창패개발_데이터_판매데이터.csv # [Source] 대봉 자체 판매/발주 데이터
+│   │   ├── 초창패개발_데이터_CS데이터.csv   # [Source] 대봉 자체 CS 데이터
+│   │   ├── 초창패개발_데이터_평균출고소요일.csv # [Source] 대봉 자체 리드타임 데이터
+│   │   ├── weather_data.json        # [Source] 기상청 API 결과 (수집본)
+│   │   └── dummy_data_100.json      # [Test] RL 학습 초기 테스트용 더미 데이터
+│   └── processed/
+│       ├── create_predictions.py    # (유틸) ML 모델로 예측 파일 생성 스크립트
+│       ├── price_predictions_...csv    # (ML 결과) 가격 예측 저장본
+│       └── quality_predictions_...csv  # (ML 결과) 품질 예측 저장본
 │
-├── model_register/         # 2. 모델 저장소 (학습된 모델 보관)
-│   ├── ml_model/           #    - 기계학습 모델 (가격/품질 예측)
-│   │   ├── ml_model_v1.pkl
-│   │   └── ml_model_v2.pkl
-│   └── rl_model/           #    - 강화학습 모델 (SAC+PER)
-│       ├── rl_model_v1.pth
-│       └── rl_model_v2.pth
+├── model_register/
+│   ├── ml_model/
+│   │   ├── price_ensemble_..._lgb.pkl # (산출물) 학습된 ML 가격 모델 (LGB)
+│   │   ├── price_ensemble_..._features.pkl # (산출물) 가격 모델이 사용한 피처 목록
+│   │   ├── quality_ensemble_..._lgb.pkl # (산출물) 학습된 ML 품질 모델 (LGB)
+│   │   └── quality_ensemble_..._features.pkl # (산출물) 품질 모델이 사용한 피처 목록
+│   └── rl_model/
+│       └── dqn_checkpoint_step...pth # (산출물) 학습된 RL 모델 체크포인트
 │
-├── notebooks/              # 3. 실험실 (데이터 분석 및 모델 프로토타이핑)
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_ml_model_training.ipynb
-│   └── 03_rl_training_simulation.ipynb # (과제 제출용 핵심 노트북)
+├── notebooks/
+│   ├── comprehensive_data_analysis.ipynb # 원본 데이터 탐색 및 시각화 (EDA)
+│   ├── data_dist_dummy_for_RL.ipynb    # RL 더미 데이터 분석
+│   └── weather_data_analysis.ipynb     # 기상 데이터 분석
 │
-├── src/                    # 4. 핵심 소스 코드 (재사용 가능한 모든 모듈)
+├── src/
 │   ├── __init__.py
-│   ├── config.py           #    - 모든 경로, 하이퍼파라미터, API 키 관리
-│   │
+│   ├── config.py                 # (핵심) 모든 하이퍼파라미터 및 경로 관리
 │   ├── data/
-│   │   └── preprocess.py   #    - data/raw/ -> data/processed/ 로 변환
-│   │
+│   │   └── rl_dataloader.py      # (핵심) ML 예측 + Raw 데이터 -> RL 학습 데이터 생성기
 │   ├── models/
 │   │   ├── __init__.py
-│   │   ├── ml_model.py     #    - '기계학습 모델' (가격/품질) 클래스 정의
-│   │   ├── rl_model_DQN.py
-│   │   └── rl_model_SAC.py
-│   │
+│   │   ├── ml_price_model.py     # (ML 정의) 가격 예측 (회귀) 앙상블 모델 클래스
+│   │   ├── ml_quality_model.py   # (ML 정의) 품질 예측 (분류) 앙상블 모델 클래스
+│   │   ├── rl_model_DQN.py       # (RL 정의) DQN (Dueling+Noisy) 모델 클래스
+│   │   └── rl_model_SAC.py       # (RL 정의) SAC (Discrete) 모델 클래스 (현재 보류)
 │   └── utils/
 │       ├── __init__.py
-│       └── replay_buffer.py #   - PER(우선순위 경험 리플레이) 클래스 정의
+│       └── replay_buffer.py    # (RL 유틸) PER(우선순위 경험 리플레이) 버퍼
 │
-├── training/               # 5. 학습 서버 (<Training Server> 로직)
+├── serving/
 │   ├── __init__.py
-│   ├── utils.py
-│   ├── train_ml.py         #    - src/models/ml_model.py를 학습, model_register/에 저장
-│   ├── train_rl.py         #    - ★★★ SAC+PER 학습 루프 (model.train())
-│   │                       #    - Replay Buffer에서 데이터 샘플링
-│   │                       #    - 주기적으로 model_register/에 모델 저장
-│   └── reward_collector.py #    - (옵션) 클릭 데이터를 수집해 Replay Buffer에 저장하는 파이프라인
+│   ├── main.py                   # (서빙) FastAPI API 엔드포인트 정의 (실행 파일)
+│   ├── inference.py            # (서빙) ML+RL 모델을 통합 로드/예측하는 '추론 엔진' 클래스
+│   └── model_loader.py         # (서빙) 새 모델을 감시하고 자동 교체(Hot-swap)하는 관리자
 │
-├── serving/                # 6. 서빙 API 서버 (<Serving API Server> 로직)
+├── training/
 │   ├── __init__.py
-│   ├── main.py             #    - FastAPI / Flask 등 API 서버 실행 파일
-│   ├── model_loader.py     #    - Model Register를 감시, 새 모델 로드/교체 (Hot-Swap)
-│   └── inference.py        #    - ★★★ 모델(eval())로 Q-value 계산, JSON 생성하는 핵심 로GIC
+│   ├── train_ml.py               # (학습 실행) ML (가격/품질) 모델 학습 스크립트
+│   ├── train_rl.py               # (학습 실행) RL (DQN/SAC) 모델 학습 스크립트
+│   └── utils.py                  # (학습 유틸) RL State 벡터 변환, Reward 계산 함수
 │
-├── requirements.txt        # 7. 의존성 (필요한 모든 라이브러리)
-└── README.md               # 8. 프로젝트 설명서
+├── backend_log_guide.py          # (문서) 대봉 측에 전달할 백엔드 로그 수집 가이드
+├── data_structure.md             # (문서) RL 데이터 JSON 구조 정의
+├── project_architecture.txt      # (문서) 본 파일 (프로젝트 구조)
+└── requirements.txt              # Python 패키지 의존성
