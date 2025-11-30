@@ -39,6 +39,25 @@ class RLDataLoader:
             self.sales_df = pd.read_csv(os.path.join(data_dir, '초창패개발_데이터_판매데이터.csv'))
             self.cs_df = pd.read_csv(os.path.join(data_dir, '초창패개발_데이터_CS데이터.csv'))
             lead_time_df = pd.read_csv(os.path.join(data_dir, '초창패개발_데이터_평균출고소요일.csv'))
+
+            # 1. 공급가격: '₩', ',' 제거 후 float 변환
+            if self.sales_df['공급가격'].dtype == 'object':
+                self.sales_df['공급가격'] = (
+                    self.sales_df['공급가격']
+                    .astype(str)
+                    .str.replace('₩', '')
+                    .str.replace(',', '')
+                    .astype(float)
+                )
+            
+            # 2. 수량: ',' 제거 후 float/int 변환 (필요한 경우)
+            if self.sales_df['수량'].dtype == 'object':
+                self.sales_df['수량'] = (
+                    self.sales_df['수량']
+                    .astype(str)
+                    .str.replace(',', '')
+                    .astype(float)
+                )
             
             # CS 발생 여부 딕셔너리 (빠른 조회를 위해)
             self.cs_order_set = set(self.cs_df['발주번호'].unique())
