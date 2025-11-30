@@ -17,6 +17,9 @@ MODEL_REGISTER_PATH = os.path.join(PROJECT_ROOT, "model_register")
 RL_MODEL_PATH = os.path.join(MODEL_REGISTER_PATH, "rl_model")
 ML_MODEL_PATH = os.path.join(MODEL_REGISTER_PATH, "ml_model")
 
+INFERENCE_DATA_DIR = os.path.join(PROJECT_ROOT, "data", "inference_data")
+DAILY_PREDICTION_FILE = os.path.join(INFERENCE_DATA_DIR, "daily_predictions.csv")
+
 # --- 2. Model hyperparameters ---
 
 OBS_DIM = 50        # State의 실제 차원 (예: 품목정보 10 + 그룹 2 + 가격 1 + 리드타임 1 + 하자비율 1)
