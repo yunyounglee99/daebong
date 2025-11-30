@@ -87,6 +87,8 @@ class ModelInferenceEngine:
         # RL models config
         self.q_network = None
 
+        self.daily_cache: Optional[pd.DataFrame] = None
+
         self.latest_price_prefix_loaded: Optional[str] = None
         self.latest_quality_prefix_loaded: Optional[str] = None
         self.latest_rl_path_loaded: Optional[str] = None
@@ -102,9 +104,32 @@ class ModelInferenceEngine:
         else:
             print("ERROR: RL Model classes not loaded. Skipping RL model loading.")
 
+        self.load_daily_cache()
+
         print("="*60)
         print("Inference Engine Initialized.")
         print("="*60)
+
+    def load_daily_cache(self):
+        """
+        용도: 'daily_predictions.csv' 파일을 로드하여 메모리에 캐싱합니다.
+        Args: None
+        Returns: None
+        """
+        print(f"Loading daily prediction cache from: {DAILY_PREDICTION_FILE}")
+        if os.path.exists(DAILY_PREDICTION_FILE):
+            try:
+                self.daily_cache = pd.read_csv(DAILY_PREDICTION_FILE)
+                # 품종을 인덱스로 설정하여 검색 속도 향상 (선택 사항)
+                # if '품종' in self.daily_cache.columns:
+                #     self.daily_cache.set_index('품종', inplace=True, drop=False)
+                print(f"Loaded daily predictions: {len(self.daily_cache)} items.")
+            except Exception as e:
+                print(f"Warning: Failed to load daily cache. {e}")
+                self.daily_cache = None
+        else:
+            print("Warning: No daily prediction file found. Please run DailyBatchProcessor.")
+            self.daily_cache = None
 
     def _find_latest_ml_model(self, prefix: str):
         """
@@ -431,11 +456,11 @@ class DailyBatchProcessor:
         
         # 1. 날짜 피처 (오늘 기준 - 내일 가격 예측을 위함)
         today = datetime.now()
-        print(f'\ntoday is {today}  \n')
+        # print(f'\ntoday is {today}  \n')
         if 'year' in input_dict: input_dict['year'] = today.year
         if 'month' in input_dict: input_dict['month'] = today.month
         if 'day' in input_dict: input_dict['day'] = today.day
-        if 'dayofweek' in input_dict: input_dict['dayofweek'] = today.dayofweek
+        if 'dayofweek' in input_dict: input_dict['dayofweek'] = today.weekday()
         
         # 2. 날씨 피처
         for k, v in weather_data.items():
@@ -478,10 +503,17 @@ class DailyBatchProcessor:
         weather_data = self._fetch_yesterday_weather()
 
         # 3. 데이터 로드
+        print("Loading all raw data files from inference_data/ ...")
         try:
             # (참고: 대봉 측이 이 폴더에 매일 최신 파일을 덮어쓴다고 가정)
+            price_raw = pd.read_csv(os.path.join(self.data_dir, '농넷_시장별_사과가격.csv'))
             sales_raw = pd.read_csv(os.path.join(self.data_dir, '초창패개발_데이터_판매데이터.csv'))
+            sales_vol_raw = pd.read_csv(os.path.join(self.data_dir, '초창패개발_데이터_판매량분석.csv'))
             lead_time_raw = pd.read_csv(os.path.join(self.data_dir, '초창패개발_데이터_평균출고소요일.csv'))
+            cs_raw = pd.read_csv(os.path.join(self.data_dir, '초창패개발_데이터_CS데이터.csv'))
+            cs_ratio_raw = pd.read_csv(os.path.join(self.data_dir, '초창패개발_데이터_CS비율분석.csv'))
+            
+            print("All 6 raw data files loaded successfully.")
             
             # 리드타임 맵 생성
             lead_time_map = pd.Series(
@@ -493,23 +525,40 @@ class DailyBatchProcessor:
         except FileNotFoundError as e:
             print(f"!!! Error: Raw data file not found in {self.data_dir}. {e}")
             return
-
-        # 4. 타겟 아이템 추출 (판매 이력이 있는 모든 품종-업체 조합)
-        # (실제로는 '활성화된 상품 마스터' 테이블을 쓰는 게 좋음)
-        if '품종' in sales_raw.columns and '업체명' in sales_raw.columns:
-            target_items = sales_raw[['품종', '업체명']].drop_duplicates()
-        else:
-            print("!!! Error: Sales data missing '품종' or '업체명' columns.")
+        except Exception as e:
+            print(f"!!! Error reading data files: {e}")
             return
+
+        # 4. 타겟 아이템 추출
+        target_cols = []
+        item_col = None
+        
+        if '판매상품명' in sales_raw.columns:
+            item_col = '판매상품명'
+        elif '품종' in sales_raw.columns:
+            item_col = '품종'
+        else:
+            print(f"!!! Error: Sales data missing item identifier column. Columns: {sales_raw.columns}")
+            return
+
+        if '업체명' not in sales_raw.columns:
+            print("!!! Error: Sales data missing '업체명' column.")
+            return
+            
+        # 유니크한 (상품명, 업체명) 조합 추출
+        target_items = sales_raw[[item_col, '업체명']].drop_duplicates()
         
         results = []
         print(f"Predicting for {len(target_items)} items...")
         
         for _, item in target_items.iterrows():
-            item_name = item['품종']
+            item_name = item[item_col] # 품종 대신 판매상품명 사용
             company = item['업체명']
             
             # (1) ML 모델 입력 구성
+            # item 정보에 '품종' 키가 없으면 '판매상품명'을 대신 넣어줄 필요가 있을 수 있음
+            # (하지만 _prepare_input_df는 주로 날짜와 날씨를 쓰므로 큰 문제 없음)
+            
             price_input = self._prepare_input_df(
                 self.engine.feature_names_price, weather_data, item
             )
@@ -520,18 +569,17 @@ class DailyBatchProcessor:
             # (2) 예측 수행
             try:
                 pred_price = self.engine.price_model.predict(price_input)[0]
-                pred_quality = self.engine.quality_model.predict_proba(quality_input)[0] # (확률 1차원)
+                pred_quality = self.engine.quality_model.predict_proba(quality_input)[0]
             except Exception as e:
-                print(f"Prediction failed for {item_name}: {e}")
+                # print(f"Prediction failed for {item_name}: {e}") # 너무 많이 출력될 수 있으므로 생략
                 pred_price, pred_quality = 0, 0
 
             # (3) 리드타임 조회
             lead_time = lead_time_map.get(company, default_lead_time)
             
-            # (4) 결과 수집 (인덱스로 쓸 키: 품종)
-            # 실제로는 product_id가 고유 키여야 함
+            # (4) 결과 수집
             results.append({
-                '품종': item_name, 
+                '품종': item_name, # 결과 CSV의 컬럼명은 '품종'으로 유지 (RL 모델 호환성 위해)
                 '업체명': company,
                 'pred_price': pred_price,
                 'pred_quality': pred_quality,
@@ -541,11 +589,10 @@ class DailyBatchProcessor:
         # 5. 결과 저장
         if results:
             result_df = pd.DataFrame(results)
-            # '품종'을 인덱스로 저장하지 않고 컬럼으로 저장 (load 시 set_index 함)
             result_df.to_csv(DAILY_PREDICTION_FILE, index=False)
-            print(f"✓ Daily predictions saved to {DAILY_PREDICTION_FILE}")
+            print(f"Daily predictions saved to {DAILY_PREDICTION_FILE}")
             
-            # 6. 엔진 캐시 리로드 (즉시 반영)
+            # 6. 엔진 캐시 리로드
             self.engine.load_daily_cache()
         else:
             print("Warning: No predictions generated.")
