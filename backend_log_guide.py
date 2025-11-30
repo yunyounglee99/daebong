@@ -15,7 +15,7 @@ import json
 # --- 예시 함수 (실제 백엔드 로직에 맞게 수정 필요) ---
 
 def log_recommendation_impression(session_id: str, user_id: str, 
-                                  recommendation_list: list, context: dict):
+                                recommendation_list: list, context: dict):
     """
     [로그 1: 추천 노출 (Action=1)]
     사용자에게 추천 목록이 '보여지는' 순간 호출합니다.

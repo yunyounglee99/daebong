@@ -138,8 +138,8 @@ def predict_quality_rate(
 
 
 @app.post("/predict_q_values", 
-          response_model=QValueResponse, 
-          summary="RL 추천 만족도(Q-value) 예측")
+        response_model=QValueResponse, 
+        summary="RL 추천 만족도(Q-value) 예측")
 def predict_rl_q_values(
     state: RLState, 
     engine: ModelInferenceEngine = Depends(get_engine)
